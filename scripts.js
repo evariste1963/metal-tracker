@@ -34,11 +34,11 @@ const metal = "XAU";
 const currency = "GBP";
 const updateBtn = document.querySelector(".btn-update");
 
-var myHeaders = new Headers();
+const myHeaders = new Headers();
 myHeaders.append("x-access-token", "goldapi-15j9sm18l0w7rfer-io");
 myHeaders.append("Content-Type", "application/json");
 
-const getTimestamp = timestamp => {
+const getTimestamp = (timestamp) => {
   let date = new Date(timestamp * 1000);
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -55,26 +55,47 @@ const getTimestamp = timestamp => {
 
   return callDate;
 };
-var requestOptions = {
+const requestOptions = {
   method: "GET",
   headers: myHeaders,
   redirect: "follow",
 };
-const getMetalPrice = () => {
-  fetch(`https://www.goldapi.io/api/${metal}/${currency}`, requestOptions)
-    .then(response => response.json())
-    .then(result => {
-      console.log(result);
-      let dateTime = getTimestamp(result.timestamp);
-      console.log(`
-      ${dateTime}
-      ${result.metal}:-
-      Day low: ${result.low_price}
-      Day high: ${result.high_price}
-      Price: ${result.price}`);
-    })
 
-    .catch(error => console.log("error", error));
+const getMetalPrice = async function () {
+  try {
+    const response = await fetch(
+      `https://www.goldapi.io/api/${metal}/${currency}`,
+      requestOptions
+    );
+    const result = await response.json();
+    console.log(result);
+    let dateTime = getTimestamp(result.timestamp);
+    console.log(`
+  ${dateTime}
+  ${result.metal}:-
+  Day low: ${result.low_price}
+  Day high: ${result.high_price}
+  Price: ${result.price}`);
+  } catch (error) {
+    console.log("error", error);
+  }
 };
+
+//const getMetalPrice = () => {
+//   fetch(`https://www.goldapi.io/api/${metal}/${currency}`, requestOptions)
+//     .then(response => response.json())
+//     .then(result => {
+//       console.log(result);
+//       let dateTime = getTimestamp(result.timestamp);
+//       console.log(`
+//       ${dateTime}
+//       ${result.metal}:-
+//       Day low: ${result.low_price}
+//       Day high: ${result.high_price}
+//       Price: ${result.price}`);
+//     })
+
+//     .catch(error => console.log("error", error));
+// };
 
 updateBtn.addEventListener("click", getMetalPrice);
