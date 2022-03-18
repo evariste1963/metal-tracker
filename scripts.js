@@ -23,7 +23,7 @@ updateBtn.addEventListener("click", getMetalPrice);
 const API_KEY1 = "goldapi-15j9sm18l0w7rfer-io";
 const metal = "XAU";
 const currency = "GBP";
-const updateBtn1 = document.querySelector(".btn-update");
+const updateBtn = document.querySelector(".btn-update");
 
 var myHeaders = new Headers();
 myHeaders.append("x-access-token", "goldapi-15j9sm18l0w7rfer-io");
@@ -51,7 +51,7 @@ var requestOptions = {
   headers: myHeaders,
   redirect: "follow",
 };
-const getMetalPrice1 = () => {
+const getMetalPrice = () => {
   fetch(`https://www.goldapi.io/api/${metal}/${currency}`, requestOptions)
     .then(response => response.json())
     .then(result => {
@@ -68,4 +68,4 @@ const getMetalPrice1 = () => {
     .catch(error => console.log("error", error));
 };
 
-updateBtn1.addEventListener("click", getMetalPrice1);
+updateBtn.addEventListener("click", getMetalPrice);
