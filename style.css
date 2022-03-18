@@ -1,0 +1,19 @@
+.btn-country,
+.btn-update {
+  align-items: center;
+  display: flex;
+}
+
+.searchbtn,
+.btn-update,
+.btn-country,
+.btncountry {
+  border: none;
+  font-size: 2rem;
+  padding: 2rem 5rem;
+  border-radius: 0.7rem;
+  margin: 3rem;
+  color: white;
+  background-color: orangered;
+  cursor: pointer;
+}
