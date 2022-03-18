@@ -1,13 +1,9 @@
-.btn-country,
 .btn-update {
   align-items: center;
   display: flex;
 }
 
-.searchbtn,
-.btn-update,
-.btn-country,
-.btncountry {
+.btn-update {
   border: none;
   font-size: 2rem;
   padding: 2rem 5rem;
