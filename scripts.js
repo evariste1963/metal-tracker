@@ -17,6 +17,15 @@ const getMetalPrice = () => {
 };
 updateBtn.addEventListener("click", getMetalPrice);
 */
+/*
+{timestamp: 1647631965, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP', …}ask: 1457.17bid: 1456.4ch: -20.5chp: -1.39currency: "GBP"exchange: "FOREXCOM"high_price: 1478.16low_price: 1454.94metal: "XAU"open_price: 1477.28open_time: 1647561600prev_close_price: 1477.28price: 1456.78price_gram_18k: 35.1274price_gram_20k: 39.0305price_gram_21k: 40.982price_gram_22k: 42.9335price_gram_24k: 46.8366symbol: "FOREXCOM:XAUGBP"timestamp: 1647631965[[Prototype]]: Object
+scripts.js:60 
+2022-03-18 19:32:45
+XAU:-
+Day low: 1454.94
+Day high: 1478.16
+Price: 1456.78
+*/
 
 // https://www.goldapi.io/dashboard
 
