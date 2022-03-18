@@ -47,7 +47,9 @@ const getMetalPrice1 = () => {
   fetch("https://www.goldapi.io/api/XAU/GBP", requestOptions)
     .then(response => response.json())
     .then(result => {
+      console.log(result);
       let date = new Date(result.timestamp * 1000);
+
       //const datevalues = [
       let year = date.getFullYear();
       let month = date.getMonth() + 1;
