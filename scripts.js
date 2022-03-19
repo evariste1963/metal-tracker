@@ -34,6 +34,16 @@ Price: 1456.78
 const API_KEY1 = "goldapi-15j9sm18l0w7rfer-io";
 const metal = "XAU";
 const currency = "GBP";
+const historicDate = "2020 01 01 10:20:30"; // 'yyyy mm dd hh:mm:ss'
+function toTimestamp(strDate) {
+  const datum = Date.parse(strDate);
+  return datum / 1000;
+}
+
+const histDate = toTimestamp(historicDate);
+
+console.log(new Date(histDate * 1000));
+
 const updateBtn = document.querySelector(".btn-update");
 
 const myHeaders = new Headers();
@@ -62,11 +72,13 @@ const requestOptions = {
   headers: myHeaders,
   redirect: "follow",
 };
+console.log(`https://www.goldapi.io/api/${metal}/${currency}/${histDate}`);
+//endpoint - https://www.goldapi.io/api/:symbol/:currency/:date?
 
 const getMetalPrice = async () => {
   try {
     const response = await fetch(
-      `https://www.goldapi.io/api/${metal}/${currency}`,
+      `https://www.goldapi.io/api/${metal}/${currency}/`,
       requestOptions
     );
     const result = await response.json();
