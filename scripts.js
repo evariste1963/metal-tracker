@@ -30,24 +30,34 @@ Price: 1456.78
 */
 
 // https://www.goldapi.io/dashboard
-
-const API_KEY1 = "goldapi-15j9sm18l0w7rfer-io";
+//https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
+const API_KEY = "goldapi-15j9sm18l0w7rfer-io";
 const metal = "XAU";
 const currency = "GBP";
-const historicDate = "2020 01 01 10:20:30"; // 'yyyy mm dd hh:mm:ss'
-function toTimestamp(strDate) {
-  const datum = Date.parse(strDate);
-  return datum / 1000;
-}
+const historicDate = ""; //"20201112"; // 'yyyy/mm/dd'
 
-const histDate = toTimestamp(historicDate);
-
-console.log(new Date(histDate * 1000));
-
+//result from historic date:
+/*
+{date: '2020-11-12T10:30:00.000Z', timestamp: 1605177000000, metal: 'XAU', exchange: 'LBMA', currency: 'GBP', …}
+ch: -6.2508
+chp: -0.439
+currency: "GBP"
+date: "2020-11-12T10:30:00.000Z"
+exchange: "LBMA"
+metal: "XAU"
+prev_close_price: 1430.2235
+price: 1423.9727
+price_gram_18k: 34.3363
+price_gram_20k: 38.1515
+price_gram_21k: 40.0591
+price_gram_22k: 41.9666
+price_gram_24k: 45.7818
+timestamp: 1605177000000
+*/
 const updateBtn = document.querySelector(".btn-update");
 
 const myHeaders = new Headers();
-myHeaders.append("x-access-token", "goldapi-15j9sm18l0w7rfer-io");
+myHeaders.append("x-access-token", API_KEY);
 myHeaders.append("Content-Type", "application/json");
 
 const getTimestamp = (timestamp) => {
@@ -72,23 +82,31 @@ const requestOptions = {
   headers: myHeaders,
   redirect: "follow",
 };
-console.log(`https://www.goldapi.io/api/${metal}/${currency}/${histDate}`);
+console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
 //endpoint - https://www.goldapi.io/api/:symbol/:currency/:date?
 
 const getMetalPrice = async () => {
   try {
     const response = await fetch(
-      `https://www.goldapi.io/api/${metal}/${currency}/`,
+      `https://www.goldapi.io/api/${metal}/${currency}/${historicDate}?`,
       requestOptions
     );
     const result = await response.json();
     console.log(result);
-    let dateTime = getTimestamp(result.timestamp);
-    console.log(`
+
+    let dateTime = getTimestamp(
+      result.date ? result.timestamp / 1000 : result.timestamp
+    );
+    !result.date
+      ? console.log(`
   ${dateTime}
   ${result.metal}:-
   Day low: ${result.low_price}
   Day high: ${result.high_price}
+  Price: ${result.price}`)
+      : console.log(`
+  ${dateTime}
+  Previous closing price: ${result.prev_close_price}
   Price: ${result.price}`);
   } catch (error) {
     console.log("error", error);
