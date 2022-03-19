@@ -63,7 +63,7 @@ const requestOptions = {
   redirect: "follow",
 };
 
-const getMetalPrice = async function () {
+const getMetalPrice = async () => {
   try {
     const response = await fetch(
       `https://www.goldapi.io/api/${metal}/${currency}`,
