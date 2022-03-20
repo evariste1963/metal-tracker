@@ -16,7 +16,7 @@ let displayChart = new Chart(priceChart, {
     datasets: [
       {
         label: "Price",
-        data: [1440.36, 1440.2, 1439.98, 1437.61, 1410.07],
+        data: [1400.36, 1432.2, 1436.98, 1437.61, 1450.07],
       },
     ],
   },

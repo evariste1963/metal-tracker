@@ -1,9 +1,4 @@
 .btn-update {
-  align-items: center;
-  display: flex;
-}
-
-.btn-update {
   border: none;
   font-size: 2rem;
   padding: 2rem 5rem;
@@ -12,4 +7,10 @@
   color: white;
   background-color: orangered;
   cursor: pointer;
+}
+
+#stackerChart {
+  display: block;
+  height: 500px !important;
+  width: 500px !important;
 }
