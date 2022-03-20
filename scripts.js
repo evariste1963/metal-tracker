@@ -30,6 +30,27 @@ const getTimestamp = (timestamp) => {
 
   return callDate;
 };
+
+//create an external function for this bit -- pass in result.values... return outcomes
+let dateTime = (result) => {
+  return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
+};
+//render data -- currently just consolelogging
+const renderData = (result, callTime) => {
+  //create an external function for this bit -- pass in result.values... return outcomes
+  !result.date
+    ? console.log(`
+${callTime}
+${result.metal}:-
+Day low: ${result.low_price}
+Day high: ${result.high_price}
+Price: ${result.price}`)
+    : console.log(`
+${callTime}
+Previous closing price: ${result.prev_close_price}
+Price: ${result.price}`);
+};
+
 const requestOptions = {
   method: "GET",
   headers: myHeaders,
@@ -47,23 +68,7 @@ const getMetalPrice = async () => {
     const result = await response.json();
     console.log(result);
 
-    //create an external function for this bit -- pass in result.values... return outcomes
-    let dateTime = getTimestamp(
-      result.date ? result.timestamp / 1000 : result.timestamp
-    );
-
-    //create an external function for this bit -- pass in result.values... return outcomes
-    !result.date
-      ? console.log(`
-  ${dateTime}
-  ${result.metal}:-
-  Day low: ${result.low_price}
-  Day high: ${result.high_price}
-  Price: ${result.price}`)
-      : console.log(`
-  ${dateTime}
-  Previous closing price: ${result.prev_close_price}
-  Price: ${result.price}`);
+    renderData(result, dateTime(result));
   } catch (error) {
     console.log("error", error);
   }
