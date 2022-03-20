@@ -6,8 +6,21 @@ const API_KEY = "goldapi-15j9sm18l0w7rfer-io";
 const metal = "XAU";
 const currency = "GBP";
 const historicDate = ""; //"20201112"; // 'yyyy/mm/dd'
-
 const updateBtn = document.querySelector(".btn-update");
+let priceChart = document.getElementById("stackerChart").getContext("2d");
+
+let displayChart = new Chart(priceChart, {
+  type: "line",
+  data: {
+    labels: ["14Mar22", "15Mar22", "16Mar22", "17Mar22", "18Mar22"],
+    datasets: [
+      {
+        label: "Price",
+        data: [1440.36, 1440.2, 1439.98, 1437.61, 1410.07],
+      },
+    ],
+  },
+});
 
 const myHeaders = new Headers();
 myHeaders.append("x-access-token", API_KEY);
