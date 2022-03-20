@@ -9,16 +9,56 @@ const historicDate = ""; //"20201112"; // 'yyyy/mm/dd'
 const updateBtn = document.querySelector(".btn-update");
 let priceChart = document.getElementById("stackerChart").getContext("2d");
 
+Chart.defaults.global.defaultFontFamily = "lato";
+Chart.defaults.global.defaultFontSize = 28;
+Chart.defaults.global.defaultFontColor = "#777";
+
 let displayChart = new Chart(priceChart, {
-  type: "line",
+  type: "polarArea",
   data: {
     labels: ["14Mar22", "15Mar22", "16Mar22", "17Mar22", "18Mar22"],
     datasets: [
       {
         label: "Price",
-        data: [1400.36, 1432.2, 1436.98, 1437.61, 1450.07],
+        data: [1460.36, 1432.2, 1436.98, 1437.61, 1450.07],
+        backgroundColor: [
+          "rgba(153, 102, 255, 0.6)",
+          "rgba(120, 102, 255, 0.6)",
+          "rgba(64, 102, 255, 0.6)",
+          "rgba(164, 10, 255, 0.6)",
+          "rgba(125, 125, 125, 0.6)",
+        ],
+        borderWidth: 1,
+        borderColor: "#777",
+        hoverBorderWidth: 2,
+        hoverBorderColor: "orangeRed",
       },
     ],
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Price Tracker",
+      fontSize: 40,
+    },
+    legend: {
+      display: true,
+      position: "right",
+      labels: {
+        fontColor: "#000",
+      },
+    },
+    layout: {
+      padding: {
+        left: 50,
+        right: 0,
+        top: 10,
+        bottom: 10,
+      },
+      tooltips: {
+        enabled: true,
+      },
+    },
   },
 });
 
