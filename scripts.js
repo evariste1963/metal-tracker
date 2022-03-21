@@ -19,14 +19,15 @@ let displayChart = new Chart(priceChart, {
     labels: ["14Mar22", "15Mar22", "16Mar22", "17Mar22", "18Mar22"],
     datasets: [
       {
-        label: "Price",
-        data: [1460.36, 1432.2, 1436.98, 1437.61, 1450.07],
+        label: "GBP",
+        data: [1432.0, 1434.2, 1436.98, 1437.61, 1450.07],
         backgroundColor: [
-          "rgba(153, 102, 255, 0.6)",
-          "rgba(120, 102, 255, 0.6)",
-          "rgba(64, 102, 255, 0.6)",
-          "rgba(164, 10, 255, 0.6)",
-          "rgba(125, 125, 125, 0.6)",
+          "rgba(255,255,255,0)",
+          //"rgba(153, 102, 255, 0.6)",
+          // "rgba(120, 102, 255, 0.6)",
+          //"rgba(64, 102, 255, 0.6)",
+          //"rgba(164, 10, 255, 0.6)",
+          //"rgba(125, 125, 125, 0.6)",
         ],
         borderWidth: 1,
         borderColor: "#777",
@@ -43,7 +44,7 @@ let displayChart = new Chart(priceChart, {
     },
     legend: {
       display: true,
-      position: "right",
+      position: "left",
       labels: {
         fontColor: "#000",
       },
