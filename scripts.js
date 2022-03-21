@@ -14,7 +14,7 @@ Chart.defaults.global.defaultFontSize = 28;
 Chart.defaults.global.defaultFontColor = "#777";
 
 let displayChart = new Chart(priceChart, {
-  type: "polarArea",
+  type: "line",
   data: {
     labels: ["14Mar22", "15Mar22", "16Mar22", "17Mar22", "18Mar22"],
     datasets: [
@@ -66,7 +66,7 @@ const myHeaders = new Headers();
 myHeaders.append("x-access-token", API_KEY);
 myHeaders.append("Content-Type", "application/json");
 
-const getTimestamp = (timestamp) => {
+const getTimestamp = timestamp => {
   let date = new Date(timestamp * 1000);
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -85,7 +85,7 @@ const getTimestamp = (timestamp) => {
 };
 
 //create an external function for this bit -- pass in result.values... return outcomes
-let dateTime = (result) => {
+let dateTime = result => {
   return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
 };
 //render data -- currently just consolelogging

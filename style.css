@@ -1,16 +1,29 @@
+.container {
+  display: block;
+  width: 70%;
+  height: 100vh;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
 .btn-update {
   border: none;
-  font-size: 2rem;
-  padding: 2rem 5rem;
+  font-size: 1.5rem;
+  padding: 1.5rem 1.5rem;
   border-radius: 0.7rem;
-  margin: 3rem;
+  margin: 2rem auto;
   color: white;
   background-color: orangered;
   cursor: pointer;
 }
 
-#stackerChart {
-  display: block;
-  height: 500px !important;
-  width: 1000px !important;
+.chartDiv {
+  margin: 0 auto;
+  height: 20vh;
+  width: 50vw;
+}
+
+#chartWindow {
+  margin: 2rem auto;
 }
