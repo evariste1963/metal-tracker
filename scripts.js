@@ -7,29 +7,25 @@ const metal = "XAU";
 const currency = "GBP";
 const historicDate = ""; //"20201112"; // 'yyyy/mm/dd'
 const updateBtn = document.querySelector(".btn-update");
-let priceChart = document.getElementById("stackerChart").getContext("2d");
+//let priceChart = document.getElementById("stackerChart").getContext("2d");
 
 var data = {
-  labels: ["Week1", "Week2", "Week3", "Week4", "Week5", "Week6"],
-  series: [
-    [5, 4, 3, 7, 5, 10],
-    [3, 2, 9, 5, 4, 6],
-    [2, 1, -3, -4, -2, 0],
-  ],
+  labels: ["14Mar22", "15Mar22", "16Mar22", "17Mar22", "18Mar22"],
+  series: [[1432.0, 1434.2, 1436.98, 1437.61, 1450.07]],
 };
 
 // We are setting a few options for our chart and override the defaults
 var options = {
   // Don't draw the line chart points
-  showPoint: false,
+  showPoint: true,
   // Disable line smoothing
-  lineSmooth: false,
+  lineSmooth: true,
   // X-Axis specific configuration
   axisX: {
     // We can disable the grid for this axis
-    showGrid: false,
+    showGrid: true,
     // and also don't show the label
-    showLabel: false,
+    showLabel: true,
   },
   // Y-Axis specific configuration
   axisY: {
@@ -39,14 +35,39 @@ var options = {
     // used for the labels on each axis. Here we are converting the
     // values into million pound.
     labelInterpolationFnc: function (value) {
-      return "$" + value + "m";
+      return "£" + value;
     },
   },
 };
 
-// All you need to do is pass your configuration as third parameter to the chart function
-new Chartist.Line(".ct-chart", data, options);
+const responsiveOptions = [
+  [
+    "screen and (min-width: 641px) and (max-width: 1024px)",
+    {
+      showPoint: false,
+      axisX: {
+        labelInterpolationFnc: function (value) {
+          return "Week " + value;
+        },
+      },
+    },
+  ],
+  [
+    "screen and (max-width: 640px)",
+    {
+      showLine: false,
+      axisX: {
+        labelInterpolationFnc: function (value) {
+          return "W" + value;
+        },
+      },
+    },
+  ],
+];
 
+// All you need to do is pass your configuration as third parameter to the chart function
+new Chartist.Line(".ct-chart", data, options, responsiveOptions);
+/*
 Chart.defaults.global.defaultFontFamily = "lato";
 Chart.defaults.global.defaultFontSize = 28;
 Chart.defaults.global.defaultFontColor = "#777";
@@ -100,6 +121,7 @@ let displayChart = new Chart(priceChart, {
     },
   },
 });
+*/
 
 const myHeaders = new Headers();
 myHeaders.append("x-access-token", API_KEY);

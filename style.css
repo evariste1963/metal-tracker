@@ -1,6 +1,6 @@
 .container {
   display: block;
-  width: 70%;
+  width: 50%;
   height: 100vh;
   margin: 0 auto;
   justify-content: center;
@@ -26,4 +26,9 @@
 
 #chartWindow {
   margin: 2rem auto;
+}
+
+.chartArea {
+  width: 75%;
+  margin: 0 auto;
 }
