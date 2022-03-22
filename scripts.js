@@ -285,7 +285,7 @@ var options = {
   ],
   chart: {
     height: 300,
-    width: "70%",
+    width: "60%",
     type: "line",
   },
   title: {
@@ -316,6 +316,7 @@ var options = {
 };
 
 var chart = new ApexCharts(candleChart, options);
+
 chart.render();
 
 const myHeaders = new Headers();
@@ -365,7 +366,7 @@ const requestOptions = {
   headers: myHeaders,
   redirect: "follow",
 };
-console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
+//console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
 //endpoint - https://www.goldapi.io/api/:symbol/:currency/:date?
 
 const getMetalPrice = async () => {
