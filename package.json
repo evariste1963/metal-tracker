@@ -19,7 +19,7 @@
    "description": "",
    "devDependencies": {
       "@parcel/transformer-sass": "^2.2.0",
-      "parcel": "^2.2.0"
+      "parcel": "^2.4.0"
    },
    "dependencies": {
       "apexcharts": "^3.33.2"
