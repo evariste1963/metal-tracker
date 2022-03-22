@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
 .container {
   display: block;
   width: 50%;
@@ -18,14 +23,10 @@
   cursor: pointer;
 }
 
-*#chartWindow {
-  margin: 2rem auto;
-}
-
 .chartArea {
-  margin: 0 auto;
+  margin: 4rem auto;
 }
 
-#apexcharts47zdcado {
+#apexcharts-canvas {
   margin: 2rem auto;
 }
