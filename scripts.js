@@ -39,6 +39,7 @@ var options = {
       name: "candle",
       type: "candlestick",
       data: [
+        //place this in an external txt file?
         {
           x: new Date(1538778600000),
           y: [6629.81, 6650.5, 6623.04, 6633.33],
@@ -283,7 +284,8 @@ var options = {
     },
   ],
   chart: {
-    height: 350,
+    height: 300,
+    width: "100%",
     type: "line",
   },
   title: {
@@ -291,7 +293,7 @@ var options = {
     align: "left",
   },
   stroke: {
-    width: [3, 1],
+    width: [2, 1],
   },
   tooltip: {
     shared: true,
