@@ -285,7 +285,7 @@ var options = {
   ],
   chart: {
     height: 300,
-    width: "100%",
+    width: "70%",
     type: "line",
   },
   title: {
