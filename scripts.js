@@ -1,4 +1,4 @@
-"use strict";
+import ApexCharts from "apexcharts";
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
