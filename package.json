@@ -1,30 +1,27 @@
 {
    "name": "metalsapi",
-  "version": "1.0.0",
-  "main": "scripts.js",
-  
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html  --dist-dir ./dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/evariste1963/metal-tracker.git"
-  },
-  "author": "this.me",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/evariste1963/metal-tracker/issues"
-  },
-  "homepage": "https://github.com/evariste1963/metal-tracker#readme",
-  "description": "",
-
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.2.0",
-    "parcel": "^2.2.0"
-  },
-
-  "dependencies": {
-    "apexcharts": "^3.33.2"
-  }
+   "version": "1.0.0",
+   "main": "scripts.js",
+   "scripts": {
+      "start": "parcel index.html",
+      "build": "parcel build index.html  --dist-dir ./dist"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/evariste1963/metal-tracker.git"
+   },
+   "author": "this.me",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/evariste1963/metal-tracker/issues"
+   },
+   "homepage": "https://github.com/evariste1963/metal-tracker#readme",
+   "description": "",
+   "devDependencies": {
+      "@parcel/transformer-sass": "^2.2.0",
+      "parcel": "^2.2.0"
+   },
+   "dependencies": {
+      "apexcharts": "^3.33.2"
+   }
 }
