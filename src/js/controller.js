@@ -1,21 +1,21 @@
-import ApexCharts from "apexcharts";
+import ApexCharts from 'apexcharts';
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
-const API_KEY = "goldapi-15j9sm18l0w7rfer-io";
-const metal = "XAU";
-const currency = "GBP";
-const historicDate = ""; //"20201112"; // 'yyyy/mm/dd'
-const updateBtn = document.querySelector(".btn-update");
-const candleChart = document.querySelector("#chart");
+const API_KEY = 'goldapi-15j9sm18l0w7rfer-io';
+const metal = 'XAU';
+const currency = 'GBP';
+const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
+const updateBtn = document.querySelector('.btn-update');
+const candleChart = document.querySelector('#chart');
 
 //https://apexcharts.com/
 
 var options = {
   series: [
     {
-      name: "line",
-      type: "line",
+      name: 'line',
+      type: 'line',
       data: [
         {
           x: new Date(1538778600000),
@@ -36,8 +36,8 @@ var options = {
       ],
     },
     {
-      name: "candle",
-      type: "candlestick",
+      name: 'candle',
+      type: 'candlestick',
       data: [
         //place this in an external txt file or server or local server?
         {
@@ -285,12 +285,12 @@ var options = {
   ],
   chart: {
     height: 300,
-    width: "60%",
-    type: "line",
+    width: '60%',
+    type: 'line',
   },
   title: {
-    text: "Gold Daily Prices",
-    align: "left",
+    text: 'Gold Daily Prices',
+    align: 'left',
   },
   stroke: {
     width: [2, 1],
@@ -306,12 +306,12 @@ var options = {
         var h = w.globals.seriesCandleH[seriesIndex][dataPointIndex];
         var l = w.globals.seriesCandleL[seriesIndex][dataPointIndex];
         var c = w.globals.seriesCandleC[seriesIndex][dataPointIndex];
-        return "";
+        return '';
       },
     ],
   },
   xaxis: {
-    type: "datetime",
+    type: 'datetime',
   },
 };
 
@@ -320,8 +320,8 @@ var chart = new ApexCharts(candleChart, options);
 chart.render();
 
 const myHeaders = new Headers();
-myHeaders.append("x-access-token", API_KEY);
-myHeaders.append("Content-Type", "application/json");
+myHeaders.append('x-access-token', API_KEY);
+myHeaders.append('Content-Type', 'application/json');
 
 const getTimestamp = timestamp => {
   let date = new Date(timestamp * 1000);
@@ -352,6 +352,8 @@ const renderData = (result, callTime) => {
     ? console.log(`
 ${callTime}
 ${result.metal}:-
+BUY: ${result.ask}
+SELL: ${result.bid}
 Day low: ${result.low_price}
 Day high: ${result.high_price}
 Price: ${result.price}`)
@@ -362,9 +364,9 @@ Price: ${result.price}`);
 };
 
 const requestOptions = {
-  method: "GET",
+  method: 'GET',
   headers: myHeaders,
-  redirect: "follow",
+  redirect: 'follow',
 };
 //console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
 //endpoint - https://www.goldapi.io/api/:symbol/:currency/:date?
@@ -380,11 +382,11 @@ const getMetalPrice = async () => {
 
     renderData(result, dateTime(result));
   } catch (error) {
-    console.log("error", error);
+    console.log('error', error);
   }
 };
 
-updateBtn.addEventListener("click", getMetalPrice);
+updateBtn.addEventListener('click', getMetalPrice);
 
 //goldAPI response
 /*
