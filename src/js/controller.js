@@ -1,4 +1,5 @@
 import ApexCharts from 'apexcharts';
+import * as model from './model.js';
 import { API_KEY, API_URL } from './config.js';
 
 // https://www.goldapi.io/dashboard
@@ -369,8 +370,6 @@ const requestOptions = {
   headers: myHeaders,
   redirect: 'follow',
 };
-//console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
-//endpoint - https://www.goldapi.io/api/:symbol/:currency/:date?
 
 const getMetalPrice = async () => {
   try {
