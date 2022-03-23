@@ -39,7 +39,7 @@ var options = {
       name: "candle",
       type: "candlestick",
       data: [
-        //place this in an external txt file?
+        //place this in an external txt file or server or local server?
         {
           x: new Date(1538778600000),
           y: [6629.81, 6650.5, 6623.04, 6633.33],
@@ -289,7 +289,7 @@ var options = {
     type: "line",
   },
   title: {
-    text: "Gold Daily Spread",
+    text: "Gold Daily Prices",
     align: "left",
   },
   stroke: {
@@ -323,7 +323,7 @@ const myHeaders = new Headers();
 myHeaders.append("x-access-token", API_KEY);
 myHeaders.append("Content-Type", "application/json");
 
-const getTimestamp = (timestamp) => {
+const getTimestamp = timestamp => {
   let date = new Date(timestamp * 1000);
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -342,7 +342,7 @@ const getTimestamp = (timestamp) => {
 };
 
 //create an external function for this bit -- pass in result.values... return outcomes
-let dateTime = (result) => {
+let dateTime = result => {
   return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
 };
 //render data -- currently just consolelogging
