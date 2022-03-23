@@ -1,8 +1,9 @@
 import ApexCharts from 'apexcharts';
+import { API_KEY, API_URL } from './config.js';
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
-const API_KEY = 'goldapi-15j9sm18l0w7rfer-io';
+//const API_KEY = 'goldapi-15j9sm18l0w7rfer-io';
 const metal = 'XAU';
 const currency = 'GBP';
 const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
@@ -374,7 +375,7 @@ const requestOptions = {
 const getMetalPrice = async () => {
   try {
     const response = await fetch(
-      `https://www.goldapi.io/api/${metal}/${currency}/${historicDate}?`,
+      `${API_URL}/${metal}/${currency}/${historicDate}?`,
       requestOptions
     );
     const result = await response.json();
