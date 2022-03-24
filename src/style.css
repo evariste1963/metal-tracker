@@ -12,15 +12,38 @@
   text-align: center;
 }
 
+.header {
+  display: flex;
+  font-size: 3rem;
+  font-family: cursive;
+  height: 6rem;
+  margin: 0.5rem auto;
+  align-items: center;
+}
+
+#logo {
+  margin: 0;
+}
+#logotext {
+  margin: 0 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.btnDiv {
+  margin: 0 auto 0 auto;
+  align-self: center;
+}
+
 .btn-update {
   border: none;
   font-size: 1.5rem;
   padding: 1.5rem 1.5rem;
   border-radius: 0.7rem;
-  margin: 2rem auto;
+  margin: 0 auto;
   color: white;
   background-color: orangered;
   cursor: pointer;
+  font-family: cursive;
 }
 
 .chartArea {
