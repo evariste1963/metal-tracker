@@ -20,7 +20,7 @@ body {
   justify-content: center;
   text-align: center;
   background: linear-gradient(rgba(251, 248, 248, 0.2), rgb(76, 76, 78)),
-    url(./img/scottsdale-mint-M6f-OZK0N6w-unsplash.jpg) center no-repeat fixed;
+    url(../img/gold.jpg) center no-repeat fixed;
 }
 
 .header {
@@ -36,40 +36,48 @@ body {
 
 #logo {
   margin: 0 1rem;
-  background: rgb(211, 125, 28);
+  /*background: rgb(211, 125, 28);*/
 }
 #logotext {
   margin: 0;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   text-shadow: 2px 2px #fbfafa;
   font-style: italic;
 }
 
 .btnDiv {
-  margin: 0 2rem 0 auto;
-  align-self: center;
+  margin: auto 1rem auto auto;
+  align-items: center;
 }
 
-.btn-update {
+.btn-update,
+.btn-stack {
   border: none;
   font-size: 1.5rem;
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1rem;
   border-radius: 0.7rem;
   margin: 0;
   color: white;
   background-color: rgb(95, 14, 14);
-  box-shadow: rgb(98, 98, 98) rgb(98, 98, 98);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
+  vertical-align: middle;
+}
+
+.btn-update:hover,
+.btn-stack:hover {
+  font-weight: 800;
 }
 
 .chartArea {
-  margin: 4rem auto 0 auto;
+  margin: 2rem auto 0 auto;
 }
 
-#apexcharts-canvas {
+.apexcharts-canvas {
   margin: 2rem auto;
+  background: rgba(209, 204, 204, 0.5);
+  border-radius: 1rem;
 }
 
 footer {

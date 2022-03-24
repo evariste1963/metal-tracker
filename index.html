@@ -4,33 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/css/main.css" />
     <!-- header image below-->
-    <link rel = "icon" href = "./src/img/logo.png" type = "image/x-icon"> 
+    <link rel="icon" href="./src/img/logo.png" type="image/x-icon" />
     <script type="module" defer src="/src/js/controller.js"></script>
-        
+
     <title>Stackers API</title>
   </head>
   <body>
-    <div class="container" >
+    <div class="container">
       <div class="header sticky">
-        <img id="logo" src = "./src/img/logo.png" width="60" height="60" >
+        <img id="logo" src="./src/img/logo.png" width="60" height="60" />
         <p id="logotext">stackers</p>
-      <div class="btnDiv">
-        <button class="btn-update">GET LATEST PRICE</button>
+        <div class="btnDiv">
+          <button class="btn-update">GET LATEST PRICE</button>
+          <button class="btn-stack">Add Stack</button>
+        </div>
       </div>
-  </div>
-    <div class="chartArea">
-    <div id="chart" class="chart1"></div>
-     </div>
+      <div class="chartArea">
+        <div id="chart" class="chart1"></div>
+      </div>
     </div>
-    
-    <div><footer>
-      <h3 id="footnote">
-        coded by <span id="tag">this.me</span>
-      </h3>
-    </footer></div>
 
-  
-</body>
+    <div>
+      <footer>
+        <h3 id="footnote">coded by <span id="tag">this.me</span></h3>
+      </footer>
+    </div>
+  </body>
 </html>
