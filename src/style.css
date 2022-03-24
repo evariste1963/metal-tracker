@@ -10,13 +10,8 @@
   margin: 0 auto;
   justify-content: center;
   text-align: center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: fixed;
-  background-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgb(212, 212, 214)),
+    url(./img/scottsdale-mint-M6f-OZK0N6w-unsplash.jpg) center no-repeat fixed;
 }
 
 .header {
@@ -48,7 +43,7 @@
   border-radius: 0.7rem;
   margin: 0 auto;
   color: white;
-  background-color: orangered;
+  background-color: rgb(175, 76, 26);
   cursor: pointer;
   font-family: cursive;
 }
@@ -59,4 +54,5 @@
 
 #apexcharts-canvas {
   margin: 2rem auto;
+  color: #000;
 }
