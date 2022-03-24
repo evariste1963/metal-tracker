@@ -1,16 +1,24 @@
 * {
   padding: 0;
   margin: 0 auto;
+  font-family: Ink free, cursive, sans-serif;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
 }
 
 .container {
   display: block;
+
   width: 70%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgb(212, 212, 214)),
+  background: linear-gradient(rgba(251, 248, 248, 0.2), rgb(76, 76, 78)),
     url(./img/scottsdale-mint-M6f-OZK0N6w-unsplash.jpg) center no-repeat fixed;
 }
 
@@ -25,10 +33,14 @@
 
 #logo {
   margin: 0 1rem;
+  background: rgb(211, 125, 28);
 }
 #logotext {
   margin: 0;
-  font-size: rem;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px #fbfafa;
+  font-style: italic;
 }
 
 .btnDiv {
@@ -41,7 +53,7 @@
   font-size: 1.5rem;
   padding: 1.5rem 1.5rem;
   border-radius: 0.7rem;
-  margin: 0 auto;
+  margin: 0;
   color: white;
   background-color: rgb(175, 76, 26);
   cursor: pointer;
@@ -49,10 +61,30 @@
 }
 
 .chartArea {
-  margin: 4rem auto;
+  margin: 4rem auto 0 auto;
 }
 
 #apexcharts-canvas {
   margin: 2rem auto;
-  color: #000;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  bottom: 0;
+  color: #fff;
+  margin: 0 auto;
+  align-items: center;
+}
+#footnote {
+  height: 100%;
+  text-align: center;
+}
+
+#tag {
+  font-size: 1.5rem;
+  font-style: italic;
+
+  color: rgb(98, 98, 223);
 }
