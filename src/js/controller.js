@@ -392,12 +392,19 @@ modalWindow = document.querySelector('.add-stack-window');
 overlay = document.querySelector('.overlay');
 btnOpen = document.querySelector('.btn-stack');
 btnHide = document.querySelector('.btn--close-modal');
+btnUploadStack = document.querySelector('.upload__btn');
 
-btnOpen.addEventListener('click', function (e) {
+const toggleWindow = e => {
   e.preventDefault();
   modalWindow.classList.toggle('hidden');
   overlay.classList.toggle('hidden');
-});
+};
+
+btnOpen.addEventListener('click', toggleWindow);
+
+btnHide.addEventListener('click', toggleWindow);
+
+btnUploadStack.addEventListener('click', toggleWindow); ///change to submit
 
 //goldAPI response
 /*
