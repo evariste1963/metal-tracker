@@ -9,7 +9,7 @@
   --color-grey-dark-1: #615551;
   --color-grey-dark-2: #918581;
 }
-.add-recipe-window {
+.add-stack-window {
   position: fixed;
   top: 50%;
   left: 50%;

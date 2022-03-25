@@ -31,11 +31,9 @@
         <h3 id="footnote">coded by <span id="tag">this.me</span></h3>
       </footer>
     </div>
-
-
-    
-    <div class="overlay hidden"></div>
-    <div class="add-recipe-window hidden">
+   
+    <div class="overlay "></div>    
+      <div class="add-stack-window "></div>
       <button class="btn--close-modal">&times;</button>
       <form class="upload">
         <div class="upload__column">
@@ -55,52 +53,52 @@
         </div>
 
         <div class="upload__column">
-          <h3 class="upload__heading">Ingredients</h3>
-          <label>Ingredient 1</label>
+          <h3 class="upload__heading">Stacking</h3>
+          <label>code</label>
           <input
-            value="0.5,kg,Rice"
+            value="XAU"
             type="text"
             required
-            name="ingredient-1"
-            placeholder="Format: 'Quantity,Unit,Description'"
+            name="code"
+            placeholder="Format: 'XAU XAG...'"
           />
-          <label>Ingredient 2</label>
+          <label>weight</label>
           <input
-            value="1,,Avocado"
-            type="text"
-            name="ingredient-2"
-            placeholder="Format: 'Quantity,Unit,Description'"
+            value=1
+            type="number"
+            name="weight"
+            placeholder="Format: 'Weight (ounces)'"
           />
-          <label>Ingredient 3</label>
+          <label>purchase price</label>
           <input
-            value=",,salt"
-            type="text"
-            name="ingredient-3"
-            placeholder="Format: 'Quantity,Unit,Description'"
+            value=100
+            type="number"
+            name="purchase price"
+            placeholder="Format: 'price per ounce'"
           />
-          <label>Ingredient 4</label>
-          <input
-            type="text"
-            name="ingredient-4"
-            placeholder="Format: 'Quantity,Unit,Description'"
-          />
-          <label>Ingredient 5</label>
+          <label>premium</label>
           <input
             type="text"
-            name="ingredient-5"
-            placeholder="Format: 'Quantity,Unit,Description'"
+            name="premium"
+            placeholder="Format: 'your premium percentage (optional)'"
           />
-          <label>Ingredient 6</label>
+          <label>spare</label>
           <input
             type="text"
-            name="ingredient-6"
-            placeholder="Format: 'Quantity,Unit,Description'"
+            name="spare"
+            placeholder="Format: 'spare'"
+          />
+          <label>spare-2</label>
+          <input
+            type="text"
+            name="spare-2"
+            placeholder="Format: 'spare-2'"
           />
         </div>
 
         <button class="btn upload__btn">
           <svg>
-            <use href="src/img/icons.svg#icon-upload-cloud"></use>
+            <use href="src/img/logo.png"></use>
           </svg>
           <span>Upload</span>
         </button>
