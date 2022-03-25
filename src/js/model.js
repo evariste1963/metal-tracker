@@ -1,8 +1,8 @@
 import View from './view';
 
-class AddRecipeView extends View {
+class AddStackView extends View {
   _parentElement = document.querySelector('.upload');
-  _message = 'Recipe successfully uploaded';
+  _message = 'Stack successfully uploaded';
 
   _window = document.querySelector('.add-recipe-window');
   _overlay = document.querySelector('.overlay');
@@ -42,4 +42,4 @@ class AddRecipeView extends View {
   */
 }
 
-export default new AddRecipeView();
+export default new AddStackView();
