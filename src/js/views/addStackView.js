@@ -10,18 +10,6 @@ class AddStackView extends View {
     this._addHandlerHideWindow();*/
   }
   /*
-  modal = document.querySelector('.add-stack-window');
-  overlay = document.querySelector('.overlay');
-  btnOpen = document.querySelector('.btn-stack');
-  btnHide = document.querySelector('.btn--close-modal');
-  
-  btnOpen.addEventListener('click', function (e) {
-    e.preventDefault();
-   modal.classList.toggle('hidden');
-    overlay.classList.toggle('hidden');
-  });
-*/
-  /*
   toggleWindow() {
     this._overlay.classList.toggle('hidden');
     this._window.classList.toggle('hidden');
