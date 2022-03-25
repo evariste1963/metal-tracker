@@ -32,26 +32,26 @@
       </footer>
     </div>
    
-    <div class="overlay "></div>    
-      <div class="add-stack-window "></div>
+      <div class="overlay hidden"></div>    
+      <div class="add-stack-window hidden">
       <button class="btn--close-modal">&times;</button>
       <form class="upload">
         <div class="upload__column">
-          <h3 class="upload__heading">Recipe data</h3>
-          <label>Title</label>
-          <input value="TESTing" required name="title" type="text" />
-          <label>URL</label>
-          <input value="TESTing" required name="sourceUrl" type="text" />
-          <label>Image URL</label>
-          <input value="TESTing" required name="image" type="text" />
-          <label>Publisher</label>
-          <input value="TESTing" required name="publisher" type="text" />
-          <label>Prep time</label>
-          <input value="23" required name="cookingTime" type="number" />
-          <label>Servings</label>
-          <input value="23" required name="servings" type="number" />
-        </div>
-
+          <h3 class="upload__heading">Stack something precious</h3>
+          <label>CODE</label>
+          <input value="XUA" required name="code" type="text" />
+          <label>Weight</label>
+          <input value="TESTing" required name="weight" type="text" />
+          <label>Purchase Price</label>
+          <input value="TESTing" required name="purchase price" type="text" />
+          <label>Premium %</label>
+          <input value="23" required name="premium" type="number" />
+          <label>Spare1</label>
+          <input value="TESTing" required name="spare1" type="text" />
+          <label>Spare2</label>
+          <input value="23" required name="spare2" type="number" />
+        </div> 
+<!--
         <div class="upload__column">
           <h3 class="upload__heading">Stacking</h3>
           <label>code</label>
@@ -95,12 +95,10 @@
             placeholder="Format: 'spare-2'"
           />
         </div>
-
+      -->
         <button class="btn upload__btn">
-          <svg>
-            <use href="src/img/logo.png"></use>
-          </svg>
-          <span>Upload</span>
+            <img src="./src/img/logo.png" width="120" height="120" />
+               <span style="font-size: 4rem">Upload</span>
         </button>
       </form>
     </div>

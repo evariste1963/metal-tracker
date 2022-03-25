@@ -388,6 +388,17 @@ const getMetalPrice = async () => {
 
 updateBtn.addEventListener('click', getMetalPrice);
 
+modalWindow = document.querySelector('.add-stack-window');
+overlay = document.querySelector('.overlay');
+btnOpen = document.querySelector('.btn-stack');
+btnHide = document.querySelector('.btn--close-modal');
+
+btnOpen.addEventListener('click', function (e) {
+  e.preventDefault();
+  modalWindow.classList.toggle('hidden');
+  overlay.classList.toggle('hidden');
+});
+
 //goldAPI response
 /*
 {timestamp: 1647631965, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP', …}ask: 1457.17bid: 1456.4ch: -20.5chp: -1.39currency: "GBP"exchange: "FOREXCOM"high_price: 1478.16low_price: 1454.94metal: "XAU"open_price: 1477.28open_time: 1647561600prev_close_price: 1477.28price: 1456.78price_gram_18k: 35.1274price_gram_20k: 39.0305price_gram_21k: 40.982price_gram_22k: 42.9335price_gram_24k: 46.8366symbol: "FOREXCOM:XAUGBP"timestamp: 1647631965[[Prototype]]: Object

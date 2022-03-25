@@ -4,17 +4,24 @@ class AddStackView extends View {
   _parentElement = document.querySelector('.upload');
   _message = 'Stack successfully uploaded';
 
-  _window = document.querySelector('.add-recipe-window');
-  _overlay = document.querySelector('.overlay');
-  _btnOpen = document.querySelector('.nav__btn--add-recipe');
-  _btnHide = document.querySelector('.btn--close-modal');
-  /*
   constructor() {
     super();
-    this._addHandlerShowWindow();
-    this._addHandlerHideWindow();
+    /*this._addHandlerShowWindow();
+    this._addHandlerHideWindow();*/
   }
- 
+  /*
+  modal = document.querySelector('.add-stack-window');
+  overlay = document.querySelector('.overlay');
+  btnOpen = document.querySelector('.btn-stack');
+  btnHide = document.querySelector('.btn--close-modal');
+  
+  btnOpen.addEventListener('click', function (e) {
+    e.preventDefault();
+   modal.classList.toggle('hidden');
+    overlay.classList.toggle('hidden');
+  });
+*/
+  /*
   toggleWindow() {
     this._overlay.classList.toggle('hidden');
     this._window.classList.toggle('hidden');

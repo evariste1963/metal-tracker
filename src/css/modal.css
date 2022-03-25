@@ -14,7 +14,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100rem;
+  width: 50rem;
   background-color: white;
   border-radius: 9px;
 
@@ -87,7 +87,7 @@ label:focus {
   background-color: var(--color-grey-light-1);
 }
 
-.button {
+button {
   grid-column: 1 / span 2;
   justify-self: center;
   margin-top: 1rem;
@@ -101,7 +101,15 @@ label:focus {
   grid-column: 1/-1;
 }
 
-btn {
+.btn {
   grid-column: 1 / -1;
   justify-self: center;
+}
+
+.upload__btn {
+  display: flex;
+  align-items: center;
+  border-radius: 5%;
+  color: #fff;
+  background: rgba(37, 7, 7, 0.8);
 }
