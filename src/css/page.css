@@ -46,8 +46,9 @@ body {
 }
 
 #logo:hover {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
+  margin-right: 5rem;
 }
 
 #logotext {
