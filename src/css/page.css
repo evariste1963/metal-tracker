@@ -41,8 +41,15 @@ body {
 
 #logo {
   margin: 1rem;
+  transition: all 0.3s linear;
   /*background: rgb(211, 125, 28);*/
 }
+
+#logo:hover {
+  width: 100px;
+  height: 100px;
+}
+
 #logotext {
   margin: 0;
   font-size: 4rem;
