@@ -1,5 +1,5 @@
 import ApexCharts from 'apexcharts';
-import * as model from './model.js';
+import * as model from './views/addStackView.js';
 import { API_KEY, API_URL } from './config.js';
 
 // https://www.goldapi.io/dashboard
