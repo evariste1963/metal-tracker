@@ -91,7 +91,7 @@ body {
 }
 
 .apexcharts-canvas {
-  margin: 2rem auto;
+  margin: 2rem auto 2rem 2rem;
   background: rgba(209, 204, 204, 0.4);
   border-radius: 1rem;
 }
