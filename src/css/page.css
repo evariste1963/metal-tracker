@@ -98,7 +98,7 @@ body {
 }
 
 .chartArea {
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
   grid-column: span 4;
   grid-row: span 2;
   width: 100%;
