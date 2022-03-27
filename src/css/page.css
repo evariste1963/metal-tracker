@@ -46,16 +46,16 @@ body {
 }
 
 #logo:hover {
-  width: 110px;
-  height: 110px;
-  margin-right: 5rem;
+  width: 120px;
+  height: 120px;
+  margin-right: 3rem;
 }
 
 #logotext {
   margin: 0;
   font-size: 4rem;
   font-weight: 800;
-  text-shadow: 2px 2px #fbfafa;
+  text-shadow: 2px 2px rgb(221, 189, 7);
   font-style: italic;
 }
 
@@ -68,11 +68,11 @@ body {
 .btn-stack {
   border: none;
   font-size: 1.5rem;
-  font-weight: inherit;
+  font-weight: 500;
   padding: 1rem 1rem;
   border-radius: 0.7rem;
   margin: 0;
-  color: white;
+  color: rgb(221, 189, 7);
   background-color: rgba(95, 14, 14, 1);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
@@ -107,17 +107,18 @@ body {
 .spotTicker,
 .histTicker {
   grid-column: 5;
-
-  margin: 1rem;
-  border: solid 1px #256;
+  border-radius: 1rem;
+  border: solid 1px rgb(221, 189, 7);
 }
 
 .spotTicker {
   grid-row: 1;
+  margin: 1rem 1rem 0 0;
 }
 
 .histTicker {
   grid-row: 2;
+  margin: 0 1rem 1rem 0;
 }
 
 .apexcharts-canvas {
@@ -147,5 +148,5 @@ footer {
   font-size: 1.5rem;
   font-style: italic;
 
-  color: rgb(98, 98, 223);
+  color: rgb(221, 189, 7);
 }
