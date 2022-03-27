@@ -35,7 +35,7 @@ body {
   font-size: 3rem;
   font-family: cursive;
   height: 6rem;
-  margin: 0.5rem auto;
+  margin: 0 auto 1.5rem auto;
   align-items: center;
 }
 
@@ -46,16 +46,16 @@ body {
 }
 
 #logo:hover {
-  width: 110px;
-  height: 110px;
-  margin-right: 5rem;
+  width: 120px;
+  height: 120px;
+  margin-right: 3rem;
 }
 
 #logotext {
   margin: 0;
   font-size: 4rem;
   font-weight: 800;
-  text-shadow: 2px 2px #fbfafa;
+  text-shadow: 2px 2px rgb(221, 189, 7);
   font-style: italic;
 }
 
@@ -68,11 +68,11 @@ body {
 .btn-stack {
   border: none;
   font-size: 1.5rem;
-  font-weight: inherit;
+  font-weight: 500;
   padding: 1rem 1rem;
   border-radius: 0.7rem;
   margin: 0;
-  color: white;
+  color: rgb(221, 189, 7);
   background-color: rgba(95, 14, 14, 1);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
@@ -83,17 +83,59 @@ body {
 .btn-update:hover,
 .btn-stack:hover {
   font-weight: 800;
-  background-color: rgba(95, 14, 14, 0.9);
+  background-color: #5f0e0ee6;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+#chart {
+  height: 20rem;
 }
 
 .chartArea {
-  margin: 2rem auto 0 auto;
+  padding: 0 0 0 1rem;
+  grid-column: span 4;
+  grid-row: span 2;
+  width: 100%;
+}
+
+.spotTicker,
+.histTicker {
+  grid-column: 5;
+  border-radius: 1rem;
+  background: rgba(209, 204, 204, 0.4);
+}
+
+.spotTicker {
+  grid-row: 1;
+  margin: 0 1rem 0 0;
+}
+
+.histTicker {
+  grid-row: 2;
+  margin: 0 1rem 0 0;
+}
+
+.userStack {
+  grid-column: span 5;
+  grid-row: span 2;
+
+  border-radius: 1rem;
+  background: rgba(209, 204, 204, 0.4);
+  margin: 0 1rem 1rem 1rem;
 }
 
 .apexcharts-canvas {
-  margin: 2rem auto 2rem 2rem;
+  margin: 0 auto;
   background: rgba(209, 204, 204, 0.4);
   border-radius: 1rem;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -115,5 +157,5 @@ footer {
   font-size: 1.5rem;
   font-style: italic;
 
-  color: rgb(98, 98, 223);
+  color: rgb(221, 189, 7);
 }
