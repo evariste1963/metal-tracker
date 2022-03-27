@@ -286,8 +286,8 @@ var options = {
     },
   ],
   chart: {
-    height: 300,
-    width: '70%',
+    height: '100%',
+    width: '100%',
     type: 'line',
   },
   title: {
