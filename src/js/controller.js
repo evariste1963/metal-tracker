@@ -11,7 +11,7 @@ const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
 const updateBtn = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 
-//build this below from api data collected
+//build this below from api historic data/csv file
 let candleData = [
   {
     x: new Date(1538778600000),
