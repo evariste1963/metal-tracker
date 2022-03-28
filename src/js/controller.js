@@ -12,7 +12,7 @@ const updateBtn = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 
 //build this below from api data collected
-let dataArray = [
+let candleData = [
   {
     x: new Date(1538778600000),
     y: [6629.81, 6650.5, 6623.04, 6633.33],
@@ -284,7 +284,7 @@ var options = {
     {
       name: 'candle',
       type: 'candlestick',
-      data: dataArray,
+      data: candleData,
     },
   ],
   chart: {
