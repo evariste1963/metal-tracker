@@ -18,6 +18,7 @@
    "homepage": "https://github.com/evariste1963/metal-tracker#readme",
    "description": "",
    "devDependencies": {
+      "@parcel/transformer-image": "^2.0.0-rc.0",
       "@parcel/transformer-sass": "^2.2.0",
       "parcel": "^2.4.0"
    },
