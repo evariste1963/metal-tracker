@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/css/main.css" />
     <!-- header image below-->
-    <link rel="icon" href="./src/img/stack3.png" type="image/x-icon" />
+    <link rel="icon" href="./src/img/stack2.png" type="image/x-icon" />
     <script type="module" defer src="/src/js/controller.js"></script>
 
     <title>Stackers API</title>
@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <div class="header sticky">
-        <img id="logo" src="./src/img/stack3.png" width="95" height="95" />
+        <img id="logo" src="./src/img/stack2.png" width="120" height="80" />
         <p id="logotext">stackers</p>
         <div class="btnDiv">
           <button class="btn-update">GET LATEST PRICE</button>
@@ -30,82 +30,36 @@
         <div class="userStack">Your Stack</div>
       </div>
     </div>
-
+    <div class="overlay hidden">
+      <div class="add-stack-window hidden">
+        <button class="btn--close-modal">&times;</button>
+        <h3 class="upload__heading">Stack something precious</h3>
+        <form class="upload">
+          <div class="upload__column">
+            <label>Code</label>
+            <input value="XUA" required name="code" type="text" />
+            <label>Weight</label>
+            <input value="TESTing" required name="weight" type="text" />
+            <label>Purchase Price</label>
+            <input value="TESTing" required name="purchase price" type="text" />
+            <label>Premium %</label>
+            <input value="23" required name="premium" type="number" />
+            <label>Spare1</label>
+            <input value="TESTing" required name="spare1" type="text" />
+            <label>Spare2</label>
+            <input value="23" required name="spare2" type="number" />
+          </div>
+          <button class="btn upload__btn">
+            <img src="./src/img/stack2.png" width="120" height="80" />
+            <span style="font-size: 4rem">Submit</span>
+          </button>
+        </form>
+      </div>
+    </div>
     <div>
       <footer>
         <h3 id="footnote">coded by <span id="tag">this.me</span></h3>
       </footer>
-    </div>
-
-    <div class="overlay hidden"></div>
-    <div class="add-stack-window hidden">
-      <button class="btn--close-modal">&times;</button>
-      <h3 class="upload__heading">Stack something precious</h3>
-      <form class="upload">
-        <div class="upload__column">
-          <label>Code</label>
-          <input value="XUA" required name="code" type="text" />
-          <label>Weight</label>
-          <input value="TESTing" required name="weight" type="text" />
-          <label>Purchase Price</label>
-          <input value="TESTing" required name="purchase price" type="text" />
-          <label>Premium %</label>
-          <input value="23" required name="premium" type="number" />
-          <label>Spare1</label>
-          <input value="TESTing" required name="spare1" type="text" />
-          <label>Spare2</label>
-          <input value="23" required name="spare2" type="number" />
-        </div>
-        <!--
-        <div class="upload__column">
-          <h3 class="upload__heading">Stacking</h3>
-          <label>code</label>
-          <input
-            value="XAU"
-            type="text"
-            required
-            name="code"
-            placeholder="Format: 'XAU XAG...'"
-          />
-          <label>weight</label>
-          <input
-            value=1
-            type="number"
-            name="weight"
-            placeholder="Format: 'Weight (ounces)'"
-          />
-          <label>purchase price</label>
-          <input
-            value=100
-            type="number"
-            name="purchase price"
-            placeholder="Format: 'price per ounce'"
-          />
-          <label>premium</label>
-          <input
-            type="text"
-            name="premium"
-            placeholder="Format: 'your premium percentage (optional)'"
-          />
-          <label>spare</label>
-          <input
-            type="text"
-            name="spare"
-            placeholder="Format: 'spare'"
-          />
-          <label>spare-2</label>
-          <input
-            type="text"
-            name="spare-2"
-            placeholder="Format: 'spare-2'"
-          />
-        </div>
-      -->
-        <button class="btn upload__btn">
-          <img src="./src/img/stack3.png" width="120" height="120" />
-          <span style="font-size: 4rem">Submit</span>
-        </button>
-      </form>
     </div>
   </body>
 </html>
