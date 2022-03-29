@@ -11,10 +11,14 @@ class SpotDataView extends View {
     <H1 ><span>Latest Price</span><br>
     <div id=callTime>${callTime}</div>
     <div id= spotBox>
-    <p id=spotPrice >£ ${result.price}  <span id=change>${(
-          ((result.price - result.prev_close_price) / result.prev_close_price) *
-          100
-        ).toFixed(2)}%</span></p>
+    <div id=spotItems>
+    <p id=spotPrice >£${result.price}</p>
+    <p id=changeV >${(result.price - result.prev_close_price).toFixed(2)}</p>
+    <p id=changeP>${(
+      ((result.price - result.prev_close_price) / result.prev_close_price) *
+      100
+    ).toFixed(2)}%</p>
+        </div>
     <div id=buy><span>BUY:  £${result.ask}</span></div>
     <div id=sell><span>SELL:  £${result.bid}</span></div>
     </div>
@@ -25,4 +29,5 @@ class SpotDataView extends View {
   Price: ${result.price}`);
   }
 }
+
 export default new SpotDataView();

@@ -1,5 +1,6 @@
 import icons from 'url:../../img/icons.svg';
 export default class View {}
+
 /*
 export default class View {
   renderSpinner() {
