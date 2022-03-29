@@ -398,17 +398,20 @@ let dateTime = result => {
 };
 //render data -- currently just consolelogging
 const renderData = (result, callTime) => {
+  const spotTicker = document.querySelector('.spotTicker');
+
   //create an external function for this bit -- pass in result.values... return outcomes
   !result.date
-    ? console.log(`
+    ? (spotTicker.innerHTML = result.price)
+    : /* console.log(`
 ${callTime}
 ${result.metal}:-
 BUY: ${result.ask}
 SELL: ${result.bid}
 Day low: ${result.low_price}
 Day high: ${result.high_price}
-Price: ${result.price}`)
-    : console.log(`
+Price: ${result.price}`)*/
+      console.log(`
 ${callTime}
 Previous closing price: ${result.prev_close_price}
 Price: ${result.price}`);
