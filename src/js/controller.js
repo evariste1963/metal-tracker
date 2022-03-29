@@ -400,9 +400,16 @@ let dateTime = result => {
 };
 //render data -- currently just consolelogging
 const renderData = (result, callTime) => {
-  //create an external function for this bit -- pass in result.values... return outcomes
+  //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
   !result.date
-    ? (spotTicker.innerHTML = `<H1><span>Latest Price</span><br><span id = spotPrice >£${result.price}</span></H1>`)
+    ? (spotTicker.innerHTML = `
+    <H1 ><span>Latest Price</span><br>
+    <div id= spotBox>
+    <span id=spotPrice >£ ${result.price}</span>
+    <div id=buy><span>BUY:  £${result.ask}</span></div>
+    <div id=sell><span>SELL:  £${result.bid}</span></div>
+    </div>
+    </H1>`)
     : /* console.log(`
 ${callTime}
 ${result.metal}:-
