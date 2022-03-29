@@ -1,6 +1,7 @@
 import ApexCharts from 'apexcharts';
 import * as model from './views/addStackView.js';
 import { API_KEY, API_URL } from './config.js';
+import spotDataView from './views/spotDataView.js';
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
@@ -398,34 +399,9 @@ const getTimestamp = timestamp => {
 let dateTime = result => {
   return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
 };
-let markUp = '';
-const createMarkup = function (result, callTime) {
-  markUp = !result.date
-    ? `
-  <H1 ><span>Latest Price</span><br>
-  <div id=callTime>${callTime}</div>
-  <div id= spotBox>
-  <span id=spotPrice >£ ${result.price}</span>
-  <div id=buy><span>BUY:  £${result.ask}</span></div>
-  <div id=sell><span>SELL:  £${result.bid}</span></div>
-  </div>
-  </H1>`
-    : /* console.log(`
-${callTime}
-${result.metal}:-
-BUY: ${result.ask}
-SELL: ${result.bid}
-Day low: ${result.low_price}
-Day high: ${result.high_price}
-Price: ${result.price}`)*/
-      console.log(`
-${callTime}
-Previous closing price: ${result.prev_close_price}
-Price: ${result.price}`);
-};
 
-//render data -- currently just consolelogging
-const renderData = markUp => {
+//render data
+const renderData = () => {
   spotTicker.innerHTML = markUp;
   //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
 };
@@ -436,6 +412,8 @@ const requestOptions = {
   redirect: 'follow',
 };
 
+let markUp = '';
+
 const getMetalPrice = async () => {
   try {
     const response = await fetch(
@@ -445,7 +423,7 @@ const getMetalPrice = async () => {
     const result = await response.json();
     console.log(result);
 
-    createMarkup(result, dateTime(result));
+    markUp = spotDataView._generateMarkup(result, dateTime(result));
     renderData(markUp);
   } catch (error) {
     console.log('error', error);
