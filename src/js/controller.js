@@ -398,18 +398,18 @@ const getTimestamp = timestamp => {
 let dateTime = result => {
   return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
 };
-//render data -- currently just consolelogging
-const renderData = (result, callTime) => {
-  //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
-  !result.date
-    ? (spotTicker.innerHTML = `
-    <H1 ><span>Latest Price</span><br>
-    <div id= spotBox>
-    <span id=spotPrice >£ ${result.price}</span>
-    <div id=buy><span>BUY:  £${result.ask}</span></div>
-    <div id=sell><span>SELL:  £${result.bid}</span></div>
-    </div>
-    </H1>`)
+let markUp = '';
+const createMarkup = function (result, callTime) {
+  markUp = !result.date
+    ? `
+  <H1 ><span>Latest Price</span><br>
+  <div id=callTime>${callTime}</div>
+  <div id= spotBox>
+  <span id=spotPrice >£ ${result.price}</span>
+  <div id=buy><span>BUY:  £${result.ask}</span></div>
+  <div id=sell><span>SELL:  £${result.bid}</span></div>
+  </div>
+  </H1>`
     : /* console.log(`
 ${callTime}
 ${result.metal}:-
@@ -422,6 +422,12 @@ Price: ${result.price}`)*/
 ${callTime}
 Previous closing price: ${result.prev_close_price}
 Price: ${result.price}`);
+};
+
+//render data -- currently just consolelogging
+const renderData = markUp => {
+  spotTicker.innerHTML = markUp;
+  //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
 };
 
 const requestOptions = {
@@ -439,7 +445,8 @@ const getMetalPrice = async () => {
     const result = await response.json();
     console.log(result);
 
-    renderData(result, dateTime(result));
+    createMarkup(result, dateTime(result));
+    renderData(markUp);
   } catch (error) {
     console.log('error', error);
   }
