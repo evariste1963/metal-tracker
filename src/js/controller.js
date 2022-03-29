@@ -426,19 +426,13 @@ const getMetalPrice = async () => {
     markUp = spotDataView._generateMarkup(result, dateTime(result));
     renderData(markUp);
 
-    const changeV = document.getElementById('changeV');
-    const changeP = document.getElementById('changeP');
-    const spotPrice = document.getElementById('spotPrice');
+    const spotItems = document.getElementById('spotItems');
 
-    if (result.price - result.prev_close_price < 0) {
-      changeV.style.color = 'rgb(199, 15, 15)';
-      changeP.style.color = 'rgb(199, 15, 15)';
-      spotPrice.style.color = 'rgb(199, 15, 15)';
-    } else {
-      changeV.style.color = 'rgb(10, 92, 10)';
-      changeP.style.color = 'rgb(10, 92, 10)';
-      spotPrice.style.color = 'rgb(10, 92, 10)';
-    }
+    if (result.price - result.prev_close_price < 0)
+      spotItems.style.color = 'rgb(199, 15, 15)';
+
+    if (result.price - result.prev_close_price > 0)
+      spotItems.style.color = 'rgb(10, 92, 10)';
   } catch (error) {
     console.log('error', error);
   }
