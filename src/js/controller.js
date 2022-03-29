@@ -10,6 +10,7 @@ const currency = 'GBP';
 const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
 const updateBtn = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
+const spotTicker = document.querySelector('.spotTicker');
 
 //build this below from api historic data/csv file
 let candleData = [
@@ -392,17 +393,16 @@ const getTimestamp = timestamp => {
   return callDate;
 };
 
+//spotTicker.innerHTML = `<H1><span>Latest Price</span><br><span id = spotPrice >£1430.05</span></H1>`;
 //create an external function for this bit -- pass in result.values... return outcomes
 let dateTime = result => {
   return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
 };
 //render data -- currently just consolelogging
 const renderData = (result, callTime) => {
-  const spotTicker = document.querySelector('.spotTicker');
-
   //create an external function for this bit -- pass in result.values... return outcomes
   !result.date
-    ? (spotTicker.innerHTML = result.price)
+    ? (spotTicker.innerHTML = `<H1><span>Latest Price</span><br><span id = spotPrice >£${result.price}</span></H1>`)
     : /* console.log(`
 ${callTime}
 ${result.metal}:-

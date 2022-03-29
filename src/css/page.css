@@ -109,11 +109,18 @@ body {
   grid-column: 5;
   border-radius: 1rem;
   background: rgba(209, 204, 204, 0.4);
+  align-items: center;
 }
 
 .spotTicker {
   grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
   margin: 0 1rem 0 0;
+  align-items: center;
+  justify-content: center;
+  color: rgb(36, 41, 49);
 }
 
 .histTicker {
