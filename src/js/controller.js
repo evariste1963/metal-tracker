@@ -2,6 +2,7 @@ import ApexCharts from 'apexcharts';
 import * as model from './views/addStackView.js';
 import { API_KEY, API_URL } from './config.js';
 import spotDataView from './views/spotDataView.js';
+import addStackView from './views/addStackView.js';
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
@@ -423,7 +424,7 @@ const getMetalPrice = async () => {
     const result = await response.json();
     console.log(result);
 
-    markUp = spotDataView._generateMarkup(result, dateTime(result));
+    markUp = spotDataView._generateSpotMarkup(result, dateTime(result));
     renderData(markUp);
 
     const spotItems = document.getElementById('spotItems');
@@ -440,20 +441,12 @@ const getMetalPrice = async () => {
 
 modalWindow = document.querySelector('.add-stack-window');
 overlay = document.querySelector('.overlay');
-btnOpen = document.querySelector('.btn-stack');
-btnHide = document.querySelector('.btn--close-modal');
-btnUploadStack = document.querySelector('.upload__btn');
 
-const toggleWindow = e => {
-  e.preventDefault();
-  modalWindow.classList.toggle('hidden');
-  overlay.classList.toggle('hidden');
-};
+document
+  .querySelectorAll('.modal')
+  .forEach(btn => btn.addEventListener('click', addStackView._toggleWindow)); ///maybe change btnUploadStack to submit to submit (remove modal class)
 
 btnUpdate.addEventListener('click', getMetalPrice);
-btnOpen.addEventListener('click', toggleWindow);
-btnHide.addEventListener('click', toggleWindow);
-btnUploadStack.addEventListener('click', toggleWindow); ///change to submit
 
 //goldAPI response
 /*

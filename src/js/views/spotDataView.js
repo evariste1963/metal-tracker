@@ -5,7 +5,7 @@ class SpotDataView extends View {
     super();
   }
 
-  _generateMarkup(result, callTime) {
+  _generateSpotMarkup(result, callTime) {
     return !result.date
       ? `
     <H1 ><span>Latest Price</span><br>

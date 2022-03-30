@@ -9,6 +9,13 @@ class AddStackView extends View {
     /*this._addHandlerShowWindow();
     this._addHandlerHideWindow();*/
   }
+
+  _toggleWindow = e => {
+    e.preventDefault();
+    modalWindow.classList.toggle('hidden');
+    overlay.classList.toggle('hidden');
+  };
+
   /*
   toggleWindow() {
     this._overlay.classList.toggle('hidden');
