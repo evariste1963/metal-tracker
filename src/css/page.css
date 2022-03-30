@@ -130,7 +130,7 @@ body {
 
 #spotItems {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 #spotPrice {
@@ -139,12 +139,15 @@ body {
 }
 
 #changeV {
-  grid-column: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 8;
   grid-row: 1;
 }
 
 #changeP {
-  grid-column: 7;
+  grid-column: 8;
   grid-row: 2;
 }
 
@@ -152,8 +155,8 @@ body {
 #buy,
 #sell,
 #highLow,
-#changeP,
-#changeV {
+.changeP,
+.changeV {
   font-size: 1rem;
   margin: 0;
 }
@@ -203,24 +206,24 @@ footer {
 }
 
 .arrow {
-  display: block;
+  /*display: block;*/
   width: 0px;
   height: 0px;
   border: 1rem solid transparent;
-  grid-column: 7;
+  grid-column: 6;
   grid-row: 1;
 }
 
 .arrow-up {
   border-bottom-color: rgb(31, 102, 13);
   border-top-width: 0px;
-  grid-column: 7;
+  grid-column: 6;
   grid-row: 1;
 }
 
 .arrow-down {
   border-top-color: rgb(117, 11, 11);
   border-bottom-width: 0px;
-  grid-column: 7;
+  grid-column: 6;
   grid-row: 1;
 }
