@@ -49,8 +49,8 @@ export const getMetalPrice = async () => {
     const result = await response.json();
     console.log(result);
 
-    markUp = spotDataView._generateSpotMarkup(result, dateTime(result));
-    renderData(markUp);
+    markUp = await spotDataView._generateSpotMarkup(result, dateTime(result));
+    await renderData(markUp);
 
     const spotItems = document.getElementById('spotItems');
 

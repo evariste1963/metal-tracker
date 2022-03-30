@@ -6,19 +6,18 @@ class SpotDataView extends View {
   }
 
   _generateSpotMarkup(result, callTime) {
-    const changeV = (result.price - result.prev_close_price).toFixed(2);
-    const changeP = (
+    const changeValue = (result.price - result.prev_close_price).toFixed(2);
+    const changePercentage = (
       ((result.price - result.prev_close_price) / result.prev_close_price) *
       100
     ).toFixed(2);
+
     const arrow =
-      changeV < 0 ? (
-        <div class="arrow arrow-down"></div>
-      ) : changeV > 0 ? (
-        <div class="arrow arrow-up"></div>
-      ) : (
-        ''
-      );
+      changeValue < 0
+        ? 'arrow arrow-down'
+        : changeValue > 0
+        ? 'arrow arrow-up'
+        : '';
 
     return !result.date
       ? `
@@ -27,8 +26,8 @@ class SpotDataView extends View {
     <div id= spotBox>
     <div id=spotItems>
     <p id=spotPrice >£${result.price}</p>
-    <p id=changeV > ${arrow} ${changeV}</p>
-    <p id=changeP>${changeP}%</p>
+    <p class='changeV ${arrow}'>${changeValue}</p>
+    <p class=changeP>${changePercentage}%</p>
         </div>
     <div id=buy><span>BUY:  £${result.ask}</span></div>
     <div id=sell><span>SELL:  £${result.bid}</span></div>

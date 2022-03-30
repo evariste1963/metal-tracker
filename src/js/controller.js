@@ -12,7 +12,6 @@ const currency = 'GBP';
 const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'*/
 const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
-const spotTicker = document.querySelector('.spotTicker');
 
 //build this below from api historic data/csv file
 let candleData = [
@@ -377,10 +376,6 @@ chart.render();
 //create an external function for this bit -- pass in result.values... return outcomes
 
 //render data
-const renderData = () => {
-  spotTicker.innerHTML = markUp;
-  //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
-};
 
 /*
 const requestOptions = {
