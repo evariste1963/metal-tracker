@@ -26,7 +26,8 @@ class SpotDataView extends View {
     <div id= spotBox>
     <div id=spotItems>
     <p id=spotPrice >£${result.price}</p>
-    <p class='changeV'><span class ='${arrow}'></span>${changeValue}</p>
+    <p class ='${arrow}'></p>
+    <p class='changeV'>${changeValue}</p>
     <p class=changeP>${changePercentage}%</p>
         </div>
     <div id=buy><span>BUY:  £${result.ask}</span></div>

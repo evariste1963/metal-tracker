@@ -17,9 +17,9 @@ const getTimestamp = timestamp => {
   let mins = date.getMinutes();
   let secs = date.getSeconds();
 
-  let callDate = `${year}-${month.toString().padStart(2, 0)}-${day
+  let callDate = `${day.toString().padStart(2, 0)}-${month
     .toString()
-    .padStart(2, 0)} ${hours.toString().padStart(2, 0)}:${mins
+    .padStart(2, 0)}-${year} ${hours.toString().padStart(2, 0)}:${mins
     .toString()
     .padStart(2, 0)}:${secs.toString().padStart(2, 0)}`;
 
