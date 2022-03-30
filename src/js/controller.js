@@ -1,15 +1,15 @@
 import ApexCharts from 'apexcharts';
-import * as model from './views/addStackView.js';
-import { API_KEY, API_URL } from './config.js';
+import * as model from './model.js';
+import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
 import spotDataView from './views/spotDataView.js';
 import addStackView from './views/addStackView.js';
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
 //const API_KEY = 'goldapi-15j9sm18l0w7rfer-io';
-const metal = 'XAU';
+/*const metal = 'XAU';
 const currency = 'GBP';
-const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
+const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'*/
 const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 const spotTicker = document.querySelector('.spotTicker');
@@ -373,10 +373,6 @@ var chart = new ApexCharts(candleChart, options);
 
 chart.render();
 
-const myHeaders = new Headers();
-myHeaders.append('x-access-token', API_KEY);
-myHeaders.append('Content-Type', 'application/json');
-
 const getTimestamp = timestamp => {
   let date = new Date(timestamp * 1000);
   let year = date.getFullYear();
@@ -407,6 +403,7 @@ const renderData = () => {
   //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
 };
 
+/*
 const requestOptions = {
   method: 'GET',
   headers: myHeaders,
@@ -438,7 +435,7 @@ const getMetalPrice = async () => {
     console.log('error', error);
   }
 };
-
+*/
 modalWindow = document.querySelector('.add-stack-window');
 overlay = document.querySelector('.overlay');
 
@@ -446,7 +443,7 @@ document
   .querySelectorAll('.modal')
   .forEach(btn => btn.addEventListener('click', addStackView._toggleWindow)); ///maybe change btnUploadStack to submit to submit (remove modal class)
 
-btnUpdate.addEventListener('click', getMetalPrice);
+btnUpdate.addEventListener('click', model.getMetalPrice);
 
 //goldAPI response
 /*
