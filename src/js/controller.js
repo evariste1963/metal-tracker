@@ -9,7 +9,7 @@ import spotDataView from './views/spotDataView.js';
 const metal = 'XAU';
 const currency = 'GBP';
 const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
-const updateBtn = document.querySelector('.btn-update');
+const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 const spotTicker = document.querySelector('.spotTicker');
 
@@ -412,7 +412,7 @@ const requestOptions = {
   redirect: 'follow',
 };
 
-let markUp = '';
+let markUp;
 
 const getMetalPrice = async () => {
   try {
@@ -438,8 +438,6 @@ const getMetalPrice = async () => {
   }
 };
 
-updateBtn.addEventListener('click', getMetalPrice);
-
 modalWindow = document.querySelector('.add-stack-window');
 overlay = document.querySelector('.overlay');
 btnOpen = document.querySelector('.btn-stack');
@@ -452,10 +450,9 @@ const toggleWindow = e => {
   overlay.classList.toggle('hidden');
 };
 
+btnUpdate.addEventListener('click', getMetalPrice);
 btnOpen.addEventListener('click', toggleWindow);
-
 btnHide.addEventListener('click', toggleWindow);
-
 btnUploadStack.addEventListener('click', toggleWindow); ///change to submit
 
 //goldAPI response
@@ -491,7 +488,7 @@ timestamp: 1605177000000
 /*
 const API_KEY = "b0ifc1x03it7x9ysdkymb90iea14322975t5ld01t0ap56iad6u1h37vuro3";
 const gold = "XAU";
-const updateBtn = document.querySelector(".btn-update");
+const btnUpdate = document.querySelector(".btn-update");
 const getMetalPrice = () => {
   fetch(
     `https://www.metals-api.com/api/latest?access_key=${API_KEY}&base=USD&symbols=${gold}`
@@ -504,5 +501,5 @@ const getMetalPrice = () => {
       const date = data.timestamp;
     });
 };
-updateBtn.addEventListener("click", getMetalPrice);
+btnUpdate.addEventListener("click", getMetalPrice);
 */
