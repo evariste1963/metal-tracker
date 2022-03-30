@@ -373,29 +373,8 @@ var chart = new ApexCharts(candleChart, options);
 
 chart.render();
 
-const getTimestamp = timestamp => {
-  let date = new Date(timestamp * 1000);
-  let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
-  let hours = date.getHours();
-  let mins = date.getMinutes();
-  let secs = date.getSeconds();
-
-  let callDate = `${year}-${month.toString().padStart(2, 0)}-${day
-    .toString()
-    .padStart(2, 0)} ${hours.toString().padStart(2, 0)}:${mins
-    .toString()
-    .padStart(2, 0)}:${secs.toString().padStart(2, 0)}`;
-
-  return callDate;
-};
-
 //spotTicker.innerHTML = `<H1><span>Latest Price</span><br><span id = spotPrice >£1430.05</span></H1>`;
 //create an external function for this bit -- pass in result.values... return outcomes
-let dateTime = result => {
-  return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
-};
 
 //render data
 const renderData = () => {
