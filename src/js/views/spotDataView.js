@@ -31,3 +31,12 @@ class SpotDataView extends View {
 }
 
 export default new SpotDataView();
+
+/*
+arrow heads
+*/
+
+/*
+  
+<div type="text/css" class="arrow arrow-up"></div>
+<div type="text/css" class="arrow arrow-down"></div>*/
