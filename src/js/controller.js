@@ -3,6 +3,7 @@ import * as model from './model.js';
 import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
 import spotDataView from './views/spotDataView.js';
 import addStackView from './views/addStackView.js';
+import * as helpers from './views/helpers.js';
 
 // https://www.goldapi.io/dashboard
 //https://www.goldapi.io/api/"XAU"/"GBP"/'20200101'
@@ -14,7 +15,7 @@ const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 
 //build this below from api historic data/csv file
-let candleData = [
+/*let candleData = [
   {
     x: new Date(1538778600000),
     y: [6629.81, 6650.5, 6623.04, 6633.33],
@@ -256,10 +257,11 @@ let candleData = [
     y: [6604.98, 6606, 6604.07, 6606],
   },
 ];
-
+*/
 //https://apexcharts.com/
 
-var options = {
+var options = helpers.options;
+/*{
   series: [
     {
       name: 'line',
@@ -366,7 +368,7 @@ var options = {
   xaxis: {
     type: 'datetime',
   },
-};
+};*/
 
 var chart = new ApexCharts(candleChart, options);
 
