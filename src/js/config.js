@@ -13,7 +13,27 @@ export const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
 // -------------------------------------------delete---------------------------------------------------------------------------------\\
 //goldAPI response
 /*
-{timestamp: 1647631965, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP', …}ask: 1457.17bid: 1456.4ch: -20.5chp: -1.39currency: "GBP"exchange: "FOREXCOM"high_price: 1478.16low_price: 1454.94metal: "XAU"open_price: 1477.28open_time: 1647561600prev_close_price: 1477.28price: 1456.78price_gram_18k: 35.1274price_gram_20k: 39.0305price_gram_21k: 40.982price_gram_22k: 42.9335price_gram_24k: 46.8366symbol: "FOREXCOM:XAUGBP"timestamp: 1647631965[[Prototype]]: Object
+{timestamp: 1648737132, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP', …}
+ask: 1479.23
+bid: 1478.36
+ch: 7.39
+chp: 0.5
+currency: "GBP"
+exchange: "FOREXCOM"
+high_price: 1480.36
+low_price: 1463.56
+metal: "XAU"
+open_price: 1471.4
+open_time: 1648684800
+prev_close_price: 1471.4
+price: 1478.79
+price_gram_18k: 35.6582
+price_gram_20k: 39.6202
+price_gram_21k: 41.6012
+price_gram_22k: 43.5822
+price_gram_24k: 47.5442
+symbol: "FOREXCOM:XAUGBP"
+timestamp: 1648737132
 
 2022-03-18 19:32:45
 XAU:-
@@ -39,23 +59,4 @@ price_gram_21k: 40.0591
 price_gram_22k: 41.9666
 price_gram_24k: 45.7818
 timestamp: 1605177000000
-*/
-
-/*
-const API_KEY = "b0ifc1x03it7x9ysdkymb90iea14322975t5ld01t0ap56iad6u1h37vuro3";
-const gold = "XAU";
-const btnUpdate = document.querySelector(".btn-update");
-const getMetalPrice = () => {
-  fetch(
-    `https://www.metals-api.com/api/latest?access_key=${API_KEY}&base=USD&symbols=${gold}`
-  )
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
-      console.log(data);
-      const date = data.timestamp;
-    });
-};
-btnUpdate.addEventListener("click", getMetalPrice);
 */
