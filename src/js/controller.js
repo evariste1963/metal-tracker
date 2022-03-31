@@ -342,7 +342,7 @@ var options = {
     },
   },
   title: {
-    text: 'Gold Daily Prices',
+    text: 'Historic data',
     align: 'left',
   },
   stroke: {

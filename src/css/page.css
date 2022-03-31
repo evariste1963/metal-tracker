@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 0;
   font-family: Ink free, cursive, sans-serif;
+  font-size: 1rem;
   box-sizing: border-box;
 }
 
@@ -196,6 +197,7 @@ body {
 
 .apexcharts-canvas {
   margin: 0 auto;
+  padding: 1rem 0 1rem 0;
   background: rgba(209, 204, 204, 0.6);
   border-radius: 1rem;
   width: 100%;
@@ -203,7 +205,7 @@ body {
 }
 
 footer {
-  width: 70%;
+  width: 85%;
   height: 5rem;
   bottom: 0;
   background: rgba(37, 7, 7, 1);
