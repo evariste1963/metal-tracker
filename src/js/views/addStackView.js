@@ -1,5 +1,8 @@
 import View from './view';
 
+modalWindow = document.querySelector('.add-stack-window');
+overlay = document.querySelector('.overlay');
+
 class AddStackView extends View {
   _parentElement = document.querySelector('.upload');
   _message = 'Stack successfully uploaded';

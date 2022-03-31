@@ -33,7 +33,6 @@ export const getMetalPrice = async () => {
     const result = await response.json();
     console.log(result);
 
-    //THIS SHOULD BE SOMEWHERE ELSE --HELPER? AND OR MODEL??
     markUp = await spotDataView._generateSpotMarkup(result, dateTime(result));
     await renderData(markUp);
 
@@ -44,7 +43,6 @@ export const getMetalPrice = async () => {
 
     if (result.price - result.prev_close_price > 0)
       spotItems.style.color = 'rgb(10, 92, 10)';
-    ///----------------------------------------------------
   } catch (error) {
     console.log('error', error);
   }
