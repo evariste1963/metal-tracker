@@ -1,3 +1,4 @@
+//generate timeDate stamp
 export const getTimestamp = timestamp => {
   let date = new Date(timestamp * 1000);
   let year = date.getFullYear();

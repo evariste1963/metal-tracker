@@ -1,33 +1,17 @@
 import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
 import spotDataView from './views/spotDataView.js';
+import * as helpers from './views/helpers.js';
 
 let markUp;
 const renderData = () => {
   const spotTicker = document.querySelector('.spotTicker');
   spotTicker.innerHTML = markUp;
-  //create an external function for this bit -- pass in result.values... return outcomes --- use 2nd box for other data (high/low etc)
-};
-
-const getTimestamp = timestamp => {
-  let date = new Date(timestamp * 1000);
-  let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
-  let hours = date.getHours();
-  let mins = date.getMinutes();
-  let secs = date.getSeconds();
-
-  let callDate = `${day.toString().padStart(2, 0)}-${month
-    .toString()
-    .padStart(2, 0)}-${year} ${hours.toString().padStart(2, 0)}:${mins
-    .toString()
-    .padStart(2, 0)}:${secs.toString().padStart(2, 0)}`;
-
-  return callDate;
 };
 
 let dateTime = result => {
-  return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
+  return helpers.getTimestamp(
+    result.date ? result.timestamp / 1000 : result.timestamp
+  );
 };
 
 const myHeaders = new Headers();
