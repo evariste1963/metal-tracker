@@ -2,12 +2,6 @@ import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
 import spotDataView from './views/spotDataView.js';
 import { getTimestamp, AJAX } from './helpers.js';
 
-let markUp;
-const renderData = () => {
-  const spotTicker = document.querySelector('.spotTicker');
-  spotTicker.innerHTML = markUp;
-};
-
 let dateTime = result => {
   return getTimestamp(result.date ? result.timestamp / 1000 : result.timestamp);
 };

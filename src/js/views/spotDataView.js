@@ -1,5 +1,5 @@
 import View from './view';
-import { AJAX } from '../helpers.js';
+import { result } from '../helpers.js';
 
 class SpotDataView extends View {
   constructor() {
