@@ -1,5 +1,5 @@
 import View from './view';
-import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
+import { API_KEY, API_URL, metal, currency, historicDate } from '../config.js';
 
 class SpotDataView extends View {
   constructor() {
