@@ -1,6 +1,6 @@
 import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
 import spotDataView from './views/spotDataView.js';
-import * as helpers from './views/helpers.js';
+import * as helpers from './helpers.js';
 
 let markUp;
 const renderData = () => {
@@ -30,11 +30,14 @@ export const getMetalPrice = async () => {
       `${API_URL}/${metal}/${currency}/${historicDate}?`,
       requestOptions
     );
+
+    //this should be in helpers.js --- create get results function(response) -- return data after JSON
     const result = await response.json();
     console.log(result);
 
     markUp = await spotDataView._generateSpotMarkup(result, dateTime(result));
     await renderData(markUp);
+    //------- return result after JSON
 
     const spotItems = document.getElementById('spotItems');
 

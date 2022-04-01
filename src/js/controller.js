@@ -1,7 +1,7 @@
 import ApexCharts from 'apexcharts';
 import * as model from './model.js';
 import addStackView from './views/addStackView.js';
-import * as helpers from './views/helpers.js';
+import * as helpers from './helpers.js';
 
 const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
