@@ -1,4 +1,5 @@
 import View from './view';
+import result from '../helpers.js';
 
 class SpotDataView extends View {
   constructor() {

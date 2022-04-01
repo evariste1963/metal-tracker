@@ -1,3 +1,12 @@
+export const AJAX = async function (url, requestOptions) {
+  const response = await fetch(url, requestOptions);
+
+  const result = await response.json();
+  console.log(result);
+
+  return result;
+};
+
 //generate timeDate stamp
 export const getTimestamp = timestamp => {
   let date = new Date(timestamp * 1000);
