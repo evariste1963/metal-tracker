@@ -26,12 +26,13 @@ const requestOptions = {
 
 export const getMetalPrice = async () => {
   try {
+    //const response = await AJAX(`${API_URL}/${metal}/${currency}/${historicDate}?`, requestOptions);
     const response = await fetch(
+      //-- change to await AJAX and run fetch in helpers
       `${API_URL}/${metal}/${currency}/${historicDate}?`,
       requestOptions
     );
-
-    //this should be in helpers.js --- create get results function(response) -- return data after JSON
+    //this should be in helpers.js --- create getResults async function(response) -- return data after JSON
     const result = await response.json();
     console.log(result);
 
