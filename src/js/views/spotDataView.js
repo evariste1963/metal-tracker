@@ -1,41 +1,26 @@
 import View from './view';
-import { result } from '../helpers.js';
 
 class SpotDataView extends View {
   constructor() {
     super();
   }
-}
-_renderData = () => {
-  const spotTicker = document.querySelector('.spotTicker');
-  spotTicker.innerHTML = _markUp;
-};
 
-spotItems = document.getElementById('spotItems');
+  _generateSpotMarkup(result, callTime) {
+    const changeValue = (result.price - result.prev_close_price).toFixed(2);
+    const changePercentage = (
+      ((result.price - result.prev_close_price) / result.prev_close_price) *
+      100
+    ).toFixed(2);
 
-if (result.price - result.prev_close_price < 0)
-  spotItems.style.color = 'rgb(199, 15, 15)';
-if (result.price - result.prev_close_price > 0)
-  spotItems.style.color = 'rgb(10, 92, 10)';
+    const arrow =
+      changeValue < 0
+        ? 'arrow arrow-down'
+        : changeValue > 0
+        ? 'arrow arrow-up'
+        : '';
 
-_markUp = _generateSpotMarkup(result, dateTime(result));
-
-_generateSpotMarkup = function () {
-  const changeValue = (result.price - result.prev_close_price).toFixed(2);
-  const changePercentage = (
-    ((result.price - result.prev_close_price) / result.prev_close_price) *
-    100
-  ).toFixed(2);
-
-  const arrow =
-    changeValue < 0
-      ? 'arrow arrow-down'
-      : changeValue > 0
-      ? 'arrow arrow-up'
-      : '';
-
-  return !result.date
-    ? `
+    return !result.date
+      ? `
     <H1 ><span>Latest Price</span><br>
     <div id=callTime>${callTime}</div>
     <div id= spotBox>
@@ -49,10 +34,11 @@ _generateSpotMarkup = function () {
     <div id=sell><span>SELL:  £${result.bid}</span></div>
     </div>
     </H1>`
-    : console.log(`
+      : console.log(`
   ${callTime}
   Previous closing price: ${result.prev_close_price}
   Price: ${result.price}`);
-};
+  }
+}
 
 export default new SpotDataView();
