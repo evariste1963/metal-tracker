@@ -8,16 +8,17 @@ const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 const modal = document.querySelectorAll('.modal');
 
+//get default chart
 var chart = new ApexCharts(candleChart, helpers.options);
-
+//render chart
 chart.render();
-
+//get metal price on 'get latest price' button
 const controlGetMetalPrice = async () => {
-  const data = await model.getMetalPrice();
-  markUp = await spotDataView._generateSpotMarkup(data);
+  const markUp = await spotDataView._generateSpotMarkup(
+    await model.getMetalPrice()
+  );
+  //render price update
   await spotDataView.renderData(markUp);
-
-  
 };
 
 //-- All EventListeners --\\

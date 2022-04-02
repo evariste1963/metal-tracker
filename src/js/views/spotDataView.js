@@ -1,5 +1,4 @@
 import View from './view';
-import { API_KEY, API_URL, metal, currency, historicDate } from '../config.js';
 
 class SpotDataView extends View {
   constructor() {
@@ -11,7 +10,6 @@ class SpotDataView extends View {
       result.date ? result.timestamp / 1000 : result.timestamp
     );
   };
-  //dateTime(result)
 
   _generateSpotMarkup(result, callTime) {
     const changeValue = (result.price - result.prev_close_price).toFixed(2);
