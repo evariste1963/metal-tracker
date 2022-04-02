@@ -6,6 +6,13 @@ class SpotDataView extends View {
     super();
   }
 
+  dateTime = result => {
+    return getTimestamp(
+      result.date ? result.timestamp / 1000 : result.timestamp
+    );
+  };
+  //dateTime(result)
+
   _generateSpotMarkup(result, callTime) {
     const changeValue = (result.price - result.prev_close_price).toFixed(2);
     const changePercentage = (
@@ -20,12 +27,17 @@ class SpotDataView extends View {
         ? 'arrow arrow-up'
         : '';
 
+    const dayChange =
+      result.price - result.prev_close_price > 0
+        ? 'color:rgb(10, 92, 10)'
+        : 'color:rgb(199, 15, 15)';
+
     return !result.date
       ? `
     <H1 ><span>Latest Price</span><br>
     <div id=callTime>${callTime}</div>
     <div id= spotBox>
-    <div id=spotItems>
+    <div id=spotItems style='${dayChange}'>
     <p id=spotPrice >£${result.price}</p>
     <p class ='${arrow}'></p>
     <p class='changeV'>${changeValue}</p>
@@ -40,6 +52,11 @@ class SpotDataView extends View {
   Previous closing price: ${result.prev_close_price}
   Price: ${result.price}`);
   }
+
+  renderData = markUp => {
+    const spotTicker = document.querySelector('.spotTicker');
+    spotTicker.innerHTML = markUp;
+  };
 }
 
 export default new SpotDataView();
