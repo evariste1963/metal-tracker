@@ -19,6 +19,7 @@ const controlGetMetalPrice = async () => {
   );
   //render price update
   await spotDataView.renderData(markUp);
+  await StatisticDataView.renderData(markUp);
 };
 
 //-- All EventListeners --\\
