@@ -1,17 +1,19 @@
 import View from './view';
+import * as helpers from '../helpers.js';
+import statisticDataView from './statisticDataView';
 
 class SpotDataView extends View {
   constructor() {
     super();
   }
 
-  dateTime = result => {
-    return getTimestamp(
+  _generateSpotMarkup(result) {
+    statisticDataView._generateStatMarkup(result);
+
+    const dateTime = helpers.getTimestamp(
       result.date ? result.timestamp / 1000 : result.timestamp
     );
-  };
 
-  _generateSpotMarkup(result, callTime) {
     const changeValue = (result.price - result.prev_close_price).toFixed(2);
     const changePercentage = (
       ((result.price - result.prev_close_price) / result.prev_close_price) *
@@ -33,7 +35,7 @@ class SpotDataView extends View {
     return !result.date
       ? `
     <H1 ><span>Latest Price</span><br>
-    <div id=callTime>${callTime}</div>
+    <div id=callTime>${dateTime}</div>
     <div id= spotBox>
     <div id=spotItems style='${dayChange}'>
     <p id=spotPrice >£${result.price}</p>

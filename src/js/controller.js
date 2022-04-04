@@ -15,15 +15,13 @@ var chart = new ApexCharts(candleChart, helpers.options);
 chart.render();
 //get metal price on 'get latest price' button
 const controlGetMetalPrice = async () => {
-  const markUp = await spotDataView._generateSpotMarkup(
+  let markUp = await spotDataView._generateSpotMarkup(
     await model.getMetalPrice()
   );
   //render price update
   await spotDataView.renderData(markUp);
-  markUp = await statisticDataView._generateStatMarkup();
   await statisticDataView.renderData(markUp);
 };
-
 //-- All EventListeners --\\
 modal.forEach(btn => btn.addEventListener('click', addStackView._toggleWindow)); ///maybe change btnUploadStack to submit to submit (remove modal class)
 
