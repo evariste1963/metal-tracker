@@ -1,3 +1,4 @@
+import spotDataView from './spotDataView';
 import View from './view';
 
 class StatisticDataView extends View {
@@ -5,7 +6,7 @@ class StatisticDataView extends View {
     super();
   }
 
-  _generateSpotMarkup(result) {
+  _generateStatMarkup(result) {
     console.log(result);
     return !result.date
       ? `
@@ -29,8 +30,8 @@ class StatisticDataView extends View {
   }
 
   renderData = markUp => {
-    const spotTicker = document.querySelector('.spotTicker');
-    spotTicker.innerHTML = markUp;
+    const statTicker = document.querySelector('.statTicker');
+    statTicker.innerHTML = markUp;
   };
 }
 

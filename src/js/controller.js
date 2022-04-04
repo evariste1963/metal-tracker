@@ -2,6 +2,7 @@ import ApexCharts from 'apexcharts';
 import * as model from './model.js';
 import addStackView from './views/addStackView.js';
 import spotDataView from './views/spotDataView.js';
+import statisticDataView from './views/statisticDataView.js';
 import * as helpers from './helpers.js';
 
 const btnUpdate = document.querySelector('.btn-update');
@@ -19,7 +20,8 @@ const controlGetMetalPrice = async () => {
   );
   //render price update
   await spotDataView.renderData(markUp);
-  await StatisticDataView.renderData(markUp);
+  markUp = await statisticDataView._generateStatMarkup(result);
+  await statisticDataView.renderData(markUp);
 };
 
 //-- All EventListeners --\\
