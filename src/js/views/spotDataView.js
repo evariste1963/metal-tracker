@@ -8,7 +8,8 @@ class SpotDataView extends View {
   }
 
   _generateSpotMarkup(result) {
-    statisticDataView._generateStatMarkup(result);
+    let statMarkUp = statisticDataView._generateStatMarkup(result);
+    statisticDataView.renderData(statMarkUp);
 
     const dateTime = helpers.getTimestamp(
       result.date ? result.timestamp / 1000 : result.timestamp

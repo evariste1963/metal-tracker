@@ -20,7 +20,7 @@ const controlGetMetalPrice = async () => {
   );
   //render price update
   await spotDataView.renderData(markUp);
-  await statisticDataView.renderData(markUp);
+  //await statisticDataView.renderData();
 };
 //-- All EventListeners --\\
 modal.forEach(btn => btn.addEventListener('click', addStackView._toggleWindow)); ///maybe change btnUploadStack to submit to submit (remove modal class)

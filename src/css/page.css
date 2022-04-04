@@ -171,6 +171,7 @@ body {
 #buy,
 #sell,
 #highLow,
+#openPrice,
 .changeP,
 .changeV {
   font-size: 1rem;
