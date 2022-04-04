@@ -1,4 +1,3 @@
-import spotDataView from './spotDataView';
 import View from './view';
 
 class StatisticDataView extends View {
@@ -7,6 +6,7 @@ class StatisticDataView extends View {
   }
 
   _generateStatMarkup(result) {
+    ///need to get RESULT in here!!
     console.log(result);
     return !result.date
       ? `
