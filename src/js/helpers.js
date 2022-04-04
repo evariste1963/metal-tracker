@@ -1,6 +1,7 @@
 export const AJAX = async function (url, requestOptions) {
-  const response = await fetch(url, requestOptions);
-
+  this.url = url;
+  this.requestOptions = requestOptions;
+  const response = await fetch(this.url, this.requestOptions);
   const result = await response.json();
   console.log(result);
 

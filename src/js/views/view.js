@@ -1,7 +1,4 @@
 import icons from 'url:../../img/icons.svg';
-export default class View {}
-
-/*
 export default class View {
   renderSpinner() {
     const markup = `
@@ -14,5 +11,10 @@ export default class View {
     this._clear(); //clear out HTML container
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
+
+  renderData = (markUp, element) => {
+    this.element = element;
+    this.markUp = markUp;
+    document.querySelector(this.element).innerHTML = this.markUp;
+  };
 }
-*/

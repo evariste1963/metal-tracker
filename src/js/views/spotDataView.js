@@ -9,7 +9,7 @@ class SpotDataView extends View {
 
   _generateSpotMarkup(result) {
     let statMarkUp = statisticDataView._generateStatMarkup(result);
-    statisticDataView.renderData(statMarkUp);
+    statisticDataView.renderData(statMarkUp, '.statTicker');
 
     const dateTime = helpers.getTimestamp(
       result.date ? result.timestamp / 1000 : result.timestamp
@@ -44,20 +44,13 @@ class SpotDataView extends View {
     <p class='changeV'>${changeValue}</p>
     <p class=changeP>${changePercentage}%</p>
         </div>
-    <div id=buy><span>BUY:  £${result.ask}</span></div>
-    <div id=sell><span>SELL:  £${result.bid}</span></div>
-    </div>
+     </div>
     </H1>`
       : console.log(`
   ${callTime}
   Previous closing price: ${result.prev_close_price}
   Price: ${result.price}`);
   }
-
-  renderData = markUp => {
-    const spotTicker = document.querySelector('.spotTicker');
-    spotTicker.innerHTML = markUp;
-  };
 }
 
 export default new SpotDataView();
