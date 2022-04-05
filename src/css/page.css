@@ -1,3 +1,11 @@
+:root {
+  --gold-font-color: rgb(221, 189, 7);
+  --secondary-bg-color: rgba(95, 14, 14, 1);
+  --box-bg-color: rgba(209, 204, 204, 0.4);
+  --price-up-color: rgb(10, 92, 10);
+  --price-drop-color: rgb(199, 15, 15);
+}
+
 * {
   padding: 0;
   margin: 0 auto;
@@ -54,7 +62,7 @@ body {
   margin: 0;
   font-size: 4rem;
   font-weight: 800;
-  text-shadow: 2px 2px rgb(221, 189, 7);
+  text-shadow: 2px 2px var(--gold-font-color);
   font-style: italic;
 }
 
@@ -71,8 +79,8 @@ body {
   padding: 1rem 1rem;
   border-radius: 0.7rem;
   margin: 0;
-  color: rgb(221, 189, 7);
-  background-color: rgba(95, 14, 14, 1);
+  color: var(--gold-font-color);
+  background-color: var(--secondary-bg-color);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
   vertical-align: middle;
@@ -108,7 +116,8 @@ body {
   display: flex;
   grid-column: 5;
   border-radius: 1rem;
-  background: rgba(209, 204, 204, 0.4);
+  color: rgb(97, 90, 90);
+  background: var(--box-bg-color);
   align-items: center;
 }
 
@@ -120,7 +129,7 @@ body {
   padding: 0.35rem;
   align-items: center;
   justify-content: center;
-  color: rgb(97, 90, 90);
+ 
 }
 #spotBox {
   display: grid;
@@ -146,14 +155,14 @@ body {
 }
 
 .arrow-up {
-  border-bottom-color: rgb(31, 102, 13);
+  border-bottom-color: var(--price-up-color);
   border-top-width: 0px;
   grid-column: 6;
   grid-row: span 2;
 }
 
 .arrow-down {
-  border-top-color: rgb(117, 11, 11);
+  border-top-color: var(--price-drop-color);
   border-bottom-width: 0px;
   grid-column: 6;
   grid-row: span 2;
@@ -188,14 +197,14 @@ body {
   grid-row: span 2;
 
   border-radius: 1rem;
-  background: rgba(209, 204, 204, 0.4);
+  background: var(--box-bg-color);
   margin: 0 1rem 1rem 1rem;
 }
 
 .apexcharts-canvas {
   margin: 0 auto;
   padding: 1rem 0 1rem 0;
-  background: rgba(209, 204, 204, 0.6);
+  background: var(--box-bg-color);
   border-radius: 1rem;
   width: 100%;
   height: 100%;
@@ -205,7 +214,7 @@ footer {
   width: 85%;
   height: 5rem;
   bottom: 0;
-  background: rgba(37, 7, 7, 1);
+  background: var(--secondary-bg-color);
   color: #fff;
   margin: 0 auto;
   align-items: center;

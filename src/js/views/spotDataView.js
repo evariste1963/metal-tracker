@@ -28,8 +28,8 @@ class SpotDataView extends View {
 
     const dayChange =
       result.price - result.prev_close_price > 0
-        ? 'color:rgb(10, 92, 10)'
-        : 'color:rgb(199, 15, 15)';
+        ? 'color: var(--price-up-color)'
+        : 'color: var(--price-drop-color)';
 
     return !result.date
       ? `
