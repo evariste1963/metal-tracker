@@ -1,11 +1,25 @@
-export const AJAX = async function (url, requestOptions) {
-  this.url = url;
-  this.requestOptions = requestOptions;
-  const response = await fetch(this.url, this.requestOptions);
-  const result = await response.json();
-  console.log(result);
+import { TIMEOUT_SEC } from './config';
 
-  return result;
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error(`Request took too long! Timeout after ${s} second`));
+    }, s * 1000);
+  });
+};
+
+export const AJAX = async function (url, requestOptions) {
+  try {
+    this.url = url;
+    this.requestOptions = requestOptions;
+    const response = await fetch(this.url, this.requestOptions);
+    const result = await response.json();
+    console.log(result);
+
+    return result;
+  } catch (err) {
+    throw err; //throw error back to ???
+  }
 };
 
 //generate timeDate stamp

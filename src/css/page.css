@@ -129,8 +129,6 @@ body {
   margin: 0 1rem 0 0;
   padding: 0.35rem;
   align-items: center;
-  
- 
 }
 #spotBox {
   display: grid;
@@ -180,7 +178,8 @@ body {
 #callTime,
 #buy,
 #sell,
-#highLow,
+#high,
+#Low,
 #openPrice,
 .changeP,
 .changeV {
@@ -234,21 +233,21 @@ footer {
 }
 
 .spinner {
-   text-align: center;
+  text-align: center;
 }
-  .spinner svg {
-    height: 3rem;
-    width: 3rem;
-    fill: #736563;
-    animation: rotate 2s infinite linear;
+.spinner svg {
+  height: 3rem;
+  width: 3rem;
+  fill: #736563;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
   }
 
-  @keyframes rotate {
-    0% {
-      transform: rotate(0);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
   }
+}
