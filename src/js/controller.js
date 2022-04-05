@@ -16,9 +16,8 @@ chart.render();
 //get metal price on 'get latest price' button
 const controlGetMetalPrice = async () => {
   spotDataView.renderSpinner();
-  let markUp = await spotDataView._generateSpotMarkup(
-    await model.getMetalPrice()
-  );
+  statisticDataView.renderSpinner();
+  let markUp = spotDataView._generateSpotMarkup(await model.getMetalPrice());
   //render price update
   await spotDataView.renderData(markUp, '.spotTicker');
   //await statisticDataView.renderData();

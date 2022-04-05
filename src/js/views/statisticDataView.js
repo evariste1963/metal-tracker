@@ -1,9 +1,7 @@
 import View from './view';
 
 class StatisticDataView extends View {
-  constructor() {
-    super();
-  }
+  _parentElement = document.querySelector('.statTicker');
 
   _generateStatMarkup(result) {
     return !result.date
