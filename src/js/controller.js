@@ -15,6 +15,7 @@ var chart = new ApexCharts(candleChart, helpers.options);
 chart.render();
 //get metal price on 'get latest price' button
 const controlGetMetalPrice = async () => {
+  spotDataView.renderSpinner();
   let markUp = await spotDataView._generateSpotMarkup(
     await model.getMetalPrice()
   );

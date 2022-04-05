@@ -3,9 +3,7 @@ import * as helpers from '../helpers.js';
 import statisticDataView from './statisticDataView';
 
 class SpotDataView extends View {
-  constructor() {
-    super();
-  }
+  _parentElement = document.querySelector('.spotTicker');
 
   _generateSpotMarkup(result) {
     let statMarkUp = statisticDataView._generateStatMarkup(result);

@@ -1,5 +1,8 @@
 import icons from 'url:../../img/icons.svg';
 export default class View {
+  _clear() {
+    this._parentElement.innerHTML = ''; //clear out HTML container
+  }
   renderSpinner() {
     const markup = `
                 <div class="spinner">

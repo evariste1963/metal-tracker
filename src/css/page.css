@@ -222,3 +222,24 @@ footer {
 
   color: rgb(221, 189, 7);
 }
+
+.spinner {
+  /*margin: 3rem auto;*/
+  text-align: center;
+}
+  .spinner svg {
+    height: 3rem;
+    width: 3rem;
+    fill: #736563;
+    animation: rotate 2s infinite linear;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
