@@ -15,13 +15,12 @@ export const AJAX = async function (url, requestOptions) {
     const fetchPro = fetch(this.url, this.requestOptions);
     const response = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
     const result = await response.json();
-    if (!res.ok) throw new Error(`something done wrong!!`);
+    if (!response.ok) throw new Error(`something done wrong!!`);
     console.log(result);
 
     return result;
   } catch (err) {
-    console.log('this is my error' + err);
-    throw err; //throw error back to ???
+    throw err; //throw errror back
   }
 };
 
