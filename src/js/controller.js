@@ -19,7 +19,7 @@ const controlGetMetalPrice = async () => {
   statisticDataView.renderSpinner();
   let markUp = spotDataView._generateSpotMarkup(await model.getMetalPrice());
   //render price update
-  await spotDataView.renderData(markUp, '.spotTicker');
+  spotDataView.renderData(markUp);
   //await statisticDataView.renderData();
 };
 //-- All EventListeners --\\
