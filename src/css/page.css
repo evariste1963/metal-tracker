@@ -111,6 +111,15 @@ body {
   width: 100%;
 }
 
+.apexcharts-canvas {
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  background: var(--box-bg-color);
+  border-radius: 1rem;
+  width: 100%;
+ 
+}
+
 .spotTicker,
 .statTicker {
   display: flex;
@@ -199,15 +208,6 @@ body {
   border-radius: 1rem;
   background: var(--box-bg-color);
   margin: 0 1rem 1rem 1rem;
-}
-
-.apexcharts-canvas {
-  margin: 0 auto;
-  padding: 1rem 0 1rem 0;
-  background: var(--box-bg-color);
-  border-radius: 1rem;
-  width: 100%;
-  height: 100%;
 }
 
 footer {
