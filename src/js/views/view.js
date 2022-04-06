@@ -9,6 +9,7 @@ export default class View {
                   <svg>
                     <use href="${icons}#icon-loader"></use>
                   </svg>
+                  <p> fetching, please wait...</p>
                 </div>
         `;
     this._clear(); //clear out HTML container

@@ -394,7 +394,7 @@ export const options = {
   xaxis: {
     type: 'datetime',
   },
-  /*
+
   legend: {
     show: true,
     showForSingleSeries: false,
@@ -404,7 +404,7 @@ export const options = {
     horizontalAlign: 'center',
     floating: false,
     fontSize: '14px',
-    fontFamily: 'Helvetica, Arial',
+    /*fontFamily: 'Helvetica, Arial',*/
     fontWeight: 400,
     formatter: undefined,
     inverseOrder: false,
@@ -413,7 +413,7 @@ export const options = {
     tooltipHoverFormatter: undefined,
     customLegendItems: [],
     offsetX: 0,
-    offsetY: 0,
+    offsetY: -280,
     labels: {
       colors: undefined,
       useSeriesColors: false,
@@ -440,5 +440,5 @@ export const options = {
     onItemHover: {
       highlightDataSeries: true,
     },
-  },*/
+  },
 };
