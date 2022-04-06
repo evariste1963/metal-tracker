@@ -15,7 +15,7 @@ export const AJAX = async function (url, requestOptions) {
     const fetchPro = fetch(this.url, this.requestOptions);
     const response = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
     const result = await response.json();
-    if (!response.ok) throw new Error(`something done wrong!!`);
+    if (!response.ok) throw new Error(`ooops, something went wrong!!`);
     console.log(result);
 
     return result;
@@ -400,11 +400,10 @@ export const options = {
     showForSingleSeries: false,
     showForNullSeries: true,
     showForZeroSeries: true,
-    position: 'bottom',
+    position: 'top',
     horizontalAlign: 'center',
     floating: false,
     fontSize: '14px',
-    /*fontFamily: 'Helvetica, Arial',*/
     fontWeight: 400,
     formatter: undefined,
     inverseOrder: false,
@@ -413,7 +412,7 @@ export const options = {
     tooltipHoverFormatter: undefined,
     customLegendItems: [],
     offsetX: 0,
-    offsetY: -280,
+    offsetY: 0,
     labels: {
       colors: undefined,
       useSeriesColors: false,

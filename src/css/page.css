@@ -2,7 +2,7 @@
   --gold-font-color: rgb(221, 189, 7);
   --box-font-color: rgb(53, 50, 50);
   --secondary-bg-color: rgba(95, 14, 14, 1);
-  --box-bg-color: rgba(209, 204, 204, 0.4);
+  --box-bg-color: rgba(209, 204, 204, 0.6);
   --price-up-color: rgb(10, 92, 10);
   --price-drop-color: rgb(199, 15, 15);
 }
@@ -46,6 +46,7 @@ body {
   height: 6rem;
   margin: 0 auto 1.5rem auto;
   align-items: center;
+  z-index: 100;
 }
 
 #logo {
@@ -99,6 +100,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 1rem;
+  z-index: 0;
 }
 
 #chart {
@@ -118,26 +120,38 @@ body {
   background: var(--box-bg-color);
   border-radius: 1rem;
   width: 100%;
- 
 }
 
 .spotTicker,
 .statTicker {
   display: flex;
+  flex-direction: column;
   grid-column: 5;
+  margin: 0 1rem 0 0;
   border-radius: 1rem;
   color: var(--box-font-color);
   background: var(--box-bg-color);
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
 .spotTicker {
   grid-row: 1;
-  flex-direction: column;
   font-size: 1rem;
-  margin: 0 1rem 0 0;
   padding: 0.35rem;
+}
+
+.statTicker {
+  grid-row: 2;
+  padding: 0.5rem 0;
+}
+
+#statBox {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.25rem;
+  padding: 0 2rem;
   align-items: center;
 }
 
@@ -198,24 +212,11 @@ body {
   margin: 0;
 }
 
-.statTicker {
-  grid-row: 2;
-  display:flex;
-  flex-direction: column;
-  padding: 0.5rem 0;
-  margin: 0 1rem 0 0;
-  font-weight: bold;
-}
-
-#statBox {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.25rem;
-  padding: 0 2rem;
-  align-items: center;
-}
-
-#openPrice, #high, #low, #buy, #sell {
+#openPrice,
+#high,
+#low,
+#buy,
+#sell {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: right;
@@ -223,7 +224,7 @@ body {
 
 #statBox span {
   margin-left: 2px;
-  padding-left:1rem;
+  padding-left: 1rem;
 }
 
 .userStack {
