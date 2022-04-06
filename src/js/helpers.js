@@ -400,7 +400,7 @@ export const options = {
     showForSingleSeries: false,
     showForNullSeries: true,
     showForZeroSeries: true,
-    position: 'top',
+    position: 'bottom',
     horizontalAlign: 'center',
     floating: false,
     fontSize: '14px',
@@ -412,7 +412,7 @@ export const options = {
     tooltipHoverFormatter: undefined,
     customLegendItems: [],
     offsetX: 0,
-    offsetY: 0,
+    offsetY: -300,
     labels: {
       colors: undefined,
       useSeriesColors: false,

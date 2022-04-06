@@ -104,7 +104,7 @@ body {
 }
 
 #chart {
-  height: 20rem;
+  min-height: 24rem;
 }
 
 .chartArea {
