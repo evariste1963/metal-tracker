@@ -43,7 +43,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4); /*darkens page behind */
   backdrop-filter: blur(4px); /*blurs page behind */
-  z-index: 100;
+  z-index: 99999;
   transition: all 0.3s linear;
 }
 
