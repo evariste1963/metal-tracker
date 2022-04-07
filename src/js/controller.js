@@ -10,6 +10,11 @@ const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
 const modal = document.querySelectorAll('.modal');
 
+////===developement result --- TO BE DELETED---\\\
+let markUp = spotDataView._generateSpotMarkup(helpers.devData);
+spotDataView.renderData(markUp);
+//=======================================\\
+
 //get default chart
 var chart = new ApexCharts(candleChart, helpers.options);
 //render chart

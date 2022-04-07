@@ -5,6 +5,8 @@ export const metal = 'XAU';
 export const currency = 'GBP';
 export const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
 
+
+
 //console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
 
 //endpoint - https://www.goldapi.io/api/:symbol/:currency/:date?
@@ -14,7 +16,7 @@ export const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
 // -------------------------------------------delete---------------------------------------------------------------------------------\\
 //goldAPI response
 /*
-{timestamp: 1648737132, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP', …}
+{timestamp: 1648737132, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP',
 ask: 1479.23
 bid: 1478.36
 ch: 7.39
@@ -34,7 +36,7 @@ price_gram_21k: 41.6012
 price_gram_22k: 43.5822
 price_gram_24k: 47.5442
 symbol: "FOREXCOM:XAUGBP"
-timestamp: 1648737132
+timestamp: 1648737132}
 
 2022-03-18 19:32:45
 XAU:-

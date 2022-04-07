@@ -8,6 +8,36 @@ const timeout = function (s) {
   });
 };
 
+//---devdata only --- to be deleted\\
+export let devData = {
+  timestamp: 1648737132,
+  metal: 'XAU',
+  currency: 'GBP',
+  exchange: 'FOREXCOM',
+  symbol: 'FOREXCOM:XAUGBP',
+  ask: 1479.23,
+  bid: 1478.36,
+  ch: 7.39,
+  chp: 0.5,
+  currency: 'GBP',
+  exchange: 'FOREXCOM',
+  high_price: 1480.36,
+  low_price: 1463.56,
+  metal: 'XAU',
+  open_price: 1471.4,
+  open_time: 1648684800,
+  prev_close_price: 1471.4,
+  price: 1478.79,
+  price_gram_18k: 35.6582,
+  price_gram_20k: 39.6202,
+  price_gram_21k: 41.6012,
+  price_gram_22k: 43.5822,
+  price_gram_24k: 47.5442,
+  symbol: 'FOREXCOM:XAUGBP',
+  timestamp: 1648737132,
+};
+//--------------------------------------------
+
 export const AJAX = async function (url, requestOptions) {
   try {
     this.url = url;
