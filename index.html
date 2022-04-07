@@ -14,24 +14,30 @@
   <body>
     <div class="container">
       <div class="header sticky">
-        <img
-          id="logo"
-          src="./src/img/stack2.png"
-          alt="logo"
-          width="120"
-          height="80"
-        />
-        <p id="logotext">stackers</p>
-        <div class="btnDiv">
-          <button class="btn-update">GET LATEST PRICE</button>
-          <button class="btn-stack modal">Add to Stack</button>
+        <div id="headerTop">
+          <img
+            id="logo"
+            src="./src/img/stack2.png"
+            alt="logo"
+            width="120"
+            height="80"
+          />
+          <p id="logotext">stackers</p>
+          <div class="btnDiv">
+            <button class="btn-update">GET LATEST PRICE</button>
+            <button class="btn-stack modal">Add to Stack</button>
+          </div>
+        </div>
+        <div id="spotRunner">
+          <div class="spotTicker">Spot Price</div>
         </div>
       </div>
+
       <div class="page">
         <div class="chartArea">
           <div id="chart" class="chart1"></div>
         </div>
-        <div class="spotTicker">Spot Price</div>
+
         <div class="statTicker">Statistics</div>
         <div class="userStack">Your Stack</div>
       </div>

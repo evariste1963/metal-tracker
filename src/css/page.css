@@ -37,6 +37,13 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  background: rgba(221, 215, 215, 0.8);
+  z-index: 9999;
+}
+
+#headerTop {
   top: 0;
   padding-top: 1rem;
   position: sticky;
@@ -44,7 +51,7 @@ body {
   font-size: 3rem;
   font-family: cursive;
   height: 6rem;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto;
   align-items: center;
   z-index: 100;
 }
@@ -95,6 +102,17 @@ body {
   background-color: #5f0e0ee6;
 }
 
+#spotRunner {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  width: 100%;
+  justify-content: left;
+  z-index: 999;
+  color: #000;
+  font-size: 2rem;
+}
+
 .page {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -125,26 +143,27 @@ body {
 .spotTicker,
 .statTicker {
   display: flex;
-  flex-direction: column;
-  grid-column: 5;
-  margin: 0 1rem 0 0;
-  border-radius: 1rem;
-  color: var(--box-font-color);
-  background: var(--box-bg-color);
-  align-items: center;
-  justify-content: center;
+
   font-weight: bold;
 }
 
 .spotTicker {
-  grid-row: 1;
-  font-size: 1rem;
-  padding: 0.35rem;
+  width: 100%;
+  z-index: 999;
+  padding: 0.5rem;
 }
 
 .statTicker {
-  grid-row: 2;
+  grid-row: span 2;
+  flex-direction: column;
+  margin: 0 1rem 0 0;
+  grid-column: 5;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem 0;
+  background: var(--box-bg-color);
+  color: var(--box-font-color);
+  border-radius: 1rem;
 }
 
 #statBox {
@@ -156,20 +175,20 @@ body {
 }
 
 #spotBox {
-  display: grid;
+  display: flex;
   gap: 0.5rem;
+  z-index: 999;
 }
 
 #spotItems {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.25rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
+
 #spotPrice {
-  grid-column: 1 / 6;
-  grid-row: span 2;
+  padding-right: 0.5rem;
+  font-size: 2.4rem;
 }
 
 .arrow {
@@ -192,6 +211,11 @@ body {
   grid-row: span 2;
 }
 
+#change {
+  display: block;
+  padding-left: 0.5rem;
+}
+
 #changeV {
   grid-row: 1;
 }
@@ -200,7 +224,10 @@ body {
   grid-row: 2;
 }
 
-#callTime,
+#callTime {
+  font-size: 1.5rem;
+}
+
 #buy,
 #sell,
 #high,
@@ -267,12 +294,11 @@ footer {
   animation: rotate 2s infinite linear;
 }
 
-.error svg{
+.error svg {
   height: 30%;
   width: 30%;
   fill: var(--secondary-bg-color);
- }
-
+}
 
 @keyframes rotate {
   0% {

@@ -35,17 +35,19 @@ class SpotDataView extends View {
 
     return !result.date
       ? `
-    <H1 ><span>Latest Price (${result.currency})</span><br>
-    <div id=callTime>${dateTime}</div>
+    <div id='metalCur'>${result.metal} ${result.currency}</div>
     <div id= spotBox>
     <div id=spotItems style='${dayChange}'>
     <p id=spotPrice >${result.price}</p>
     <p class ='${arrow}'></p>
+    <div id='change'>
     <p class='changeV'>${changeValue}</p>
     <p class=changeP>${changePercentage}%</p>
+          </div>
         </div>
-     </div>
-    </H1>`
+      </div>
+     <div id=callTime>${dateTime}</div>
+   `
       : console.log(`
   ${callTime}
   Previous closing price: ${result.prev_close_price}
