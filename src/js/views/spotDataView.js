@@ -35,7 +35,7 @@ class SpotDataView extends View {
 
     return !result.date
       ? `
-    <H1 ><span>Latest Price ${result.currency}</span><br>
+    <H1 ><span>Latest Price (${result.currency})</span><br>
     <div id=callTime>${dateTime}</div>
     <div id= spotBox>
     <div id=spotItems style='${dayChange}'>
