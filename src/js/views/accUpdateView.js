@@ -1,5 +1,4 @@
 import View from './view';
-import * as helpers from '../helpers.js';
 
 class AccountUpdateView extends View {
   _parentElement = document.querySelector('.userStack');

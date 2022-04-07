@@ -1,5 +1,5 @@
 import View from './view';
-import * as helpers from '../helpers.js';
+import { getTimestamp } from '../helpers.js';
 import statisticDataView from './statisticDataView';
 
 class SpotDataView extends View {
@@ -11,7 +11,7 @@ class SpotDataView extends View {
     let statMarkUp = statisticDataView._generateStatMarkup(result);
     statisticDataView.renderData(statMarkUp);
 
-    const dateTime = helpers.getTimestamp(
+    const dateTime = getTimestamp(
       result.date ? result.timestamp / 1000 : result.timestamp
     );
 

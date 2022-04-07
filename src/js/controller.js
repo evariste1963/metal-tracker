@@ -18,18 +18,13 @@ chart.render();
 async function controlGetMetalPrice() {
   try {
     [spotDataView, statisticDataView].forEach(fn => fn.renderSpinner());
-    //spotDataView.renderSpinner();
-    //statisticDataView.renderSpinner();
     let markUp = await spotDataView._generateSpotMarkup(
       await model.getMetalPrice()
     );
     //render price update
     spotDataView.renderData(markUp);
-    await controlGetAccountUpdate();
   } catch (err) {
     [spotDataView, statisticDataView].forEach(fn => fn.renderError());
-    //spotDataView.renderError();
-    //statisticDataView.renderError();
   }
 }
 
@@ -38,7 +33,6 @@ async function controlGetAccountUpdate() {
     accUpdateView.renderSpinner();
     //await account update;
     let markUp = await model.getAccountUpdate();
-    //console.log('this.' + model.result);
     accUpdateView.renderData(markUp);
   } catch (err) {
     console.error(err);
@@ -47,4 +41,7 @@ async function controlGetAccountUpdate() {
 //-- All EventListeners --\\
 modal.forEach(btn => btn.addEventListener('click', addStackView._toggleWindow)); ///maybe change btnUploadStack to submit to submit (remove modal class)
 
-btnUpdate.addEventListener('click', controlGetMetalPrice);
+btnUpdate.addEventListener('click', () => {
+  controlGetMetalPrice();
+  controlGetAccountUpdate();
+});
