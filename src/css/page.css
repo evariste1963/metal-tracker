@@ -267,6 +267,13 @@ footer {
   animation: rotate 2s infinite linear;
 }
 
+.error svg{
+  height: 30%;
+  width: 30%;
+  fill: var(--secondary-bg-color);
+ }
+
+
 @keyframes rotate {
   0% {
     transform: rotate(0);

@@ -16,8 +16,9 @@ chart.render();
 //get metal price on 'get latest price' button
 async function controlGetMetalPrice() {
   try {
-    spotDataView.renderSpinner();
-    statisticDataView.renderSpinner();
+    [spotDataView, statisticDataView].forEach(fn => fn.renderSpinner());
+    //spotDataView.renderSpinner();
+    //statisticDataView.renderSpinner();
     let markUp = await spotDataView._generateSpotMarkup(
       await model.getMetalPrice()
     );
@@ -25,8 +26,9 @@ async function controlGetMetalPrice() {
     spotDataView.renderData(markUp);
     //await statisticDataView.renderData();
   } catch (err) {
-    spotDataView.renderError();
-    statisticDataView.renderError();
+    [spotDataView, statisticDataView].forEach(fn => fn.renderError());
+    //spotDataView.renderError();
+    //statisticDataView.renderError();
   }
 }
 //-- All EventListeners --\\
