@@ -61,3 +61,28 @@ price_gram_22k: 41.9666
 price_gram_24k: 45.7818
 timestamp: 1605177000000
 */
+
+//-------------------user call stats -----\\
+/*var myHeaders = new Headers();
+myHeaders.append("x-access-token", "goldapi-15j9sm18l0w7rfer-io");
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://www.goldapi.io/api/stat", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+  */
+/*
+ {4 items
+"requests_today":16
+"requests_yesterday":31
+"requests_month":290
+"requests_last_month":347
+}
+*/
