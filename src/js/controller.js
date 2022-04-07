@@ -3,6 +3,7 @@ import * as model from './model.js';
 import addStackView from './views/addStackView.js';
 import spotDataView from './views/spotDataView.js';
 import statisticDataView from './views/statisticDataView.js';
+import accUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
 
 const btnUpdate = document.querySelector('.btn-update');
@@ -24,11 +25,23 @@ async function controlGetMetalPrice() {
     );
     //render price update
     spotDataView.renderData(markUp);
-    //await statisticDataView.renderData();
+    await controlGetAccountUpdate();
   } catch (err) {
     [spotDataView, statisticDataView].forEach(fn => fn.renderError());
     //spotDataView.renderError();
     //statisticDataView.renderError();
+  }
+}
+
+async function controlGetAccountUpdate() {
+  try {
+    accUpdateView.renderSpinner();
+    //await account update;
+    let markUp = await model.getAccountUpdate();
+    //console.log('this.' + model.result);
+    accUpdateView.renderData(markUp);
+  } catch (err) {
+    console.error(err);
   }
 }
 //-- All EventListeners --\\

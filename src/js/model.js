@@ -17,7 +17,15 @@ export const getMetalPrice = async () => {
       `${API_URL}/${metal}/${currency}/${historicDate}?`,
       requestOptions
     );
+    return result;
+  } catch (error) {
+    console.log('error', error);
+  }
+};
 
+export const getAccountUpdate = async () => {
+  try {
+    const result = await AJAX(`${API_URL}/stat`, requestOptions);
     return result;
   } catch (error) {
     console.log('error', error);
