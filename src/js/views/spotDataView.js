@@ -35,7 +35,7 @@ class SpotDataView extends View {
 
     return !result.date
       ? `
-    <div id='metalCur'>${result.metal} ${result.currency}</div>
+    <div id='metalCur'>${result.metal} / ${result.metalTxt} - ${result.currency}</div>
     <div id= spotBox>
     <div id=spotItems style='${dayChange}'>
     <p id=spotPrice >${result.price}</p>

@@ -24,6 +24,7 @@ export let devData = {
   high_price: 1480.36,
   low_price: 1463.56,
   metal: 'XAU',
+  metalTxt: 'Gold',
   open_price: 1481.4,
   open_time: 1648684800,
   prev_close_price: 1481.4,
@@ -47,7 +48,11 @@ export const AJAX = async function (url, requestOptions) {
     const result = await response.json();
     if (!response.ok) throw new Error(`ooops, something went wrong!!`);
     console.log(result);
-
+    result.metal === 'XAU'
+      ? (result.metalTxt = 'Gold')
+      : result.metal === 'XAG'
+      ? (result.metalTxt = 'Silver')
+      : '';
     return result;
   } catch (err) {
     throw err; //throw errror back
