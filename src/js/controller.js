@@ -8,7 +8,6 @@ import * as helpers from './helpers.js';
 
 const btnUpdate = document.querySelector('.btn-update');
 const candleChart = document.querySelector('#chart');
-const modal = document.querySelectorAll('.modal');
 
 ////===developement result --- TO BE DELETED---\\\
 let markUp = spotDataView._generateSpotMarkup(helpers.devData);
@@ -43,10 +42,21 @@ async function controlGetAccountUpdate() {
     console.error(err);
   }
 }
+const controlStackModal = function (e) {
+  e.preventDefault();
+  addStackView._toggleWindow();
+  ///maybe change btnUploadStack to submit to submit (remove modal class)
+};
+
 //-- All EventListeners --\\
-modal.forEach(btn => btn.addEventListener('click', addStackView._toggleWindow)); ///maybe change btnUploadStack to submit to submit (remove modal class)
 
 btnUpdate.addEventListener('click', () => {
   controlGetMetalPrice();
   controlGetAccountUpdate();
 });
+
+//immediately pass controls to Views on startup (subscriber/publisher)
+const init = function () {
+  addStackView.addHandlerModal(controlStackModal);
+};
+init();

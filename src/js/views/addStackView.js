@@ -2,6 +2,7 @@ import View from './view';
 
 modalWindow = document.querySelector('.add-stack-window');
 overlay = document.querySelector('.overlay');
+const modal = document.querySelectorAll('.modal');
 
 class AddStackView extends View {
   _parentElement = document.querySelector('.upload');
@@ -13,11 +14,14 @@ class AddStackView extends View {
     this._addHandlerHideWindow();*/
   }
 
-  _toggleWindow = e => {
-    e.preventDefault();
+  _toggleWindow = function () {
     modalWindow.classList.toggle('hidden');
     overlay.classList.toggle('hidden');
   };
+
+  addHandlerModal(handler) {
+    modal.forEach(btn => btn.addEventListener('click', handler));
+  }
 }
 
 export default new AddStackView();
