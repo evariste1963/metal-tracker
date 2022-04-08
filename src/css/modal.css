@@ -2,12 +2,12 @@
   --color-primary: #f38e82;
   --color-grad-1: #fbdb89;
   --color-grad-2: #f48982;
-
   --color-grey-light-1: #f9f5f3;
   --color-grey-light-2: #f2efee;
   --color-grey-light-3: #d3c7c3;
   --color-grey-dark-1: #615551;
   --color-grey-dark-2: #918581;
+  --font-family: Ink free, cursive, sans-serif;
 }
 .add-stack-window {
   position: fixed;
@@ -41,6 +41,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  font-family: var(--font-family);
   background-color: rgba(0, 0, 0, 0.4); /*darkens page behind */
   backdrop-filter: blur(4px); /*blurs page behind */
   z-index: 99999;
@@ -116,6 +117,7 @@ button {
   padding: 0.5rem;
   align-items: center;
   border-radius: 5%;
+  font-family: var(--font-family);
   color: rgb(221, 189, 7);
   background: rgba(37, 7, 7, 0.8);
   cursor: pointer;

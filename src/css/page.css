@@ -5,13 +5,14 @@
   --box-bg-color: rgba(209, 204, 204, 0.6);
   --price-up-color: rgb(10, 92, 10);
   --price-drop-color: rgb(199, 15, 15);
+  --font-family: Ink free, cursive, sans-serif;
 }
 
 * {
   padding: 0;
   margin: 0 auto;
   padding: 0;
-  font-family: Ink free, cursive, sans-serif;
+
   box-sizing: border-box;
 }
 
@@ -22,12 +23,7 @@ body {
   margin: 0;
 }
 
-.container {
-  width: 85%;
-  min-height: 90vh;
-  margin: 0 auto;
-  justify-content: center;
-  text-align: center;
+.bg {
   background: linear-gradient(
       to bottom,
       rgba(251, 248, 248, 0.2),
@@ -36,11 +32,21 @@ body {
     url(../img/gold.jpg) center no-repeat fixed;
 }
 
+.container {
+  width: 100%;
+  min-height: 90vh;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
 .header {
   position: sticky;
   top: 0;
-  background: #fff; /*rgba(255, 255, 255, 0.8);*/
+  background: rgba(255, 255, 255, 0.9);
   z-index: 9999;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #headerTop {
@@ -51,7 +57,7 @@ body {
   font-size: 3rem;
   font-family: cursive;
   height: 6rem;
-  margin: 0 auto;
+  margin: 0 auto 0.8rem auto;
   align-items: center;
   z-index: 100;
 }
@@ -69,10 +75,11 @@ body {
 
 #logotext {
   margin: 0;
+  font-family: Ink free;
+  font-style: italic;
   font-size: 4rem;
   font-weight: 800;
   text-shadow: 2px 2px var(--gold-font-color);
-  font-style: italic;
 }
 
 .btnDiv {
@@ -104,13 +111,16 @@ body {
 
 #spotRunner {
   display: flex;
-  margin-bottom: 1rem;
   flex-direction: row;
-  width: 100%;
+  width: 85%;
   justify-content: left;
   z-index: 999;
   color: #000;
-  font-size: 2rem;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  border: solid 1px var(--secondary-bg-color);
+  border-radius: 5%/100%;
 }
 
 .page {
@@ -118,7 +128,13 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 1rem;
+  width: 85%;
   z-index: 0;
+  font-family: var(--font-family);
+  font-weight: bold;
+  border-left: solid 10px rgba(255, 255, 255, 0.6);
+  border-right: solid 10px rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
 }
 
 #chart {
@@ -163,6 +179,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 0;
+
   background: var(--box-bg-color);
   color: var(--box-font-color);
   border-radius: 1rem;
@@ -174,6 +191,7 @@ body {
   gap: 0.25rem;
   padding: 0 2rem;
   align-items: center;
+  font-size: 1.5rem;
 }
 
 #spotBox {
@@ -190,7 +208,7 @@ body {
 
 #spotPrice {
   padding-right: 0.5rem;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
 .arrow {
@@ -237,7 +255,7 @@ body {
 #openPrice,
 .changeP,
 .changeV {
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   margin: 0;
 }
 
@@ -259,10 +277,9 @@ body {
 .userStack {
   grid-column: span 5;
   grid-row: span 2;
-
   border-radius: 1rem;
   background: var(--box-bg-color);
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 1rem;
 }
 
 footer {
@@ -270,6 +287,7 @@ footer {
   height: 5rem;
   bottom: 0;
   background: var(--secondary-bg-color);
+  font-family: var(--font-family);
   color: #fff;
   margin: 0 auto;
   align-items: center;

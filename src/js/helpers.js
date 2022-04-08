@@ -61,7 +61,16 @@ export const AJAX = async function (url, requestOptions) {
 
 //generate timeDate stamp
 export const getTimestamp = timestamp => {
-  let date = new Date(timestamp * 1000);
+  let callDate = new Date(timestamp * 1000).toUTCString('en-uk', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  });
+  /*let date = new Date(timestamp * 1000);
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
   let day = date.getDate();
@@ -74,7 +83,7 @@ export const getTimestamp = timestamp => {
     .padStart(2, 0)} ${hours.toString().padStart(2, 0)}:${mins
     .toString()
     .padStart(2, 0)}:${secs.toString().padStart(2, 0)}`;
-
+*/
   return callDate;
 };
 

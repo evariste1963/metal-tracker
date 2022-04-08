@@ -12,71 +12,78 @@
     <title>Stackers API</title>
   </head>
   <body>
-    <div class="container">
-      <div class="header sticky">
-        <div id="headerTop">
-          <img
-            id="logo"
-            src="./src/img/stack2.png"
-            alt="logo"
-            width="120"
-            height="80"
-          />
-          <p id="logotext">stackers</p>
-          <div class="btnDiv">
-            <button class="btn-update">GET LATEST PRICE</button>
-            <button class="btn-stack modal">Add to Stack</button>
-          </div>
-        </div>
-        <div id="spotRunner">
-          <div class="spotTicker">Spot Price</div>
-        </div>
-      </div>
-
-      <div class="page">
-        <div class="chartArea">
-          <div id="chart" class="chart1"></div>
-        </div>
-
-        <div class="statTicker">Statistics</div>
-        <div class="userStack">Your Stack</div>
-      </div>
-    </div>
-    <div class="overlay hidden">
-      <div class="add-stack-window hidden">
-        <button class="btn--close-modal modal">&times;</button>
-        <h3 class="upload__heading">Stack something precious</h3>
-        <form class="upload">
-          <div class="upload__column">
-            <label>Code</label>
-            <input value="XUA" required name="code" type="text" />
-            <label>Weight</label>
-            <input value="TESTing" required name="weight" type="text" />
-            <label>Purchase Price</label>
-            <input value="TESTing" required name="purchase price" type="text" />
-            <label>Premium %</label>
-            <input value="23" required name="premium" type="number" />
-            <label>Spare1</label>
-            <input value="TESTing" required name="spare1" type="text" />
-            <label>Spare2</label>
-            <input value="23" required name="spare2" type="number" />
-          </div>
-          <button class="btn upload__btn modal">
+    <div class="bg">
+      <div class="container">
+        <div class="header sticky">
+          <div id="headerTop">
             <img
+              id="logo"
               src="./src/img/stack2.png"
               alt="logo"
               width="120"
               height="80"
             />
-            <span style="font-size: 4rem">Submit</span>
-          </button>
-        </form>
+            <p id="logotext">stackers</p>
+            <div class="btnDiv">
+              <button class="btn-update">GET LATEST PRICE</button>
+              <button class="btn-stack modal">Add to Stack</button>
+            </div>
+          </div>
+          <div id="spotRunner">
+            <div class="spotTicker">Spot Price</div>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chartArea">
+            <div id="chart" class="chart1"></div>
+          </div>
+
+          <div class="statTicker">Statistics</div>
+          <div class="userStack">Your Stack</div>
+        </div>
       </div>
-    </div>
-    <div>
-      <footer>
-        <h3 id="footnote">coded by <span id="tag">this.me</span></h3>
-      </footer>
+      <div class="overlay hidden">
+        <div class="add-stack-window hidden">
+          <button class="btn--close-modal modal">&times;</button>
+          <h3 class="upload__heading">Stack something precious</h3>
+          <form class="upload">
+            <div class="upload__column">
+              <label>Code</label>
+              <input value="XUA" required name="code" type="text" />
+              <label>Weight</label>
+              <input value="TESTing" required name="weight" type="text" />
+              <label>Purchase Price</label>
+              <input
+                value="TESTing"
+                required
+                name="purchase price"
+                type="text"
+              />
+              <label>Premium %</label>
+              <input value="23" required name="premium" type="number" />
+              <label>Spare1</label>
+              <input value="TESTing" required name="spare1" type="text" />
+              <label>Spare2</label>
+              <input value="23" required name="spare2" type="number" />
+            </div>
+            <button class="btn upload__btn modal">
+              <img
+                src="./src/img/stack2.png"
+                alt="logo"
+                width="120"
+                height="80"
+              />
+              <span style="font-size: 4rem">Submit</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div>
+        <footer>
+          <h3 id="footnote">coded by <span id="tag">this.me</span></h3>
+        </footer>
+      </div>
     </div>
   </body>
 </html>
