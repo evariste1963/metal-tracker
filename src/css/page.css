@@ -22,6 +22,7 @@ body {
   height: 100%;
   top: 0;
   margin: 0;
+  font-size: 100%;
 }
 
 .bg {
@@ -50,8 +51,9 @@ body {
   z-index: 9999;
   padding-bottom: 0.5rem;
   margin: 0 1rem 0.5rem 1rem;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-radius: 0.5rem 0.5rem 1rem 1rem;
+  /*border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;*/
 }
 
 #headerTop {
@@ -200,7 +202,7 @@ body {
   gap: 1rem;
   z-index: 0;
   font-family: var(--font-family);
-  font-weight: bold;
+
   margin-bottom: 10px;
 }
 
@@ -224,21 +226,19 @@ body {
 }
 
 .statTicker {
-  display: flex;
-  font-weight: bold;
-}
-
-.statTicker {
-  grid-row: span 2;
-  flex-direction: column;
-  margin: 0 1rem 0 0;
   grid-column: 5;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  /*font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';*/
+  color: var(--box-font-color);
+  background: var(--box-bg-color);
   align-items: center;
   justify-content: center;
+  margin: 0 1rem 0 0;
   padding: 0.5rem 0;
-
-  background: var(--box-bg-color);
-  color: var(--box-font-color);
   border-radius: 1rem;
 }
 

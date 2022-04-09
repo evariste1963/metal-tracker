@@ -1,4 +1,5 @@
 import { TIMEOUT_SEC } from './config';
+import forex from '../img/forex.webp ';
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -37,6 +38,9 @@ export let devData = {
   symbol: 'FOREXCOM:XAUGBP',
   timestamp: 1648737132,
 };
+
+devData.forex = forex;
+console.log(devData);
 //--------------------------------------------
 
 export const AJAX = async function (url, requestOptions) {
