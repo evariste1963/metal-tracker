@@ -10,11 +10,17 @@ class StatisticDataView extends View {
       ? `
     <H1 ><span>Spot details</span><br></H1><br>
        <div id= statBox>
-    <div id=openPrice >Day Open:<span>${result.open_price}</span></div>
-    <div id=high>Day high:<span>${result.high_price}</span></div>
-    <div id=low>Day low:<span>${result.low_price}</span></div>
-    <div id=buy>Buy:<span>${result.ask}</span></div>
-    <div id=sell>Sell:<span>${result.bid}</span></div>
+    <div id=openPrice >Day Open:<span>${parseFloat(result.open_price).toFixed(
+      2
+    )}</span></div>
+    <div id=high>Day high:<span>${parseFloat(result.high_price).toFixed(
+      2
+    )}</span></div>
+    <div id=low>Day low:<span>${parseFloat(result.low_price).toFixed(
+      2
+    )}</span></div>
+    <div id=buy>Buy:<span>${parseFloat(result.ask).toFixed(2)}</span></div>
+    <div id=sell>Sell:<span>${parseFloat(result.bid).toFixed(2)}</span></div>
     <div id=P18K>18 carat/grm:<span>${result.price_gram_18k}</span></div>
     <div id=P20K>20 carat/grm:<span>${result.price_gram_20k}</span></div>
     <div id=P22K>22 carat/grm:<span>${result.price_gram_22k}</span></div>

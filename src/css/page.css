@@ -52,8 +52,6 @@ body {
   padding-bottom: 0.5rem;
   margin: 0 1rem 0.5rem 1rem;
   border-radius: 0.5rem 0.5rem 1rem 1rem;
-  /*border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;*/
 }
 
 #headerTop {
@@ -90,6 +88,7 @@ body {
 }
 
 .btnDiv {
+  display: flex;
   margin: auto 1rem auto auto;
   align-items: center;
 }
@@ -101,12 +100,11 @@ body {
   font-weight: 500;
   padding: 1rem 1rem;
   border-radius: 0.7rem;
-  margin: 0;
+  margin: auto 1rem;
   color: var(--gold-font-color);
   background-color: var(--secondary-bg-color);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
-  vertical-align: middle;
   transition: font-weight 0.2s linear;
 }
 
@@ -197,7 +195,7 @@ body {
 
 .page {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 1rem;
   z-index: 0;
@@ -226,7 +224,7 @@ body {
 }
 
 .statTicker {
-  grid-column: 5;
+  grid-column: span 2;
   grid-row: span 2;
   display: flex;
   flex-direction: column;
@@ -246,7 +244,7 @@ body {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 0.25rem;
-  padding: 0 2rem;
+
   align-items: center;
   font-size: 1.5rem;
 }
@@ -286,7 +284,7 @@ body {
 }
 
 .userStack {
-  grid-column: span 5;
+  grid-column: span 6;
   grid-row: span 2;
   border-radius: 1rem;
   background: var(--box-bg-color);
@@ -329,6 +327,15 @@ footer {
   height: 30%;
   width: 30%;
   fill: var(--secondary-bg-color);
+}
+
+@media screen and (max-width: 1250px) {
+  body {
+    font-size: 60%;
+  }
+  .container {
+    width: 100%;
+  }
 }
 
 @keyframes rotate {

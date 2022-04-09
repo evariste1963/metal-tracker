@@ -21,7 +21,6 @@ export let devData = {
   ch: 7.39,
   chp: 0.5,
   currency: 'GBP',
-  exchange: 'FOREXCOM',
   high_price: 1480.36,
   low_price: 1463.56,
   metal: 'XAU',
@@ -39,7 +38,8 @@ export let devData = {
   timestamp: 1648737132,
 };
 
-devData.forex = forex;
+devData.forex = forex; //add forex key to object and set to img path
+
 console.log(devData);
 //--------------------------------------------
 
@@ -57,6 +57,7 @@ export const AJAX = async function (url, requestOptions) {
       : result.metal === 'XAG'
       ? (result.metalTxt = 'Silver')
       : '';
+    result.forex = forex; // add forex key to object and set to img path
     return result;
   } catch (err) {
     throw err; //throw errror back
@@ -65,7 +66,7 @@ export const AJAX = async function (url, requestOptions) {
 
 //generate timeDate stamp
 export const getTimestamp = timestamp => {
-  let callDate = new Date(timestamp * 1000).toUTCString('en-uk', {
+  let callTimeStamp = new Date(timestamp * 1000).toUTCString('en-uk', {
     weekday: 'long',
     year: 'numeric',
     month: 'short',
@@ -88,7 +89,7 @@ export const getTimestamp = timestamp => {
     .toString()
     .padStart(2, 0)}:${secs.toString().padStart(2, 0)}`;
 */
-  return callDate;
+  return callTimeStamp;
 };
 
 //build this below from api historic data/csv file

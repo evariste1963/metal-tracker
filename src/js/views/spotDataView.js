@@ -33,13 +33,13 @@ class SpotDataView extends View {
         ? 'color: var(--price-up-color)'
         : 'color: var(--price-drop-color)';
 
-    result.exchange == 'FOREXCOM'
-      ? (result.exchange = `<img id=forex src=${result.forex}alt='forex' width='120' height='20' />`)
-      : result.exchange;
+    result.exchange === 'FOREXCOM'
+      ? (result.srcExchange = `<img id=forex src=${result.forex} alt='forex' width='120' height='20' />`) //use forex img from adjusted result object
+      : (result.srcExchange = result.exchange);
 
     return !result.date
       ? `
-    <div id='metalCur'>${result.exchange}  - ${result.metal} / ${result.metalTxt} - ${result.currency} / oz</div>
+    <div id='metalCur'>${result.srcExchange}  - ${result.metal} / ${result.metalTxt} - ${result.currency} / oz</div>
     <div id= spotBox>
     <div id=spotItems style='${dayChange}'>
     <p id=spotPrice >${result.price}</p>
