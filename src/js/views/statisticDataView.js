@@ -15,6 +15,10 @@ class StatisticDataView extends View {
     <div id=low>Day low:<span>${result.low_price}</span></div>
     <div id=buy>Buy:<span>${result.ask}</span></div>
     <div id=sell>Sell:<span>${result.bid}</span></div>
+    <div id=P18K>18K/grm:<span>${result.price_gram_18k}</span></div>
+    <div id=P20K>20K/grm:<span>${result.price_gram_20k}</span></div>
+    <div id=P22K>22K/grm:<span>${result.price_gram_22k}</span></div>
+    <div id=P24K>24K/grm:<span>${result.price_gram_22k}</span></div>
     </div>
     `
       : console.log(`

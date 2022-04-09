@@ -6,6 +6,7 @@
   --price-up-color: rgb(10, 92, 10);
   --price-drop-color: rgb(199, 15, 15);
   --font-family: Ink free, cursive, sans-serif;
+  --page-width: 85%;
 }
 
 * {
@@ -33,9 +34,11 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: var(--page-width);
   min-height: 90vh;
-  margin: 0 auto;
+  margin-bottom: 8px;
+  border-left: solid 8px var(--secondary-bg-color);
+  border-right: solid 8px var(--secondary-bg-color);
   justify-content: center;
   text-align: center;
 }
@@ -43,10 +46,12 @@ body {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   z-index: 9999;
   padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0 1rem 0.5rem 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 #headerTop {
@@ -112,55 +117,14 @@ body {
 #spotRunner {
   display: flex;
   flex-direction: row;
-  width: 85%;
   justify-content: left;
   z-index: 999;
-  color: #000;
+  color: rgba(33, 32, 32, 0.8);
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   font-size: 1.5rem;
-  padding: 0 1rem;
+  margin: 0 2rem;
   border: solid 1px var(--secondary-bg-color);
   border-radius: 5%/100%;
-}
-
-.page {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 1rem;
-  width: 85%;
-  z-index: 0;
-  font-family: var(--font-family);
-  font-weight: bold;
-  border-left: solid 10px rgba(255, 255, 255, 0.6);
-  border-right: solid 10px rgba(255, 255, 255, 0.6);
-  margin-bottom: 10px;
-}
-
-#chart {
-  min-height: 24rem;
-}
-
-.chartArea {
-  padding: 0 0 0 1rem;
-  grid-column: span 4;
-  grid-row: span 2;
-  width: 100%;
-}
-
-.apexcharts-canvas {
-  margin: 0 auto;
-  padding: 1rem 0 1rem 0;
-  background: var(--box-bg-color);
-  border-radius: 1rem;
-  width: 100%;
-}
-
-.spotTicker,
-.statTicker {
-  display: flex;
-
-  font-weight: bold;
 }
 
 .spotTicker {
@@ -169,29 +133,8 @@ body {
   padding: 0.5rem;
   align-items: center;
   justify-content: center;
-}
-
-.statTicker {
-  grid-row: span 2;
-  flex-direction: column;
-  margin: 0 1rem 0 0;
-  grid-column: 5;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0;
-
-  background: var(--box-bg-color);
-  color: var(--box-font-color);
-  border-radius: 1rem;
-}
-
-#statBox {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.25rem;
-  padding: 0 2rem;
-  align-items: center;
-  font-size: 1.5rem;
+  display: flex;
+  font-weight: bold;
 }
 
 #spotBox {
@@ -204,6 +147,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 #spotPrice {
@@ -234,6 +178,7 @@ body {
 #change {
   display: block;
   padding-left: 0.5rem;
+  text-align: left;
 }
 
 #changeV {
@@ -248,11 +193,73 @@ body {
   font-size: 1.5rem;
 }
 
+.page {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  z-index: 0;
+  font-family: var(--font-family);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#chart {
+  min-height: 24rem;
+}
+
+.chartArea {
+  padding: 0 0 0 1rem;
+  grid-column: span 4;
+  grid-row: span 2;
+  width: 100%;
+}
+
+.apexcharts-canvas {
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  background: var(--box-bg-color);
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.statTicker {
+  display: flex;
+  font-weight: bold;
+}
+
+.statTicker {
+  grid-row: span 2;
+  flex-direction: column;
+  margin: 0 1rem 0 0;
+  grid-column: 5;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+
+  background: var(--box-bg-color);
+  color: var(--box-font-color);
+  border-radius: 1rem;
+}
+
+#statBox {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.25rem;
+  padding: 0 2rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
 #buy,
 #sell,
 #high,
 #low,
 #openPrice,
+#P18K,
+#P20K,
+#P22K,
+#P24K,
 .changeP,
 .changeV {
   /*font-size: 1rem;*/
@@ -263,7 +270,11 @@ body {
 #high,
 #low,
 #buy,
-#sell {
+#sell,
+#P18K,
+#P20K,
+#P22K,
+#P24K {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: right;
