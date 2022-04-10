@@ -12,7 +12,7 @@ class SpotDataView extends View {
     statisticDataView.renderData(statMarkUp);
 
     const dateTime = getTimestamp(
-      result.date ? result.timestamp / 1000 : result.timestamp
+      result.date ? result.timestamp : result.timestamp
     );
 
     const changeValue = (result.price - result.prev_close_price).toFixed(2);

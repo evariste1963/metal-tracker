@@ -11,7 +11,7 @@ const timeout = function (s) {
 
 //---devdata only --- to be deleted\\
 export let devData = {
-  timestamp: 1648737132,
+  timestamp: 1662832170,
   metal: 'XAU',
   currency: 'GBP',
   exchange: 'FOREXCOM',
@@ -35,7 +35,7 @@ export let devData = {
   price_gram_22k: 43.5822,
   price_gram_24k: 47.5442,
   symbol: 'FOREXCOM:XAUGBP',
-  timestamp: 1648737132,
+  timestamp: 1662832170,
 };
 
 devData.forex = forex; //add forex key to object and set to img path
@@ -66,15 +66,13 @@ export const AJAX = async function (url, requestOptions) {
 
 //generate timeDate stamp
 export const getTimestamp = timestamp => {
-  let callTimeStamp = new Date(timestamp * 1000).toUTCString('en-uk', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-  });
+  let callTimeStamp = new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'full',
+    timeStyle: 'long',
+  })
+    .format(timestamp * 1000)
+    .replace(' at', '');
+  console.log(callTimeStamp);
   /*let date = new Date(timestamp * 1000);
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
