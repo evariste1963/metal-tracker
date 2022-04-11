@@ -67,8 +67,8 @@ export const AJAX = async function (url, requestOptions) {
 //generate timeDate stamp
 export const getTimestamp = timestamp => {
   let callTimeStamp = new Intl.DateTimeFormat('en-GB', {
-    dateStyle: 'full',
-    timeStyle: 'long',
+    dateStyle: 'short',
+    timeStyle: 'short',
   })
     .format(timestamp * 1000)
     .replace(' at', '');

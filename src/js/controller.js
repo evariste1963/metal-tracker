@@ -3,7 +3,7 @@ import * as model from './model.js';
 import addStackView from './views/addStackView.js';
 import spotDataView from './views/spotDataView.js';
 import statisticDataView from './views/statisticDataView.js';
-import accUpdateView from './views/accUpdateView.js';
+import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
 
 const btnUpdate = document.querySelector('.btn-update');
@@ -34,10 +34,12 @@ async function controlGetMetalPrice() {
 
 async function controlGetAccountUpdate() {
   try {
-    accUpdateView.renderSpinner();
+    accountUpdateView.renderSpinner();
     //await account update;
-    let markUp = await model.getAccountUpdate();
-    accUpdateView.renderData(markUp);
+    let markUp = await accountUpdateView._generateAccMarkup(
+      await model.getAccountUpdate()
+    );
+    accountUpdateView.renderData(markUp);
   } catch (err) {
     console.error(err);
   }
