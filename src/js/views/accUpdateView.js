@@ -1,18 +1,23 @@
 import View from './view';
 
 class AccountUpdateView extends View {
-  _parentElement = document.querySelector('.userStack'); //add new element box and use this as parent.
-  _errorMessage = 'No data found for your query! Please try again ;)';
+  _parentElement = document.querySelector('accStatus');
+  _errorMessage = 'No account data found for your query! Please try again ;)';
   _message = '';
 
   _generateAccMarkup(result) {
     return `
-       <div>
-      <H1 >account details</span><br>
-      <div> ${result.requests_today}</div>
-      <div> ${result.requests_yesterday}</div>
-      <div> ${result.requests_month}</div>
-      <div> ${result.requests_last_month}</div>
+       <div id='accBox'>
+        <H1 >account status</span><br>
+        <div id='accDetails'
+          <p> Requests today: <span>${result.requests_today}</span></p>
+          <p> Requests remaining this month: <span>${
+            500 - result.requests_month
+          }</span></p>
+          <p> Requests last month: <span>${
+            result.requests_last_month
+          }</span></p></p>
+        </div>
       </div>
       </H1>
       `;
