@@ -39,8 +39,14 @@ export let devData = {
 };
 
 devData.forex = forex; //add forex key to object and set to img path
-
 console.log(devData);
+
+export let devAccount = {
+  requests_today: 16,
+  requests_yesterday: 31,
+  requests_month: 290,
+  requests_last_month: 347,
+};
 //--------------------------------------------
 
 export const AJAX = async function (url, requestOptions) {
@@ -67,8 +73,8 @@ export const AJAX = async function (url, requestOptions) {
 //generate timeDate stamp
 export const getTimestamp = timestamp => {
   let callTimeStamp = new Intl.DateTimeFormat('en-GB', {
-    dateStyle: 'short',
-    timeStyle: 'short',
+    dateStyle: 'full',
+    timeStyle: 'long',
   })
     .format(timestamp * 1000)
     .replace(' at', '');

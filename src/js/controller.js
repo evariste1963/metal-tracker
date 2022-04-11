@@ -12,6 +12,8 @@ const candleChart = document.querySelector('#chart');
 ////===developement result --- TO BE DELETED---\\\
 let markUp = spotDataView._generateSpotMarkup(helpers.devData);
 spotDataView.renderData(markUp);
+let accMarkUp = accountUpdateView._generateAccMarkup(helpers.devAccount);
+accountUpdateView.renderData(accMarkUp);
 //=======================================\\
 
 //get default chart

@@ -4,8 +4,7 @@ export const TIMEOUT_SEC = 20;
 export const metal = 'XAU';
 export const currency = 'GBP';
 export const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
-
-
+export const requestLimit = 500;
 
 //console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
 

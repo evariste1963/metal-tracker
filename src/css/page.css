@@ -1,8 +1,8 @@
 :root {
   --gold-font-color: rgb(221, 189, 7);
-  --box-font-color: rgb(53, 50, 50);
+  --box-font-color: rgb(44, 42, 42);
   --secondary-bg-color: rgba(95, 14, 14, 1);
-  --box-bg-color: rgba(209, 204, 204, 0.6);
+  --box-bg-color: rgba(209, 204, 204, 0.8);
   --price-up-color: rgb(10, 92, 10);
   --price-drop-color: rgb(199, 15, 15);
   --font-family: Ink free, cursive, sans-serif;
@@ -102,7 +102,7 @@ body {
   padding: 1rem 1rem;
   border-radius: 0.7rem;
   margin: auto 1rem;
-  color: var(--gold-font-color);
+  color: #fff;
   background-color: var(--secondary-bg-color);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
@@ -196,7 +196,7 @@ body {
 
 #accStatus {
   display: flex;
-  background: var(--box-bg-color);
+  background: var(--secondary-bg-color);
   padding: 0.5rem;
   margin: 0 1rem 0.5rem 1rem;
   border-radius: 1rem 1rem 1rem 1rem;
@@ -207,6 +207,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  color: #fff;
+  font-size: 1.25rem;
 }
 
 .page {
