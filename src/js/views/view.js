@@ -45,7 +45,7 @@ export default class View {
               </svg>
             </div>
             <p>${message}</p>
-          </div>
+            </div>
   `;
     this._clear(); //clear out HTML container
     this._parentElement.insertAdjacentHTML('afterbegin', markup);

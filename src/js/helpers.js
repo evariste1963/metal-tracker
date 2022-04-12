@@ -1,6 +1,7 @@
 import { TIMEOUT_SEC } from './config';
 import forex from '../img/forex.webp ';
 
+//re-useable timeout function
 const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
@@ -80,21 +81,7 @@ export const getTimestamp = timestamp => {
   })
     .format(timestamp * 1000)
     .replace(' at', '');
-  console.log(callTimeStamp);
-  /*let date = new Date(timestamp * 1000);
-  let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
-  let hours = date.getHours();
-  let mins = date.getMinutes();
-  let secs = date.getSeconds();
 
-  let callDate = `${year}-${month.toString().padStart(2, 0)}-${day
-    .toString()
-    .padStart(2, 0)} ${hours.toString().padStart(2, 0)}:${mins
-    .toString()
-    .padStart(2, 0)}:${secs.toString().padStart(2, 0)}`;
-*/
   return callTimeStamp;
 };
 
