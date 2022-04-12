@@ -35,10 +35,10 @@ export let devData = {
   price_gram_22k: 43.5822,
   price_gram_24k: 47.5442,
   symbol: 'FOREXCOM:XAUGBP',
-  timestamp: 1662832170,
 };
 
 devData.forex = forex; //add forex key to object and set to img path
+devData.timestamp = Date.now() / 1000;
 console.log(devData);
 
 export let devAccount = {

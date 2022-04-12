@@ -199,6 +199,7 @@ body {
   background: var(--secondary-bg-color);
   padding: 0.5rem;
   margin: 0 1rem 0.5rem 1rem;
+  border: solid 2px var(--box-bg-color);
   border-radius: 1rem 1rem 1rem 1rem;
 }
 
