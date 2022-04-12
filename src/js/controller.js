@@ -58,7 +58,7 @@ const controlStackModal = function (e) {
 
 btnUpdate.addEventListener('click', async () => {
   await controlGetMetalPrice();
-  controlGetAccountUpdate();
+  setTimeout(controlGetAccountUpdate(), 6000);
 });
 
 //immediately pass controls to Views on startup (subscriber/publisher)
