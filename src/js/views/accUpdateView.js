@@ -3,7 +3,7 @@ import View from './view';
 
 class AccountUpdateView extends View {
   _parentElement = document.querySelector('#accStatus');
-  _errorMessage = 'No account data found for your query! Please try again ;)';
+  _errorMessage = 'Account data could not be found! Please try again later';
   _message = 'updating account status, please wait...';
 
   _generateAccMarkup(result) {

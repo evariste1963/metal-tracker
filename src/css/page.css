@@ -112,7 +112,8 @@ body {
 .btn-update:hover,
 .btn-stack:hover {
   font-weight: 800;
-  background-color: #5f0e0ee6;
+  color: var(--gold-font-color);
+  background-color: var(--box-font-color);
 }
 
 #spotRunner {
@@ -124,7 +125,7 @@ body {
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   font-size: 1.5rem;
   margin: 0 2rem;
-  border: solid 1px var(--secondary-bg-color);
+  border: solid 2px var(--secondary-bg-color);
   border-radius: 5%/100%;
 }
 
@@ -136,6 +137,8 @@ body {
   justify-content: center;
   display: flex;
   font-weight: bold;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  font-size: 1.5rem;
 }
 
 #spotBox {
