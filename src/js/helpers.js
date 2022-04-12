@@ -9,6 +9,7 @@ const timeout = function (s) {
   });
 };
 
+//////////////////////////////////////////////////////////////////////////////////
 //---devdata only --- to be deleted\\
 export let devData = {
   timestamp: 1662832170,
@@ -48,6 +49,7 @@ export let devAccount = {
   requests_last_month: 347,
 };
 //--------------------------------------------
+/////////////////////////////////////////////////////////// DELETE DEVdATA BLOCK//////////////
 
 export const AJAX = async function (url, requestOptions) {
   try {
