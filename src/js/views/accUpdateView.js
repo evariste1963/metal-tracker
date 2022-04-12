@@ -7,6 +7,11 @@ class AccountUpdateView extends View {
   _message = 'updating account status, please wait...';
 
   _generateAccMarkup(result) {
+    let updated = new Intl.DateTimeFormat('en-GB', {
+      dateStyle: 'short',
+      timeStyle: 'long',
+    }).format(new Date());
+
     return `
        <div id='accBox'>
        <p> Request Limit/month: <span>${requestLimit}</span></p>
@@ -16,7 +21,9 @@ class AccountUpdateView extends View {
           }</span></p>
           <p> Requests last month: <span>${
             result.requests_last_month
-          }</span></p>
+          }</span></p><p> Last updated: <span>
+            ${updated}
+          </span></p>
           </div>
         `;
   }
