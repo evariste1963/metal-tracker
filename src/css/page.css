@@ -1,7 +1,7 @@
 :root {
   --gold-font-color: rgb(221, 189, 7);
   --box-font-color: rgb(4, 2, 40);
-  --secondary-bg-color: rgb(7, 7, 128);
+  --secondary-bg-color: rgba(7, 7, 128, 0.8);
   --box-bg-color: rgba(209, 204, 204, 0.8);
   --price-up-color: rgb(10, 92, 10);
   --price-drop-color: rgb(199, 15, 15);
@@ -48,10 +48,11 @@ body {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--secondary-bg-color);
   z-index: 9999;
   padding-bottom: 0.5rem;
   margin: 0 1rem 0.5rem 1rem;
+  border: solid 2px var(--box-bg-color);
   border-radius: 0.5rem 0.5rem 1rem 1rem;
 }
 
@@ -85,6 +86,7 @@ body {
   font-style: italic;
   font-size: 4rem;
   font-weight: 800;
+  color: #fff;
   /*text-shadow: 2px 2px var(--gold-font-color);*/
 }
 
@@ -98,12 +100,12 @@ body {
 .btn-stack {
   border: none;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   padding: 1rem 1rem;
   border-radius: 0.7rem;
   margin: auto 1rem;
-  color: #fff;
-  background-color: var(--secondary-bg-color);
+  color: var(--secondary-bg-color);
+  background-color: rgba(255, 255, 255, 1);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
   transition: font-weight 0.2s linear;
@@ -111,9 +113,9 @@ body {
 
 .btn-update:hover,
 .btn-stack:hover {
-  font-weight: 800;
-  color: var(--gold-font-color);
-  background-color: var(--box-font-color);
+  font-weight: bold;
+  color: #000;
+  /*background-color: rgb(234, 236, 244);*/
 }
 
 #spotRunner {
@@ -124,6 +126,7 @@ body {
   color: rgba(33, 32, 32, 0.8);
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   font-size: 1.5rem;
+  background: #fff;
   margin: 0 2rem;
   border: solid 2px var(--secondary-bg-color);
   border-radius: 5%/100%;
@@ -251,6 +254,7 @@ body {
   margin: 0 auto;
   padding: 1rem 0 1rem 0;
   background: var(--box-bg-color);
+  border: solid 2px var(--secondary-bg-color);
   border-radius: 1rem;
   width: 100%;
 }
@@ -269,6 +273,7 @@ body {
   justify-content: center;
   margin: 0 1rem 0 0;
   padding: 0.5rem 0;
+  border: solid 2px var(--secondary-bg-color);
   border-radius: 1rem;
 }
 
@@ -304,6 +309,7 @@ body {
 .userStack {
   grid-column: 1 /7;
   grid-row: 2 / 3;
+  border: solid 2px var(--secondary-bg-color);
   border-radius: 1rem;
   background: var(--box-bg-color);
   margin: 0 1rem;
