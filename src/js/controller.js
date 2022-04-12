@@ -56,8 +56,8 @@ const controlStackModal = function (e) {
 
 //-- All EventListeners --\\
 
-btnUpdate.addEventListener('click', () => {
-  controlGetMetalPrice();
+btnUpdate.addEventListener('click', async () => {
+  await controlGetMetalPrice();
   controlGetAccountUpdate();
 });
 

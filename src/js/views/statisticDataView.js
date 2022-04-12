@@ -3,7 +3,7 @@ import View from './view';
 class StatisticDataView extends View {
   _parentElement = document.querySelector('.statTicker');
   _errorMessage = 'No statistics found for your query! Please try again ;)';
-  _message = '';
+  _message = 'fetching data, please wait...';
 
   _generateStatMarkup(result) {
     return !result.date

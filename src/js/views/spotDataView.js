@@ -5,7 +5,7 @@ import statisticDataView from './statisticDataView';
 class SpotDataView extends View {
   _parentElement = document.querySelector('.spotTicker');
   _errorMessage = 'No data found for your query! Please try again ;)';
-  _message = '';
+  _message = 'fetching data, please wait..';
 
   _generateSpotMarkup(result) {
     let statMarkUp = statisticDataView._generateStatMarkup(result);

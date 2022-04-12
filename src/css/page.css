@@ -201,15 +201,15 @@ body {
   margin: 0 1rem 0.5rem 1rem;
   border: solid 2px var(--box-bg-color);
   border-radius: 1rem 1rem 1rem 1rem;
+  color: #fff;
+  font-size: 1.25rem;
 }
 
 #accBox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-  color: #fff;
-  font-size: 1.25rem;
+  width: 100%;  
 }
 
 .page {
