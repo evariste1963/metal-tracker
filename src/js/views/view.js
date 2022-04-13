@@ -7,7 +7,7 @@ export default class View {
     const markup = `
                 <div class="spinner">
                   <svg>
-                    <use href="${icons}#icon-loader"></use>
+                    <use href="${icons}#icon-loader" ></use>
                   </svg>
                   <p> ${this._message}</p>
                 </div>
@@ -24,7 +24,7 @@ export default class View {
   renderError(message = this._errorMessage) {
     const markup = `
   <div class="error">
-            <div>
+            <div class = 'svgBox'>
               <svg>
                 <use href="${icons}#icon-alert-triangle"></use>
               </svg>

@@ -1,6 +1,6 @@
 export const API_KEY = 'goldapi-15j9sm18l0w7rfer-io';
 export const API_URL = 'https://www.goldapi.io/api';
-export const TIMEOUT_SEC = 20;
+export const TIMEOUT_SEC = 10;
 export const metal = 'XAU';
 export const currency = 'GBP';
 export const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'

@@ -215,11 +215,6 @@ body {
   color: #fff;
   font-size: 1rem;
 }
-/*
-#accStatus svg {
-  width: 20% !important;
-  height: 20% !important;
-}*/
 
 #accBox {
   display: flex;
@@ -346,11 +341,27 @@ footer {
   fill: #736563;
   animation: rotate 2s infinite linear;
 }
+/*
+.error{
+  width:50%;
+  height:50%;
+  /*
+#accStatus svg {
+  width: 20% !important;
+  height: 20% !important;
+}
+}
+*/
+
 
 .error svg {
-  height: 30%;
-  width: 30%;
+  width: 20% !important;
+  height: 20% !important;
   fill: var(--secondary-bg-color);
+}
+
+#accStatus svg {
+  fill: #fff;
 }
 
 @media screen and (max-width: 1250px) {
