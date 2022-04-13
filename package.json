@@ -1,5 +1,5 @@
 {
-   "name": "metalsapi",
+   "name": "stackersapi",
    "version": "1.0.0",
    "main": "scripts.js",
    "scripts": {
@@ -8,14 +8,14 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/evariste1963/metal-tracker.git"
+      "url": "https://github.com/evariste1963/stackersApi.git"
    },
    "author": "this.me",
    "license": "ISC",
    "bugs": {
-      "url": "https://github.com/evariste1963/metal-tracker/issues"
+      "url": "https://github.com/evariste1963/stackersApi/issues"
    },
-   "homepage": "https://github.com/evariste1963/metal-tracker#readme",
+   "homepage": "https://github.com/evariste1963/stackersApi#readme",
    "description": "",
    "devDependencies": {
       "@parcel/transformer-image": "^2.0.0-rc.0",
