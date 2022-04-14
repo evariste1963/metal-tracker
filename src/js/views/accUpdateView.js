@@ -8,8 +8,8 @@ class AccountUpdateView extends View {
 
   _generateAccMarkup(result) {
     let updated = new Intl.DateTimeFormat('en-GB', {
-      dateStyle: 'short',
-      timeStyle: 'long',
+      dateStyle: 'long',
+      timeStyle: 'medium',
     }).format(new Date());
 
     return `
