@@ -1,4 +1,5 @@
 import icons from 'url:../../img/icons.svg';
+import spinner from '../../img/Spinner-1s-200px.svg';
 export default class View {
   _clear() {
     this._parentElement.innerHTML = ''; //clear out HTML container
@@ -6,9 +7,10 @@ export default class View {
   renderSpinner() {
     const markup = `
                 <div class="spinner">
-                  <svg>
-                    <use href="${icons}#icon-loader" ></use>
-                  </svg>
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                  <!-- ><svg>
+                    <use href="${spinner} ></use>
+                  </svg> -->
                   <p> ${this._message}</p>
                 </div>
         `;
