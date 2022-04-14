@@ -7,7 +7,8 @@ export default class View {
   renderSpinner() {
     const markup = `
                 <div class="spinner">
-                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                <!-- <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> -->
                   <!-- ><svg>
                     <use href="${spinner} ></use>
                   </svg> -->
