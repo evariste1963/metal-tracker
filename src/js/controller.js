@@ -15,6 +15,11 @@ let markUp = spotDataView._generateSpotMarkup(helpers.devData);
 spotDataView.renderData(markUp);
 let accMarkUp = accountUpdateView._generateAccMarkup(helpers.devAccount);
 accountUpdateView.renderData(accMarkUp);
+/*
+spotDataView.renderSpinner();
+accountUpdateView.renderSpinner();
+statisticDataView.renderSpinner();
+*/
 //=======================================\\
 /////////////////////////////////////////////////////////////////////////
 

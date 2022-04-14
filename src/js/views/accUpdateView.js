@@ -10,7 +10,9 @@ class AccountUpdateView extends View {
     let updated = new Intl.DateTimeFormat('en-GB', {
       dateStyle: 'long',
       timeStyle: 'medium',
-    }).format(new Date());
+    })
+      .format(new Date())
+      .replace(' at', ' @');
 
     return `
        <div id='accBox'>
