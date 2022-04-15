@@ -1,7 +1,12 @@
 :root {
   --gold-font-color: rgb(221, 189, 7);
   --box-font-color: rgb(4, 3, 19);
-  --secondary-bg-color: rgba(7, 7, 128, 0.8);
+  --secondary-bg-color: linear-gradient(
+    to bottom,
+    rgba(7, 7, 128, 0.8),
+    rgba(3, 3, 57, 0.8)
+  );
+  --box-border: rgba(5, 5, 93, 0.8);
   --box-bg-color: rgba(209, 204, 204, 0.8);
   --price-up-color: rgb(10, 92, 10);
   --price-drop-color: rgb(199, 15, 15);
@@ -39,8 +44,8 @@ body {
   width: var(--page-width);
   min-height: 90vh;
   margin-bottom: 8px;
-  border-left: solid 8px var(--secondary-bg-color);
-  border-right: solid 8px var(--secondary-bg-color);
+  border-left: solid 8px var(--box-border);
+  border-right: solid 8px var(--box-border);
   justify-content: center;
   text-align: center;
 }
@@ -128,7 +133,7 @@ body {
   font-size: 1.5rem;
   background: #fff;
   margin: 0 2rem;
-  border: solid 2px var(--secondary-bg-color);
+  border: solid 2px var(--box-border);;
   border-radius: 5%/100%;
 }
 
@@ -250,7 +255,7 @@ body {
   margin: 0 auto;
   padding: 1rem 0 1rem 0;
   background: var(--box-bg-color);
-  border: solid 2px var(--secondary-bg-color);
+  border: solid 2px var(--box-border);;
   border-radius: 1rem;
   width: 100%;
 }
@@ -267,7 +272,7 @@ body {
   justify-content: center;
   margin: 0 1rem 0 0;
   padding: 0.5rem 0;
-  border: solid 2px var(--secondary-bg-color);
+  border: solid 2px var(--box-border);
   border-radius: 1rem;
 }
 
@@ -303,7 +308,7 @@ body {
 .userStack {
   grid-column: 1 /7;
   grid-row: 2 / 3;
-  border: solid 2px var(--secondary-bg-color);
+  border: solid 2px var(--box-border);
   border-radius: 1rem;
   background: var(--box-bg-color);
   margin: 0 1rem;
