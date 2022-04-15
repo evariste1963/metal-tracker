@@ -118,8 +118,8 @@ body {
 
 .btn-update:hover,
 .btn-stack:hover {
-  font-weight: bold;
-  color: var(--secondary-bg-color);
+  font-weight: 900;
+  color: rgba(7, 7, 128, 0.8);
   /*background-color: rgb(234, 236, 244);*/
 }
 
@@ -133,17 +133,17 @@ body {
   font-size: 1.5rem;
   background: #fff;
   margin: 0 2rem;
-  border: solid 2px var(--box-border);;
+  border: solid 2px var(--box-border);
   border-radius: 5%/100%;
 }
 
 .spotTicker {
+  display: flex;
   width: 100%;
   z-index: 999;
   padding: 0.5rem;
   align-items: center;
   justify-content: center;
-  display: flex;
   font-weight: bold;
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   font-size: 1.5rem;
@@ -255,7 +255,7 @@ body {
   margin: 0 auto;
   padding: 1rem 0 1rem 0;
   background: var(--box-bg-color);
-  border: solid 2px var(--box-border);;
+  border: solid 2px var(--box-border);
   border-radius: 1rem;
   width: 100%;
 }

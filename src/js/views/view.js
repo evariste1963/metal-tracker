@@ -5,6 +5,7 @@ export default class View {
     this._parentElement.innerHTML = ''; //clear out HTML container
   }
   renderSpinner() {
+    this._clear();
     const markup = `
                 <div class="spinner">
                 <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
