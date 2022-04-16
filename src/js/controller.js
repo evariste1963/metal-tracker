@@ -5,6 +5,7 @@ import statisticDataView from './views/statisticDataView.js';
 import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
 import { chart } from './charts.js';
+//import { chart } from './stockChart.js';
 
 const btnUpdate = document.querySelector('.btn-update');
 
