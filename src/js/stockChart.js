@@ -1,10 +1,13 @@
 import ApexCharts from 'apexcharts';
+import { metal } from './config.js';
 
 //const _stockChart = document.querySelector('#chart');
 
 var options = {
   series: [
     {
+      name: metal,
+
       data: [
         [1327359600000, 30.95],
         [1327446000000, 31.34],
@@ -287,7 +290,7 @@ var options = {
   chart: {
     id: 'area-datetime',
     type: 'area',
-    height: 350,
+    height: '100%',
     zoom: {
       autoScaleYaxis: true,
     },
@@ -309,7 +312,7 @@ var options = {
     ],
     xaxis: [
       {
-        x: new Date('14 Nov 2012').getTime(),
+        x: new Date('14 Nov 2012').getTime(), /// USE ACTUAL DATA HERE
         borderColor: '#999',
         yAxisIndex: 0,
         label: {
@@ -332,7 +335,7 @@ var options = {
   },
   xaxis: {
     type: 'datetime',
-    min: new Date('01 Mar 2012').getTime(),
+    min: new Date('01 Mar 2012').getTime(), //--USE ACTUAL DATA HERE
     tickAmount: 6,
   },
   tooltip: {
@@ -351,9 +354,4 @@ var options = {
   },
 };
 
-export var chart = new ApexCharts(
-  document.querySelector('#chart-timeline'),
-  options
-);
-
-
+export var chart = new ApexCharts(document.querySelector('#chart'), options);
