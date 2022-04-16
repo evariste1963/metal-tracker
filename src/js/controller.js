@@ -1,13 +1,12 @@
-import ApexCharts from 'apexcharts';
 import * as model from './model.js';
 import addStackView from './views/addStackView.js';
 import spotDataView from './views/spotDataView.js';
 import statisticDataView from './views/statisticDataView.js';
 import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
+import { chart } from './charts.js';
 
 const btnUpdate = document.querySelector('.btn-update');
-const candleChart = document.querySelector('#chart');
 
 ///////////////////////////////////////////////////////////////////////
 ////===developement result --- TO BE DELETED---\\\
@@ -23,8 +22,6 @@ statisticDataView.renderSpinner();
 //=======================================\\
 /////////////////////////////////////////////////////////////////////////
 
-//get default chart
-var chart = new ApexCharts(candleChart, helpers.options);
 //render chart
 chart.render();
 //get metal price on 'get latest price' button
