@@ -1,5 +1,6 @@
 import ApexCharts from 'apexcharts';
 import { metal } from '../config.js';
+import csvData from '../readCsv.js';
 
 //const _stockChart = document.querySelector('#chart');
 

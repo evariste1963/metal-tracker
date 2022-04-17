@@ -1,14 +1,11 @@
-//npm install csv-parser
-/// try papa-parse!!!!!!!!!!!!!!!!!
+Papa.parse('goldpricessince1978.csv', {
+  download: true,
+  header: true,
+  delimiter: ',',
+  complete: function (results) {
+    //console.log(results.data);
+    let array = results.data.map(Object.values);
 
-
-const csv = require('csv-parser');
-const fs = require('fs');
-const results = [];
-
-fs.createReadStream('goldpricessince1978.csv')
-  .pipe(csv({}))
-  .on('data', data => results.push(data))
-  .on('end', () => {
-    console.log(results);
-  });
+    console.log(array);
+  },
+});
