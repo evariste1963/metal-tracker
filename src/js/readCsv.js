@@ -9,16 +9,15 @@ fs.createReadStream('../docs/goldpricessince1978.csv')
     console.log(results);
   });*/
 
-export const csvData = function(){
+export const csvData = function () {
   Papa.parse('../docs/goldpricessince1978.csv', {
-  download: true,
-  header: true,
-  delimiter: ',',
-  complete: function (results) {
-    //console.log(results.data);
-    let array = results.data.map(Object.values);
-
-    console.log(array);
-    return array
-  },
-})};
+    download: true,
+    header: true,
+    delimiter: ',',
+    complete: function (results) {
+      let array = results.data.map(Object.values);
+      console.log(array);
+      return array;
+    },
+  });
+};

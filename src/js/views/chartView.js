@@ -8,7 +8,6 @@ var options = {
   series: [
     {
       name: metal,
-
       data: [
         [1327359600000, 30.95],
         [1327446000000, 31.34],

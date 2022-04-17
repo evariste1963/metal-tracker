@@ -1,29 +1,28 @@
 {
-   "name": "stackersapi",
-   "version": "1.0.0",
-   "main": "scripts.js",
-   "scripts": {
-      "start": "parcel index.html",
-      "build": "parcel build index.html  --dist-dir ./dist"
-   },
-   "repository": {
-      "type": "git",
-      "url": "https://github.com/evariste1963/stackersApi.git"
-   },
-   "author": "this.me",
-   "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/evariste1963/stackersApi/issues"
-   },
-   "homepage": "https://github.com/evariste1963/stackersApi#readme",
-   "description": "",
-   "devDependencies": {
-      "@parcel/transformer-image": "^2.0.0-rc.0",
-      "@parcel/transformer-sass": "^2.2.0",
-      "parcel": "^2.4.0"
-   },
-   "dependencies": {
-      "apexcharts": "^3.33.2",
-      "papaparse": "^5.3.2"
-   }
+  "name": "stackersapi",
+  "version": "1.0.0",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html  --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evariste1963/stackersApi.git"
+  },
+  "author": "this.me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evariste1963/stackersApi/issues"
+  },
+  "homepage": "https://github.com/evariste1963/stackersApi#readme",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.2.0",
+    "parcel": "^2.4.0"
+  },
+  "dependencies": {
+    "apexcharts": "^3.33.2"
+  }
 }
