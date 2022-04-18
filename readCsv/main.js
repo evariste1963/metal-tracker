@@ -15,7 +15,7 @@ console.log('main.js', csvDataArray);
 var options = {
   series: [
     {
-      data: csvDataArray,
+      data: csvDataArray
     },
   ],
   chart: {
