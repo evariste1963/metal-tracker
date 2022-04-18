@@ -1,21 +1,23 @@
 let csvDataArray = [];
 
-Papa.parse('goldpricessince1978.csv', {
-  download: true,
-  header: true,
-  delimiter: ',',
-  complete: function (results) {
-    //console.log(results.data);
-    //let array = results.data.map(Object.values);
-    csvDataArray.push(results.data);
-  },
-});
+function csvstuff() {
+  Papa.parse('goldpricessince1978.csv', {
+    download: true,
+    header: true,
+    delimiter: ',',
+    complete: function (results) {
+      //console.log(results.data);
+      //let array = results.data.map(Object.values);
+      csvDataArray.push(results.data);
+    },
+  });
+}
 console.log('main.js', csvDataArray);
 
 var options = {
   series: [
     {
-      data: csvDataArray
+      data: csvDataArray,
     },
   ],
   chart: {
@@ -86,7 +88,12 @@ var options = {
 };
 
 var chart = new ApexCharts(document.querySelector('#chart-timeline'), options);
-chart.render();
+
+async function runchart() {
+  await csvstuff();
+  await chart.render();
+}
+runchart();
 
 var resetCssClasses = function (activeEl) {
   var els = document.querySelectorAll('button');
