@@ -6,10 +6,9 @@ import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
 //import { chart } from './charts.js';
 import { chart } from './views/chartView';
-
+import csvData from './views/chartView.js';
 
 const btnUpdate = document.querySelector('.btn-update');
-
 
 ///////////////////////////////////////////////////////////////////////
 ////===developement result --- TO BE DELETED---\\\

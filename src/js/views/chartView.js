@@ -1,13 +1,30 @@
 import ApexCharts from 'apexcharts';
 import { metal } from '../config.js';
-import csvData from '../readCsv.js';
+//import { csvData } from '../readCsv.js';
+//import csvfile from '../../docs/goldpricessince1978.csv';
 
 //const _stockChart = document.querySelector('#chart');
+//console.log('chartView: ', csvDataArray);
+
+let csvDataArray = [];
+
+Papa.parse('../../docs/goldpricessince1978.csv', {
+  download: true,
+  header: true,
+  delimiter: ',',
+  complete: function (results) {
+    //console.log(results.data);
+    //let array = results.data.map(Object.values);
+    csvDataArray.push(results.data);
+  },
+});
+console.log('this chartView', csvDataArray);
 
 var options = {
   series: [
     {
       name: metal,
+      //csvDataArray,
       data: [
         [1327359600000, 30.95],
         [1327446000000, 31.34],

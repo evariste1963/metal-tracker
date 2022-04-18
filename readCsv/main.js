@@ -1,4 +1,5 @@
-let csvdataArray = [];
+let csvDataArray = [];
+
 Papa.parse('goldpricessince1978.csv', {
   download: true,
   header: true,
@@ -6,14 +7,15 @@ Papa.parse('goldpricessince1978.csv', {
   complete: function (results) {
     //console.log(results.data);
     //let array = results.data.map(Object.values);
-    csvdataArray.push(results.data);
-    console.log('this', csvdataArray);
+    csvDataArray.push(results.data);
   },
 });
+console.log('main.js', csvDataArray);
+
 var options = {
   series: [
     {
-      data: csvdataArray,
+      data: csvDataArray,
     },
   ],
   chart: {
