@@ -6,8 +6,15 @@ body {
 }
 
 .chart {
-  height: 800px;
-  width: 80%;
-  margin: 4rem auto;
+  height: 600px;
+  width: 1200px;
+  margin: auto auto;
+  justify-content: center;
   background: #fff;
+}
+
+#myChart {
+  height: 400px !important;
+  width: 1000px !important;
+  margin: auto;
 }
