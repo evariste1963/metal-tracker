@@ -1,158 +1,43 @@
-let csvDataArray = [];
-
-function csvstuff() {
-  Papa.parse('goldpricessince1978.csv', {
-    download: true,
-    header: true,
-    delimiter: ',',
-    complete: function (results) {
-      //console.log(results.data);
-      //let array = results.data.map(Object.values);
-      csvDataArray.push(results.data);
+'use strict';
+async function chartIt() {
+  await csvstuff('goldpricessince1978.csv');
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: xlabs,
+      datasets: [
+        {
+          label: 'gold price',
+          data: ylabs,
+          backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)'],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
     },
   });
 }
-console.log('main.js', csvDataArray);
+chartIt();
+const xlabs = [];
+const ylabs = [];
 
-var options = {
-  series: [
-    {
-      data: csvDataArray,
-    },
-  ],
-  chart: {
-    id: 'area-datetime',
-    type: 'area',
-    height: 350,
-    zoom: {
-      autoScaleYaxis: true,
-    },
-  },
-  annotations: {
-    yaxis: [
-      {
-        y: 30,
-        borderColor: '#999',
-        label: {
-          show: true,
-          text: 'Support',
-          style: {
-            color: '#fff',
-            background: '#00E396',
-          },
-        },
-      },
-    ],
-    xaxis: [
-      {
-        x: new Date('01 Jan 1979').getTime(),
-        borderColor: '#999',
-        yAxisIndex: 0,
-        label: {
-          show: true,
-          text: 'Rally',
-          style: {
-            color: '#fff',
-            background: '#775DD0',
-          },
-        },
-      },
-    ],
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  markers: {
-    size: 0,
-    style: 'hollow',
-  },
-  xaxis: {
-    type: 'datetime',
-    min: new Date('01 Mar 2021').getTime(),
-    tickAmount: 6,
-  },
-  tooltip: {
-    x: {
-      format: 'dd MMM yyyy',
-    },
-  },
-  fill: {
-    type: 'gradient',
-    gradient: {
-      shadeIntensity: 1,
-      opacityFrom: 0.7,
-      opacityTo: 0.9,
-      stops: [0, 100],
-    },
-  },
-};
-
-var chart = new ApexCharts(document.querySelector('#chart-timeline'), options);
-
-async function runchart() {
-  await csvstuff();
-  await chart.render();
-}
-runchart();
-
-var resetCssClasses = function (activeEl) {
-  var els = document.querySelectorAll('button');
-  Array.prototype.forEach.call(els, function (el) {
-    el.classList.remove('active');
+async function csvstuff(urlcsv) {
+  const response = await fetch(urlcsv);
+  const data = await response.text();
+  const table = data.split(/\r?\n/g).slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const day = columns[0];
+    xlabs.push(day);
+    const price = columns[1];
+    ylabs.push(price);
   });
-
-  activeEl.target.classList.add('active');
-};
-/*
-document.querySelector('#one_month').addEventListener('click', function (e) {
-  resetCssClasses(e);
-
-  chart.zoomX(
-    new Date('28 Jan 2013').getTime(),
-    new Date('27 Feb 2013').getTime()
-  );
-});
-
-document.querySelector('#six_months').addEventListener('click', function (e) {
-  resetCssClasses(e);
-
-  chart.zoomX(
-    new Date('27 Sep 2012').getTime(),
-    new Date('27 Feb 2013').getTime()
-  );
-});
-
-document.querySelector('#one_year').addEventListener('click', function (e) {
-  resetCssClasses(e);
-  chart.zoomX(
-    new Date('27 Feb 2012').getTime(),
-    new Date('27 Feb 2013').getTime()
-  );
-});
-
-document.querySelector('#ytd').addEventListener('click', function (e) {
-  resetCssClasses(e);
-
-  chart.zoomX(
-    new Date('01 Jan 2013').getTime(),
-    new Date('27 Feb 2013').getTime()
-  );
-});
-
-document.querySelector('#all').addEventListener('click', function (e) {
-  resetCssClasses(e);
-
-  chart.zoomX(
-    new Date('23 Jan 2012').getTime(),
-    new Date('27 Feb 2013').getTime()
-  );
-});
-*/
-/*
-[1327359600000, 30.95],
-        [1327446000000, 31.34],
-        [1327532400000, 31.18],
-        [1327618800000, 31.05],
-        [1327878000000, 31.0],
-        [1327964400000, 30.95],
-        */
+}
