@@ -1,19 +1,24 @@
 'use strict';
+
 async function chartIt(csvurl) {
-  await csvstuff(csvurl);
-  const ctx = document.getElementById('myChart').getContext('2d');
+  const ctx = document.getElementById('spotChart').getContext('2d');
+  Chart.defaults.font.size = 18;
+
+  const data = await csvstuff(csvurl);
+
   const myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: xlabs,
+      labels: data.xs,
       datasets: [
         {
           label: 'gold price',
-          data: ylabs,
-          backgroundColor: ['rgba(255, 99, 132, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)'],
+          data: data.ys,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(20, 20, 200, 1)',
           borderWidth: 1,
           fill: true,
+          tension: 0,
         },
       ],
     },
@@ -28,18 +33,20 @@ async function chartIt(csvurl) {
 }
 chartIt('goldpricessince1978.csv');
 
-const xlabs = [];
-const ylabs = [];
-
 async function csvstuff(urlcsv) {
+  const xs = [];
+  const ys = [];
+
   const response = await fetch(urlcsv);
   const data = await response.text();
   const table = data.split(/\r?\n/g).slice(1);
+
   table.forEach(row => {
     const columns = row.split(',');
     const day = columns[0];
-    xlabs.push(day);
+    xs.push(day);
     const price = columns[1];
-    ylabs.push(price);
+    ys.push(price);
   });
+  return { xs, ys };
 }
