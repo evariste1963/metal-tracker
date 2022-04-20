@@ -1,7 +1,7 @@
 {
   "name": "stackersapi",
   "version": "1.0.0",
-  "main": "scripts.js",
+  "default": "scripts.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html  --dist-dir ./dist"

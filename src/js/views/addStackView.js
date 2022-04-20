@@ -1,7 +1,7 @@
 import View from './view';
 
-modalWindow = document.querySelector('.add-stack-window');
-overlay = document.querySelector('.overlay');
+const modalWindow = document.querySelector('.add-stack-window');
+const overlay = document.querySelector('.overlay');
 const modal = document.querySelectorAll('.modal');
 
 class AddStackView extends View {
