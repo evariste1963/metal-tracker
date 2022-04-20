@@ -40,13 +40,16 @@ async function csvstuff(urlcsv) {
   const response = await fetch(urlcsv);
   const data = await response.text();
   const table = data.split(/\r?\n/g).slice(1);
-  console.log(table);
+  //console.log(table);
   table.forEach(row => {
     const columns = row.split(',');
     const day = columns[0];
     xs.push(day);
-    const price = columns[1];
+
+    const price = row.substring(row.indexOf(',') + 1).replaceAll('"', '');
+    //console.log(day, price);
     ys.push(price);
   });
+  console.log(xs, ys);
   return { xs, ys };
 }
