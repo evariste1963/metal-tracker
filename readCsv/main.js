@@ -40,7 +40,7 @@ async function csvstuff(urlcsv) {
   const response = await fetch(urlcsv);
   const data = await response.text();
   const table = data.split(/\r?\n/g).slice(1);
-
+  console.log(table);
   table.forEach(row => {
     const columns = row.split(',');
     const day = columns[0];

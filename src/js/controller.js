@@ -24,8 +24,6 @@ statisticDataView.renderSpinner();
 //=======================================\\
 /////////////////////////////////////////////////////////////////////////
 
-//render chart
-chart.render();
 //get metal price on 'get latest price' button
 async function controlGetMetalPrice() {
   try {

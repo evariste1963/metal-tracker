@@ -8,16 +8,24 @@ import { metal } from '../config.js';
 
 let csvDataArray = [];
 
-Papa.parse('../../docs/goldpricessince1978.csv', {
-  download: true,
-  header: true,
-  delimiter: ',',
-  complete: function (results) {
-    //console.log(results.data);
-    //let array = results.data.map(Object.values);
-    csvDataArray.push(results.data);
-  },
-});
+async function getcsv(csvUrl) {
+  const response = await fetch(csvUrl);
+  const data = await response.text();
+  const table = data.split(/\r?\n/g).slice(1);
+  csvDataArray.push(table);
+  console.log(table);
+
+  /* Papa.parse('../../docs/goldpricessince1978.csv', {
+    download: true,
+    header: true,
+    delimiter: ',',
+    complete: function (results) {
+      //console.log(results.data);
+      //let array = results.data.map(Object.values);
+      csvDataArray.push(results.data);
+    },
+  });*/
+}
 console.log('this chartView', csvDataArray);
 
 var options = {
@@ -371,4 +379,10 @@ var options = {
   },
 };
 
-export var chart = new ApexCharts(document.querySelector('#chart'), options);
+export async function chartIt(csvUrl) {
+  await getcsv(csvUrl);
+  const chart = await new ApexCharts(document.querySelector('#chart'), options);
+  //render chart
+  chart.render();
+}
+chartIt('../../docs/goldpricessince1978.csv');
