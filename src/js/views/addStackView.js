@@ -10,8 +10,6 @@ class AddStackView extends View {
 
   constructor() {
     super();
-    /*this._addHandlerShowWindow();
-    this._addHandlerHideWindow();*/
   }
 
   _toggleWindow = function () {
