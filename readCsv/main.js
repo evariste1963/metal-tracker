@@ -18,11 +18,15 @@ async function chartIt(csvurl) {
           borderColor: 'rgba(20, 20, 200, 1)',
           borderWidth: 1,
           fill: true,
-          tension: 0,
         },
       ],
     },
     options: {
+      elements: {
+        point: {
+          radius: 0,
+        },
+      },
       scales: {
         y: {
           beginAtZero: true,
@@ -46,7 +50,10 @@ async function csvstuff(urlcsv) {
     const day = columns[0];
     xs.push(day);
 
-    const price = row.substring(row.indexOf(',') + 1).replaceAll('"', '');
+    const price = row
+      .substring(row.indexOf(',') + 1)
+      .replaceAll('"', '')
+      .replace(',', '');
     //console.log(day, price);
     ys.push(price);
   });
