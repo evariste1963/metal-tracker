@@ -12,7 +12,7 @@ const timeout = function (s) {
 
 //////////////////////////////////////////////////////////////////////////////////
 //---devdata only --- to be deleted\\
-export let devData = {
+/*export let devData = {
   timestamp: 1662832170,
   metal: 'XAU',
   currency: 'GBP',
@@ -48,7 +48,7 @@ export let devAccount = {
   requests_yesterday: 31,
   requests_month: 290,
   requests_last_month: 347,
-};
+};*/
 //--------------------------------------------
 /////////////////////////////////////////////////////////// DELETE DEVdATA BLOCK//////////////
 

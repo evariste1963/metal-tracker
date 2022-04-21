@@ -12,7 +12,7 @@ const btnUpdate = document.querySelector('.btn-update');
 
 ///////////////////////////////////////////////////////////////////////
 ////===developement result --- TO BE DELETED---\\\
-let markUp = spotDataView._generateSpotMarkup(helpers.devData);
+/*let markUp = spotDataView._generateSpotMarkup(helpers.devData);
 spotDataView.renderData(markUp);
 let accMarkUp = accountUpdateView._generateAccMarkup(helpers.devAccount);
 accountUpdateView.renderData(accMarkUp);
