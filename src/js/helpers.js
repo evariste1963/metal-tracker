@@ -12,7 +12,7 @@ const timeout = function (s) {
 
 //////////////////////////////////////////////////////////////////////////////////
 //---devdata only --- to be deleted\\
-/*export let devData = {
+export let devData = {
   timestamp: 1662832170,
   metal: 'XAU',
   currency: 'GBP',
@@ -48,15 +48,13 @@ export let devAccount = {
   requests_yesterday: 31,
   requests_month: 290,
   requests_last_month: 347,
-};*/
+};
 //--------------------------------------------
 /////////////////////////////////////////////////////////// DELETE DEVdATA BLOCK//////////////
 
 export const AJAX = async function (url, requestOptions) {
-  console.log(url);
   try {
-    this.url = url;
-    console.log('helpers: ', this.url);
+    this.url = url; //THIS IS WHERE NETLIFY PROBLEM IS!!!!!!! CANNOT ASIGN THIS.URL
     this.requestOptions = requestOptions;
     const fetchPro = fetch(this.url, this.requestOptions);
     const response = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
