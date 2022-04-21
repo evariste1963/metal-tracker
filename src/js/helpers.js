@@ -56,7 +56,7 @@ export const AJAX = async function (url, requestOptions) {
   console.log(url);
   try {
     this.url = url;
-    console.log(this.url);
+    console.log('helpers: ', this.url);
     this.requestOptions = requestOptions;
     const fetchPro = fetch(this.url, this.requestOptions);
     const response = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
