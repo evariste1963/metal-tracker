@@ -23,7 +23,7 @@ export const getMetalPrice = async () => {
       : result.metal === 'XAG'
       ? (result.metalTxt = 'Silver')
       : '';
-    //result.forex = forex; // add forex key to object and set to img path
+    result.forex = forex; // add forex key to object and set to img path
     return result;
   } catch (error) {
     console.log('error', error);

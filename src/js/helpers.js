@@ -54,6 +54,7 @@ export let devAccount = {
 
 export const AJAX = async function (url, requestOptions) {
   try {
+    console.log(url, requestOptions);
     this.url = url; //THIS IS WHERE NETLIFY PROBLEM IS!!!!!!! CANNOT ASIGN THIS.URL
     //this.url = `https://www.goldapi.io/api/XAU/GBP`;
     this.requestOptions = requestOptions;
