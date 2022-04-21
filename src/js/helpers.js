@@ -53,6 +53,7 @@ export let devAccount = {
 /////////////////////////////////////////////////////////// DELETE DEVdATA BLOCK//////////////
 
 export const AJAX = async function (url, requestOptions) {
+  console.log(url);
   try {
     this.url = url;
     this.requestOptions = requestOptions;
