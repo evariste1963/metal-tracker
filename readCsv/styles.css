@@ -1,13 +1,15 @@
 html,
 body {
+  margin-top: 2rem;
   height: 100vh;
   width: 100vw;
   background: #999;
 }
 
 .chart {
+  margin-top: 20rem;
   height: 400px;
-  width: 800px;
+  width: 1000px;
   margin: auto auto;
   justify-content: center;
   background: #fff;

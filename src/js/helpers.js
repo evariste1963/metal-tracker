@@ -1,5 +1,6 @@
 import { TIMEOUT_SEC } from './config';
 import forex from '../img/forex.webp ';
+const fetch = require('node-fetch');
 
 //re-useable timeout function
 const timeout = function (s) {
