@@ -1,7 +1,7 @@
 import ApexCharts from 'apexcharts';
 import { metal } from '../config.js';
 import { histData } from '../histData.js';
-
+/*
 let csvDataArray = [];
 
 async function getcsv(csvUrl) {
@@ -10,7 +10,7 @@ async function getcsv(csvUrl) {
   const table = data.split(/\r?\n/g).slice(1);
   csvDataArray.push(table);
 }
-
+*/
 var options = {
   series: [
     {
@@ -74,9 +74,9 @@ var options = {
       format: 'dd MMM yyyy',
     },
   },
-  colors: ['rgba(7, 7, 128, 1)'],
+  colors: ['rgba(5, 5, 93, 0.8)'],
   fill: {
-    colors: ['rgba(7, 7, 128, 0.8)', '#000'],
+    colors: ['rgba(5, 5, 93, 0.9)'],
 
     type: 'gradient',
     gradient: {

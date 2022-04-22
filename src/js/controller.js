@@ -4,9 +4,7 @@ import spotDataView from './views/spotDataView.js';
 import statisticDataView from './views/statisticDataView.js';
 import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
-//import { chart } from './charts.js';
 import { chartIt } from './views/chartView';
-//import csvData from './views/chartView.js';
 
 const btnUpdate = document.querySelector('.btn-update');
 
@@ -16,12 +14,6 @@ let markUp = spotDataView._generateSpotMarkup(helpers.devData);
 spotDataView.renderData(markUp);
 let accMarkUp = accountUpdateView._generateAccMarkup(helpers.devAccount);
 accountUpdateView.renderData(accMarkUp);
-/*
-spotDataView.renderSpinner();
-accountUpdateView.renderSpinner();
-statisticDataView.renderSpinner();
-*/
-
 //=======================================\\
 /////////////////////////////////////////////////////////////////////////
 
@@ -34,6 +26,7 @@ async function controlGetMetalPrice() {
     );
     //render price update
     spotDataView.renderData(markUp);
+    
   } catch (err) {
     [spotDataView, statisticDataView].forEach(fn => fn.renderError());
   }

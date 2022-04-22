@@ -1629,4 +1629,3 @@ export let histData = [];
 rawData.forEach(dat => {
   histData.push([dat[0] * 1000, dat[1]]);
 });
-//console.log('histData ', histData);
