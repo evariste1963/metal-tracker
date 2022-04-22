@@ -21,6 +21,7 @@ spotDataView.renderSpinner();
 accountUpdateView.renderSpinner();
 statisticDataView.renderSpinner();
 */
+
 //=======================================\\
 /////////////////////////////////////////////////////////////////////////
 
