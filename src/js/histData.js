@@ -1,3 +1,7 @@
+//when fetching spot data --
+//add/replace the days spot price -- add to end of array
+// delete first entry in array
+
 let rawData = [
   [1451606400, 719.2],
   [1451865600, 736.8],
