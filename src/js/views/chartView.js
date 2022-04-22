@@ -1,10 +1,6 @@
 import ApexCharts from 'apexcharts';
 import { metal } from '../config.js';
-//import { csvData } from '../readCsv.js';
-//import csvfile from '../../docs/goldpricessince1978.csv';
-
-//const _stockChart = document.querySelector('#chart');
-//console.log('chartView: ', csvDataArray);
+import { histData } from '../histData.js';
 
 let csvDataArray = [];
 
@@ -13,34 +9,13 @@ async function getcsv(csvUrl) {
   const data = await response.text();
   const table = data.split(/\r?\n/g).slice(1);
   csvDataArray.push(table);
-  console.log(table);
-
-  /* Papa.parse('../../docs/goldpricessince1978.csv', {
-    download: true,
-    header: true,
-    delimiter: ',',
-    complete: function (results) {
-      //console.log(results.data);
-      //let array = results.data.map(Object.values);
-      csvDataArray.push(results.data);
-    },
-  });*/
 }
-console.log('this chartView', csvDataArray);
 
 var options = {
   series: [
     {
       name: metal,
-      //csvDataArray,
-      data: [
-        [1451606400000, 719.2],
-        [1451865600000, 736.8],
-        [1451952000000, 735.2],
-        [1452038400000, 747.1],
-        [1452124800000, 759.4],
-        [1452211200000, 757.9],
-      ],
+      data: histData,
     },
   ],
   chart: {
@@ -58,7 +33,7 @@ var options = {
         borderColor: '#999',
         label: {
           show: true,
-          text: 'Support',
+          text: '',
           style: {
             color: '#fff',
             background: '#00E396',
@@ -73,7 +48,7 @@ var options = {
         yAxisIndex: 0,
         label: {
           show: true,
-          text: 'Rally',
+          text: '',
           style: {
             color: '#fff',
             background: '#775DD0',
@@ -91,7 +66,7 @@ var options = {
   },
   xaxis: {
     type: 'datetime',
-    min: new Date('18 Apr 2022').getTime(), //--USE ACTUAL DATA HERE
+    min: new Date('01 Jan 2016').getTime(), //--USE ACTUAL DATA HERE
     tickAmount: 6,
   },
   tooltip: {
@@ -99,21 +74,21 @@ var options = {
       format: 'dd MMM yyyy',
     },
   },
+  colors: ['rgba(7, 7, 128, 1)'],
   fill: {
+    colors: ['rgba(7, 7, 128, 0.8)', '#000'],
+
     type: 'gradient',
     gradient: {
       shadeIntensity: 1,
-      opacityFrom: 0.7,
+      opacityFrom: 0.8,
       opacityTo: 0.9,
       stops: [0, 100],
     },
   },
 };
 
-export async function chartIt(csvUrl) {
-  await getcsv(csvUrl);
+export async function chartIt() {
   const chart = await new ApexCharts(document.querySelector('#chart'), options);
-  //render chart
   chart.render();
 }
-chartIt('../../docs/goldpricessince1978.csv');

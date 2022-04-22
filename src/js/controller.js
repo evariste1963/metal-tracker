@@ -5,7 +5,7 @@ import statisticDataView from './views/statisticDataView.js';
 import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
 //import { chart } from './charts.js';
-import { chart } from './views/chartView';
+import { chartIt } from './views/chartView';
 //import csvData from './views/chartView.js';
 
 const btnUpdate = document.querySelector('.btn-update');
@@ -66,6 +66,7 @@ btnUpdate.addEventListener('click', async () => {
 
 //immediately pass controls to Views on startup (subscriber/publisher)
 const init = function () {
+  chartIt();
   addStackView.addHandlerModal(controlStackModal);
 };
 init();
