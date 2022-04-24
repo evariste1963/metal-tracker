@@ -1,9 +1,9 @@
 'use strict';
-import Puppeteer from Puppeteer;
+const puppeteer = require('puppeteer'));
 
 async function scrape(url){
 
-    const browser = await Puppeteer.launch();
+    const browser = await puppeteer.launch();
     const page = await new browser.newPage();
     await page.goTo(url);
 
