@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "apexcharts": "^3.33.2",
-    "node-fetch": "^3.2.3",
-   
+    "node-fetch": "^3.2.3"
   }
 }
