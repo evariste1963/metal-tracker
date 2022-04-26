@@ -6,6 +6,7 @@ import accountUpdateView from './views/accUpdateView.js';
 import * as helpers from './helpers.js';
 import { chartIt } from './views/chartView';
 import puppeteer from 'puppeteer';
+//const puppeteer = require('puppeteer');
 
 const btnUpdate = document.querySelector('.btn-update');
 
@@ -58,7 +59,7 @@ btnUpdate.addEventListener('click', async () => {
 });
 
 async function scrape(url) {
-  console.log('scraping started');
+  console.log('scraping started...');
   const browser = await puppeteer.launch({
     headless: false,
   });
@@ -100,7 +101,6 @@ async function scrape(url) {
 const init = function () {
   chartIt();
   addStackView.addHandlerModal(controlStackModal);
-
   scrape(
     'https://www.royalmint.com/gold-price/?utm_term=gold%20price&utm_campaign=PRM+-+Invest&utm_source=adwords&utm_medium=ppc&hsa_acc=9288023692&hsa_cam=13386978634&hsa_grp=122100981103&hsa_ad=554536144471&hsa_src=g&hsa_tgt=aud-1255044096217:kwd-17387132&hsa_kw=gold%20price&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw6pOTBhCTARIsAHF23fL_sAJbskxizG3wiCHy1a4esJBgm70tWyJA6IAjTfErqLMDWv36CfMaAk_uEALw_wcB'
   );
