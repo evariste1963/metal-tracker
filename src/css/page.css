@@ -129,7 +129,7 @@ body {
   border-radius: 0.7rem;
   background: var(--secondary-bg-color);
   z-index: -1;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .btn-update,
@@ -145,7 +145,7 @@ body {
   background-color: rgba(255, 255, 255, 1);
   cursor: pointer;
   font-family: Ink free, cursive, sans-serif;
-  transition: font-weight 0.2s linear;
+  transition: color 0.4 ease;
   z-index: 1;
 }
 
