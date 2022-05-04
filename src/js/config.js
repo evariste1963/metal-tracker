@@ -86,4 +86,7 @@ fetch("https://www.goldapi.io/api/stat", requestOptions)
 "requests_month":290
 "requests_last_month":347
 }
+
+
+ounces to gram 0.035274
 */
