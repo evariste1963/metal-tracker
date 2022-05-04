@@ -21,7 +21,9 @@ class StatisticDataView extends View {
     )}</span></div>
     <div id=buy>Buy:<span>${parseFloat(result.ask).toFixed(2)}</span></div>
     <div id=sell>Sell:<span>${parseFloat(result.bid).toFixed(2)}</span></div>
-    <div id=P18K>18 Karat/grm:<span>${result.price_gram_18k}</span></div>
+    <div id=P18K>18 Karat/oz:<span>${(
+      parseFloat(result.price_gram_18k) / 0.035274
+    ).toFixed(2)}</span></div>
     <div id=P20K>20 Karat/grm:<span>${result.price_gram_20k}</span></div>
     <div id=P22K>22 Karat/grm:<span>${result.price_gram_22k}</span></div>
     <div id=P24K>24 Karat/grm:<span>${result.price_gram_22k}</span></div>
