@@ -8,8 +8,9 @@ class SpotDataView extends View {
   _message = 'fetching data, please wait..';
 
   _generateSpotMarkup(result) {
-    let statMarkUp = statisticDataView._generateStatMarkup(result);
-    statisticDataView.renderData(statMarkUp);
+    console.log(result);
+    // let statMarkUp = statisticDataView._generateStatMarkup(result);
+    // statisticDataView.renderData(statMarkUp);
 
     const dateTime = getTimestamp(
       result.date ? result.timestamp : result.timestamp

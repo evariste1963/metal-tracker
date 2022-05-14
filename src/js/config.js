@@ -1,5 +1,5 @@
 export const API_KEY = 'goldapi-15j9sm18l0w7rfer-io';
-export const API_URL = 'https://www.goldapi.io/api';
+export const API_URL = 'http://api.nbp.pl/api/cenyzlota/?format=json';
 export const TIMEOUT_SEC = 30;
 export const metal = 'XAU';
 export const currency = 'GBP';
@@ -12,7 +12,7 @@ export const requestLimit = 500;
 
 // https://www.goldapi.io/dashboard
 
-// -------------------------------------------delete---------------------------------------------------------------------------------\\
+// http://api.nbp.pl/api/cenyzlota/-------------------------------------------delete---------------------------------------------------------------------------------\\
 //goldAPI response
 /*
 {timestamp: 1648737132, metal: 'XAU', currency: 'GBP', exchange: 'FOREXCOM', symbol: 'FOREXCOM:XAUGBP',

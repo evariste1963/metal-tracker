@@ -6,24 +6,22 @@ const myHeaders = new Headers();
 myHeaders.append('x-access-token', API_KEY);
 myHeaders.append('Content-Type', 'application/json');
 
-const requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow',
-};
+// const requestOptions = {
+//   // method: 'GET',
+//   // headers: myHeaders,
+//   // redirect: 'follow',
+//   mode: 'no-cors',
+// };
 
 export const getMetalPrice = async () => {
   try {
-    const result = await AJAX(
-      `${API_URL}/${metal}/${currency}/${historicDate}?`,
-      requestOptions
-    );
-    result.metal === 'XAU'
-      ? (result.metalTxt = 'Gold')
-      : result.metal === 'XAG'
-      ? (result.metalTxt = 'Silver')
-      : '';
-    result.forex = forex; // add forex key to object and set to img path
+    const result = await AJAX(`${API_URL}`);
+    result.metal === 'XAU';
+    result.metalTxt = 'Gold';
+    //   : result.metal === 'XAG'
+    //   ? (result.metalTxt = 'Silver')
+    //   : '';
+    //result.forex = forex; // add forex key to object and set to img path
     return result;
   } catch (error) {
     console.log('error', error);
