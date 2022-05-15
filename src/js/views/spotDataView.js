@@ -11,9 +11,9 @@ class SpotDataView extends View {
     console.log(result);
     // let statMarkUp = statisticDataView._generateStatMarkup(result);
     // statisticDataView.renderData(statMarkUp);
-
+    /*
     const dateTime = getTimestamp(
-      result.date ? result.timestamp : result.timestamp
+      result.data ? result.timestamp : result.timestamp
     );
 
     const changeValue = (result.price - result.prev_close_price).toFixed(2);
@@ -37,21 +37,21 @@ class SpotDataView extends View {
     result.exchange === 'FOREXCOM'
       ? (result.srcExchange = `<img id=forex src=${result.forex} alt='forex' width='120' height='20' />`) //use forex img from adjusted result object
       : (result.srcExchange = result.exchange);
-
+*/
     return !result.date
       ? `
-    <div id='metalCur'>${result.srcExchange}  - ${result.metal} / ${result.metalTxt} - ${result.currency} / oz</div>
+   ${result.metalTxt} / oz</div>
     <div id= spotBox>
-    <div id=spotItems style='${dayChange}'>
-    <p id=spotPrice >${result.price}</p>
-    <p class ='${arrow}'></p>
+    <div id=spotItems style='dayChange'>
+    <p id=spotPrice >${result.cena}</p>
+    <p class ='arrow'></p>
     <div id='change'>
-    <p class='changeV'>${changeValue}</p>
-    <p class=changeP>${changePercentage}%</p>
+    <p class='changeV'>changeValue</p>
+    <p class=changeP>changePercentage%</p>
           </div>
         </div>
       </div>
-     <div id=callTime>${dateTime}</div>
+     <div id=callTime>${result.data}</div>
    `
       : console.log(`
   ${callTime}
@@ -61,3 +61,5 @@ class SpotDataView extends View {
 }
 
 export default new SpotDataView();
+
+// {data: '2022-05-13', cena: 264.96, metalTxt: 'Gold'}cena: 264.96data: "2022-05-13"metalTxt: //"Gold"[[Prototype]]: Object
