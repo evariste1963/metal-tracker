@@ -20,14 +20,14 @@ accountUpdateView.renderData(accMarkUp);
 //get metal price on 'get latest price' button
 async function controlGetMetalPrice() {
   try {
-    [spotDataView, statisticDataView].forEach(fn => fn.renderSpinner());
+    spotDataView.renderSpinner();
     let markUp = await spotDataView._generateSpotMarkup(
       await model.getMetalPrice()
     );
     //render price update
     spotDataView.renderData(markUp);
   } catch (err) {
-    [spotDataView, statisticDataView].forEach(fn => fn.renderError());
+    spotDataView.renderError();
   }
 }
 
@@ -53,7 +53,7 @@ const controlStackModal = function (e) {
 
 btnUpdate.addEventListener('click', async () => {
   await controlGetMetalPrice();
-  setTimeout(controlGetAccountUpdate, 2000);
+  /*setTimeout(controlGetAccountUpdate, 2000)*/
 });
 
 //immediately pass controls to Views on startup (subscriber/publisher)

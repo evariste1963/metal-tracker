@@ -59,13 +59,13 @@ export const AJAX = async function (url, requestOptions) {
     const result = await response.json();
     if (!response.ok) throw new Error(`ooops, something went wrong!!`);
     //console.log(result);
-    result.metal === 'XAU'
-      ? (result.metalTxt = 'Gold')
-      : result.metal === 'XAG'
-      ? (result.metalTxt = 'Silver')
-      : '';
-    result.forex = forex; // add forex key to object and set to img path
-    return result;
+    result.metal = 'XAU';
+    // ? (result.metalTxt = 'Gold')
+    result.metal = 'XAG';
+    // ? (result.metalTxt = 'Silver')
+    // : '';
+    //result.forex = forex; // add forex key to object and set to img path
+    return result[0];
   } catch (err) {
     throw err; //throw errror back
   }
