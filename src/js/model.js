@@ -18,6 +18,7 @@ export const getMetalPrice = async () => {
     const result = await AJAX(`${API_URL}`);
     result.metal === 'XAU';
     result.metalTxt = 'Gold';
+
     //   : result.metal === 'XAG'
     //   ? (result.metalTxt = 'Silver')
     //   : '';

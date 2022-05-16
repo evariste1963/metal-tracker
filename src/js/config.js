@@ -5,6 +5,7 @@ export const metal = 'XAU';
 export const currency = 'GBP';
 export const historicDate = ''; //"20201112"; // 'yyyy/mm/dd'
 export const requestLimit = 500;
+export const conversionValue = 0.1823872 * 31.1035;
 
 //console.log(`https://www.goldapi.io/api/${metal}/${currency}/${historicDate}`);
 

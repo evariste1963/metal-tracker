@@ -1,4 +1,5 @@
 import View from './view';
+import { conversionValue } from '../config';
 import { getTimestamp } from '../helpers.js';
 import statisticDataView from './statisticDataView';
 
@@ -11,12 +12,10 @@ class SpotDataView extends View {
     console.log(result);
     // let statMarkUp = statisticDataView._generateStatMarkup(result);
     // statisticDataView.renderData(statMarkUp);
-    /*
-    const dateTime = getTimestamp(
-      result.data ? result.timestamp : result.timestamp
-    );
 
-    const changeValue = (result.price - result.prev_close_price).toFixed(2);
+    const dateTime = getTimestamp((result.timestamp = Date.now() / 1000));
+
+    /*const changeValue = (result.price - result.prev_close_price).toFixed(2);
     const changePercentage = (
       ((result.price - result.prev_close_price) / result.prev_close_price) *
       100
@@ -43,7 +42,7 @@ class SpotDataView extends View {
    ${result.metalTxt} / oz</div>
     <div id= spotBox>
     <div id=spotItems style='dayChange'>
-    <p id=spotPrice >${result.cena}</p>
+    <p id=spotPrice >${(result.cena * conversionValue).toFixed(2)}</p>
     <p class ='arrow'></p>
     <div id='change'>
     <p class='changeV'>changeValue</p>
@@ -51,7 +50,7 @@ class SpotDataView extends View {
           </div>
         </div>
       </div>
-     <div id=callTime>${result.data}</div>
+     <div id=callTime>${result.timestamp}</div>
    `
       : console.log(`
   ${callTime}
