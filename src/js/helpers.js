@@ -1,5 +1,5 @@
 import { TIMEOUT_SEC } from './config';
-import forex from '../img/forex.webp ';
+import forex from '../img/forex.webp';
 
 //re-useable timeout function
 const timeout = function (s) {
@@ -21,7 +21,7 @@ export let devData = {
   ask: 1479.23,
   bid: 1478.36,
   ch: 7.39,
-  chp: 0.5,
+  
   currency: 'GBP',
   high_price: 1480.36,
   low_price: 1463.56,

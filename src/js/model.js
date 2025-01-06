@@ -1,6 +1,6 @@
 import { API_KEY, API_URL, metal, currency, historicDate } from './config.js';
 import { AJAX } from './helpers.js';
-import forex from '../img/forex.webp ';
+import forex from '../img/forex.webp';
 
 const myHeaders = new Headers();
 myHeaders.append('x-access-token', API_KEY);
